@@ -1,0 +1,174 @@
+{
+    "top_2_5_sequences": [
+        {
+            "sequence": "ABAAABCBACABAACBDBABBDBDABBAADCAABAAABAAABAABAAABCBAAAAACACBAABAADACCBAAAACACABBABABAAABABBAABDAABCAAAABABAAAABDCBCAAADABCCDADAAAAAAAABDBBADBADAAABBABAAAAACBBADAAACCAAABAAABAAABAABABAABABABAAAACCAAAABAAABBABCACDCAACDBDCBCAAAAABADDBCACAAAAABAABAAAAAAACBDBDBACCBBBA",
+            "mutation_positions": [
+                7,
+                11,
+                25,
+                30,
+                31,
+                39,
+                50,
+                72,
+                101,
+                124,
+                125,
+                135,
+                138,
+                200,
+                206,
+                251
+            ]
+        },
+        {
+            "sequence": "ABAAABCBACBBAACBDBABBDBDBBBAAAAAABAAABDAABAABAAABCBAAAAACACBAABAADACCBAAAACACABBABABAAABABBAABDAABCAAAABABAAAABDCBCAAABABCBDDDAAAAAAAABDBAADBADAAABBABAAAAAABBADAAACCAAABAAABAAABAABABAABABABAAAACCAAAABBAABBBBCACDCAACDBBCCCAAAAABADDBCADAAAAABAABAAAAAAABBDDDBACCBBBA",
+            "mutation_positions": [
+                7,
+                50,
+                72,
+                101,
+                119,
+                123,
+                124,
+                135,
+                138,
+                156,
+                200,
+                201,
+                218,
+                220,
+                234,
+                254
+            ]
+        },
+        {
+            "sequence": "ABAAABCBACABAACBABABADDDBBBAAAAAABAAABDAABAADAAABCBAAAAACACBAABAADACCBAAAACACABBABABAAABABBAABDAABCABAABABAAAABDCBCAAADABCCAABAAAAAAAABDBDADBADAAABBABAAAAACBBADAAACCAAABAAABAABBAABABAABABABAAAACCAAAABBAABBBBCACDCAACDBCCCCAAAAABADDBCACAAAAABAABAAAAAAABBDBDBACCBBBA",
+            "mutation_positions": [
+                7,
+                11,
+                17,
+                21,
+                23,
+                45,
+                50,
+                72,
+                125,
+                126,
+                135,
+                176,
+                200,
+                201,
+                218,
+                220
+            ]
+        },
+        {
+            "sequence": "ABAAABCBACABAACBDBABBDDDBBBAAACAABAAABDAABAABAAABCBAAAAACACBAABAADACCBAAAACACABBABABAAABABBAABDAABCAAAABABAAAABDCBCAAADABCCCADAAAAAAAABDBDADBADAAABBABAAACACBBADAAACCAAACAAABAAABAABABAABAABBAAAACCAAAABAAABBBBCACDCAACDBDCCCAAAAABADDBCACAAAAABAABAAAAAAABBDBDBACCBBBA",
+            "mutation_positions": [
+                7,
+                11,
+                23,
+                31,
+                50,
+                72,
+                101,
+                124,
+                125,
+                135,
+                154,
+                169,
+                187,
+                188,
+                200,
+                220
+            ]
+        },
+        {
+            "sequence": "ABAAABCBACABAACBABABBDBDBBBAAACAABAAABDAABAABAAABCBAAAAACACBAABAADACCBAAAACACABBABABAAABABBAABDAABCAAAABABAAAABDCBCAAADABCCDADAAAAAAAABDBAADBADAAABBABAAACACBBADAAACAAAABAAABAAABAABABAABABABAAAACCAAAABBAABBBBCACDCAACDBDCCCAAAAABADDBCACAAAAABAABAAAAAAABBDBDBACCBBBA",
+            "mutation_positions": [
+                7,
+                11,
+                17,
+                31,
+                50,
+                72,
+                101,
+                124,
+                125,
+                135,
+                138,
+                154,
+                165,
+                200,
+                201,
+                220
+            ]
+        }
+    ],
+    "bottom_2_5_sequences": [
+        {
+            "sequence": "ABAAABCBACBBAACBDBABBDBCBBBAAAAAABAAABDAABAABAAABCBAAAAACACBAABAADACCBAAABCACABBABABAAABABBAABDAABCABAABABAAAABACBCAAADABCCCDDAAAAAAAABDBDACBACAAABDABAAAAACBBADAAACCAAABAAABAAABAABABAABABABAAAACCAAAABAAABBBBCACDCAACDBABCCAAAAABADDBCADAAAAABAABAAAAAAABBDBDBACCBBBA",
+            "mutation_positions": [
+                7,
+                24,
+                50,
+                72,
+                74,
+                112,
+                124,
+                135,
+                140,
+                143,
+                148,
+                200,
+                218,
+                219,
+                220,
+                234
+            ]
+        },
+        {
+            "sequence": "ABAAABCBACABAACBDBABBDBDBBBAAAAAABAAABDAABAABAAABCBAAAAACACBAABAADACCBAAAACACABBABABAAABABBAABDAABCABAABABAAAABBCBCAAABABCCADDAAAAAAAABDBDACBAAAAABDABAAAACCABABAAACCAAABAAABAAABAABABAABABABAAAACCAAAABAAABBBBCACDCAACDBDCCCAAAAABADCBCACAAAAABAABAAAAAAABBDBDBACCBBBA",
+            "mutation_positions": [
+                7,
+                11,
+                50,
+                72,
+                112,
+                119,
+                135,
+                140,
+                143,
+                148,
+                155,
+                157,
+                160,
+                200,
+                220,
+                230
+            ]
+        },
+        {
+            "sequence": "ABAAABCBACABAACBABABBDBDBBBAAACAABAAABDAABAABAAABABAAAAACACBAABAADACCBAAAACACABBABABAAABABBAABDAABCABAABABAAAABDCBCAAABABCCADDAAAAAAAABDBDACBADAAABDABBAAACAABADAAACCAAABAAABAAABAABABAABABABAAAACCAAAABAAABBBBCACDCAACDBDCCCAAAAABADDBCACAAAAABAABAAAAAAABBDBDBACCBBBA",
+            "mutation_positions": [
+                7,
+                11,
+                17,
+                31,
+                50,
+                72,
+                119,
+                135,
+                140,
+                148,
+                151,
+                155,
+                156,
+                157,
+                200,
+                220
+            ]
+        }
+    ]
+}
