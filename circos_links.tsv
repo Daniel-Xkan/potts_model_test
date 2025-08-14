@@ -1,0 +1,14 @@
+link_id	region1	start1	end1	region2	start2	end2	attributes
+link_1	seq	6	6	seq	7	7	6.06472
+link_2	seq	6	6	seq	7	7	6.37774
+link_3	seq	119	119	seq	122	122	5.94553
+link_4	seq	138	138	seq	148	148	4.90052
+link_5	seq	140	140	seq	148	148	5.61299
+link_6	seq	140	140	seq	148	148	4.91495
+link_7	seq	140	140	seq	148	148	5.18354
+link_8	seq	140	140	seq	148	148	8.50879
+link_9	seq	140	140	seq	148	148	5.2042
+link_10	seq	143	143	seq	230	230	6.37754
+link_11	seq	157	157	seq	160	160	6.0882
+link_12	seq	218	218	seq	219	219	5.0134
+link_13	seq	219	219	seq	222	222	4.79986
