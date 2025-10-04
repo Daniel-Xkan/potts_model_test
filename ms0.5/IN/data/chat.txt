@@ -75,3 +75,9 @@ G163R	0	0	0	15	15
 S230R	10	15	10	20	20
 D232N	0	0	0	10	10
 R263K	30	60	30	30	15
+
+the background chord should be read from data/IN_all_100pairs.tsv, where plot positions with DR_positions = 0, while for teh bwr chords, plot the DR_positions = 1, the file look like this: wildtype_aa1	pos1	mutate_aa1	wildtype_aa2	pos2	mutate_aa2	ddE	mutation_rate_1	mutation_rate_2	DR_position
+C	140	D	D	148	B	8.50879	0.19918032786885245	0.1860655737704918	1
+B	6	D	C	7	B	6.37774	0.0	0.0	0
+D	143	A	D	230	C	6.37754	0.023770491803278688	0.022950819672131147	1
+B	157	A	D	160	B	6.0882	0.06475409836065574	0.0	1
