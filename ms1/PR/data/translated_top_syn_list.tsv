@@ -1,21 +1,21 @@
-wildtype_aa1	pos1	mutate_aa1	wildtype_aa2	pos2	mutate_aa2
-B	30	D	B	88	C
-C	32	D	A	47	B
-B	48	A	C	54	A
-B	30	D	C	45	D
-C	54	A	C	82	B
-C	54	D	C	82	B
-C	46	D	A	76	C
-C	54	D	C	82	A
-C	54	A	C	82	A
-B	48	A	C	82	B
-C	54	A	A	71	D
-C	46	D	B	88	A
-C	90	B	B	95	C
-C	32	D	C	46	D
-B	48	A	C	82	A
-C	54	D	A	91	C
-C	46	D	C	53	D
-C	46	B	C	55	D
-C	46	B	C	82	B
-C	46	D	C	55	D
+wildtype_aa1	pos1	mutate_aa1	wildtype_aa2	pos2	mutate_aa2	DDE	untranslated_wildtype_aa1	untranslated_mutate_aa1	untranslated_wildtype_aa2	untranslated_mutate_aa2
+B	30	D	B	88	C	4.6108785	D	N	N	D
+C	32	D	A	47	B	3.4506056	V	I	I	V
+B	48	A	C	54	A	3.1376057	G	V	I	A
+B	30	D	C	45	D	3.081643	D	N	K	Q
+C	54	A	C	82	B	2.9455953	I	A	V	A
+C	54	D	C	82	B	2.8622637	I	V	V	A
+C	46	D	A	76	C	2.665547	M	I	L	V
+C	54	D	C	82	A	2.476119	I	V	V	T
+C	54	A	C	82	A	2.3435872	I	A	V	T
+B	48	A	C	82	B	2.3191676	G	V	V	A
+C	54	A	A	71	D	2.26015	I	A	A	I
+C	46	D	B	88	A	2.2406816	M	I	N	T
+C	90	B	B	95	C	2.0020018	L	M	C	F
+C	32	D	C	46	D	1.9782121	V	I	M	I
+B	48	A	C	82	A	1.9567208	G	V	V	T
+C	54	D	A	91	C	1.9268732	I	V	T	S
+C	46	D	C	53	D	1.8669852	M	I	F	Y
+C	46	B	C	55	D	1.8074695	M	L	K	R
+C	46	B	C	82	B	1.8062705	M	L	V	A
+C	46	D	C	55	D	1.7659798	M	I	K	R
