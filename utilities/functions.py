@@ -1,4 +1,5 @@
 import re
+import numpy as np
 
 def import_test():
     return 'import succeed'
@@ -89,6 +90,7 @@ def DE_dict(kn_file):
             de_dict[pair2] = delta_e2
     return de_dict
 
+# get de from kn.her.all dictionary
 def get_DE(de_dict, pair, reduced=True, redux_dict=None):
     if reduced == False:
         if redux_dict is None:
@@ -98,3 +100,42 @@ def get_DE(de_dict, pair, reduced=True, redux_dict=None):
         pair_reduced = pair
     return de_dict.get(pair_reduced)
 
+def calculate_delta_e(mutation_pair, seq, J_dict):
+    old_amino_acid, position, new_amino_acid = split_pair(mutation_pair)
+    max_position = len(seq)
+    
+    # E(old_amino_acid)
+    energy_old = 0
+    for other_pos in range(1, max_position + 1):
+        if other_pos == position:
+            continue
+        other_aa = seq[other_pos - 1]  # Access the amino acid at other_pos
+        energy_old += J_dict.get((position, other_pos, old_amino_acid, other_aa), 0)
+
+    # E(new_amino_acid)
+    energy_new = 0
+    for other_pos in range(1, max_position + 1):
+        if other_pos == position:
+            continue
+        other_aa = seq[other_pos - 1]  # Access the amino acid at other_pos
+        energy_new += J_dict.get((position, other_pos, new_amino_acid, other_aa), 0)
+
+    delta_e = energy_old - energy_new
+    return delta_e
+
+def load_J_dict(j_file, max_position):
+    J_dict = {}
+    J = np.load(j_file)
+
+    row = 0
+
+    for pos1 in range(1, max_position + 1):
+        for pos2 in range(pos1 + 1, max_position + 1):
+            for i, aa1 in enumerate(['A', 'B', 'C', 'D']):
+                for j, aa2 in enumerate(['A', 'B', 'C', 'D']):
+                    col = i * 4 + j
+                    J_dict[(pos1, pos2, aa1, aa2)] = J[row, col]
+                    J_dict[(pos2, pos1, aa2, aa1)] = J[row, col]
+            row += 1
+
+    return J_dict
