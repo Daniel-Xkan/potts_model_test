@@ -139,3 +139,12 @@ def load_J_dict(j_file, max_position):
             row += 1
 
     return J_dict
+
+def read_seq(seq_file):
+    seq_list = []
+    with open(seq_file, 'r') as f:
+        for line in f:
+            line = line.strip()
+            if line:
+                seq_list.append(line)
+    return seq_list
