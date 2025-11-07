@@ -1,5 +1,6 @@
 import re
 import numpy as np
+import pandas as pd
 
 def import_test():
     return 'import succeed'
@@ -231,3 +232,66 @@ def calculate_average_DE1_DE2_DDE(mut1, mut2, MSA_seq,J_dict,min_position,max_po
     if valid_count == 0:
         return None, None, None
     return DE1_total/valid_count, DE2_total/valid_count, DE12_total/valid_count
+
+
+def pairs_to_reduced(redux_dict, pairs):
+    """
+    Convert mutation pairs from unreduced to reduced format.
+    
+    Args:
+        redux_dict: Dictionary mapping (position, reduced_letter) to list of amino acids
+        pairs: List of pairs in format 'X###Y-A###B'
+    
+    Returns:
+        List of reduced format pairs
+    """
+    reduced_pairs = []
+    for pair in pairs:
+        # Split the pair into two mutations
+        mut1, mut2 = pair.split('-')
+        # Convert each mutation to reduced format
+        reduced_mut1 = unreduced_to_reduced(redux_dict, mut1)
+        reduced_mut2 = unreduced_to_reduced(redux_dict, mut2)
+        # Combine back into pair format
+        reduced_pair = f"{reduced_mut1}-{reduced_mut2}"
+        reduced_pairs.append(reduced_pair)
+    return reduced_pairs
+
+def analyze_sequences_mutations(consensus_file, sequences_file):
+    """
+    Read consensus and experimental sequences, then create a DataFrame with mutations.
+    
+    Args:
+        consensus_file: Path to consensus sequence file
+        sequences_file: Path to experimental sequences file
+    
+    Returns:
+        pandas.DataFrame with columns: Sequence, Mutations, Mutations_count
+    """
+    
+    # Read the consensus sequence
+    with open(consensus_file, 'r') as f:
+        consensus_sequence = f.read().strip()
+    
+    # Read the experimental sequences
+    sequences = []
+    with open(sequences_file, 'r') as f:
+        for line in f:
+            sequences.append(line.strip())
+    
+    # Create a DataFrame to store sequences and their mutations
+    sequence_df = pd.DataFrame({'Sequence': sequences})
+    
+    # Function to identify mutations compared to the consensus sequence
+    def find_mutations(sequence, consensus):
+        mutations = []
+        for i, (seq_residue, cons_residue) in enumerate(zip(sequence, consensus), start=1):
+            if seq_residue != cons_residue:
+                mutations.append(f"{cons_residue}{i}{seq_residue}")
+        return mutations
+    
+    # Add columns for mutations and mutation count
+    sequence_df['Mutations'] = sequence_df['Sequence'].apply(lambda seq: find_mutations(seq, consensus_sequence))
+    sequence_df['Mutations_count'] = sequence_df['Mutations'].apply(len)
+    
+    return sequence_df
