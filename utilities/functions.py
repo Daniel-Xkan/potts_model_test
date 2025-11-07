@@ -64,7 +64,7 @@ def join_pairs(pair1, pair2):
 # Split a single pair like 'C140D' into its components
 def split_pair(pair):
     wildtype = pair[0]
-    position = int(pair[1:-1])
+    position = int(pair[1:-1])  # Ensure position is an integer
     mutate = pair[-1]
     return wildtype, position, mutate
 
@@ -100,36 +100,90 @@ def get_DE(de_dict, pair, reduced=True, redux_dict=None):
         pair_reduced = pair
     return de_dict.get(pair_reduced)
 
-def calculate_delta_e(mutation_pair, seq, J_dict):
+def calculate_delta_e(mutation_pair, seq, J_dict, min_position, max_position):
     old_amino_acid, position, new_amino_acid = split_pair(mutation_pair)
-    max_position = len(seq)
-    
     # E(old_amino_acid)
     energy_old = 0
-    for other_pos in range(1, max_position + 1):
+    for other_pos in range(min_position, max_position + 1):
         if other_pos == position:
             continue
-        other_aa = seq[other_pos - 1]  # Access the amino acid at other_pos
+        other_aa = seq[other_pos - min_position]  # Access the amino acid at other_pos
         energy_old += J_dict.get((position, other_pos, old_amino_acid, other_aa), 0)
 
     # E(new_amino_acid)
     energy_new = 0
-    for other_pos in range(1, max_position + 1):
+    for other_pos in range(min_position, max_position + 1):
         if other_pos == position:
             continue
-        other_aa = seq[other_pos - 1]  # Access the amino acid at other_pos
+        other_aa = seq[other_pos - min_position]  # Access the amino acid at other_pos
         energy_new += J_dict.get((position, other_pos, new_amino_acid, other_aa), 0)
 
     delta_e = energy_old - energy_new
     return delta_e
 
-def load_J_dict(j_file, max_position):
+def calculate_delta_e_double(mutation_pair1, mutation_pair2, seq, J_dict,min_position,max_position):
+    old_amino_acid1, pos1, new_amino_acid1 = split_pair(mutation_pair1)
+    old_amino_acid2, pos2 , new_amino_acid2 = split_pair(mutation_pair2)
+
+    # Check if positions are already mutated
+    current_aa1 = seq[pos1 - min_position]
+    current_aa2 = seq[pos2 - min_position]
+
+    if current_aa1 != old_amino_acid1 or current_aa2 != old_amino_acid2:
+        return None
+
+    energy_old = 0
+    energy_new = 0
+
+    # old energy
+    for other_pos in range(min_position, max_position+ 1):
+        other_aa = seq[other_pos - min_position]
+        if other_pos == pos1:
+            continue
+        if other_pos == pos2:
+            energy_old += J_dict.get((pos1, pos2, current_aa1, current_aa2), 0)
+        else:
+            energy_old += J_dict.get((pos1, other_pos, old_amino_acid1, other_aa), 0)
+
+    for other_pos in range(min_position, max_position + 1):
+        other_aa = seq[other_pos - min_position]
+        if other_pos == pos2:
+            continue
+        if other_pos == pos1:
+            continue
+        else:
+            energy_old += J_dict.get((pos2, other_pos, old_amino_acid2, other_aa), 0)
+
+    # new energy
+    for other_pos in range(min_position, max_position + 1):
+        other_aa = seq[other_pos - min_position]
+        if other_pos == pos1:
+            continue
+        if other_pos == pos2:
+            energy_new += J_dict.get((pos1, pos2, new_amino_acid1, new_amino_acid2), 0)
+        else:
+            energy_new += J_dict.get((pos1, other_pos, new_amino_acid1, other_aa), 0)
+
+    for other_pos in range(min_position, max_position + 1):
+        other_aa = seq[other_pos - min_position]
+        if other_pos == pos2:
+            continue
+        if other_pos == pos1:
+            continue
+        else:
+            energy_new += J_dict.get((pos2, other_pos, new_amino_acid2, other_aa), 0)
+
+    de12 = energy_old - energy_new
+    return de12
+
+
+def load_J_dict(j_file, min_position,max_position):
     J_dict = {}
     J = np.load(j_file)
 
     row = 0
 
-    for pos1 in range(1, max_position + 1):
+    for pos1 in range(min_position, max_position + 1):
         for pos2 in range(pos1 + 1, max_position + 1):
             for i, aa1 in enumerate(['A', 'B', 'C', 'D']):
                 for j, aa2 in enumerate(['A', 'B', 'C', 'D']):
@@ -148,3 +202,32 @@ def read_seq(seq_file):
             if line:
                 seq_list.append(line)
     return seq_list
+
+def read_reduced_MSA(msa_file):
+    msa_list = []
+    with open(msa_file, 'r') as f:
+        for line in f:
+            line = line.strip()
+            if line:
+                msa_list.append(line)
+    return msa_list
+
+def calculate_average_DE1_DE2_DDE(mut1, mut2, MSA_seq,J_dict,min_position,max_position):
+    wt1, position1, mt1 = split_pair(mut1)
+    wt2, position2, mt2 = split_pair(mut2)
+    valid_count = 0
+    DE1_total = 0
+    DE2_total = 0
+    DE12_total = 0
+    for seq in MSA_seq:
+        if seq[position1-min_position] != wt1 or seq[position2-min_position] != wt2:
+            # print(f"Expected: wt1={wt1}, wt2={wt2}, Found: seq[position1]={seq[position1-1]}, seq[position2]={seq[position2-1]}")
+            continue
+        valid_count += 1
+        DE1_total += calculate_delta_e(mut1, seq, J_dict, min_position, max_position)
+        DE2_total += calculate_delta_e(mut2, seq, J_dict, min_position, max_position)
+        DE12_total += calculate_delta_e_double (mut1, mut2, seq, J_dict,min_position, max_position)
+    print(f"Valid sequences count: {valid_count}")
+    if valid_count == 0:
+        return None, None, None
+    return DE1_total/valid_count, DE2_total/valid_count, DE12_total/valid_count
