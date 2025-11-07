@@ -1,0 +1,81 @@
+Mutation Pairs	ΔΔE	Energy Type	ΔE(M1,M2)	ΔE(M1)	ΔE(M2)
+K101E_G190S	3.3	Wildtype	-4.74	-3.86	-4.18
+K101E_G190S	3.3	Rescue example	-0.11	-1.64	-1.77
+K101E_G190S	3.3	Compensate example	-1.97	-0.93	-4.35
+K101E_G190S	3.3	flip example	-0.02	-1.88	-1.45
+K101E_G190A	2.64	Wildtype	-4.33	-3.86	-3.11
+K101E_G190A	2.64	Rescue example	0.98	-0.93	-0.73
+K101E_G190A	2.64	Compensate example	1.37	-3.11	1.84
+K101E_G190A	2.64	flip example	0.19	-1.22	-1.24
+K103N_P225H	2.64	Wildtype	-3.46	-1.12	-4.98
+K103N_P225H	2.64	Rescue example	1.56	0.5	-1.58
+K103N_P225H	2.64	Compensate example	1.59	4.14	-5.18
+K103N_P225H	2.64	flip example			
+L100I_K103N	2.59	Wildtype	-3.96	-5.43	-1.12
+L100I_K103N	2.59	Rescue example	2.8	-0.85	1.06
+L100I_K103N	2.59	Compensate example	-0.92	-6.04	2.54
+L100I_K103N	2.59	flip example	-0.07	-1.31	-1.35
+K101P_K103S	2.35	Wildtype	-7.74	-5.45	-4.64
+K101P_K103S	2.35	Rescue example	0.98	-1.93	0.56
+K101P_K103S	2.35	Compensate example	-1.45	-4.4	0.6
+K101P_K103S	2.35	flip example	-2.54	-2.44	-2.46
+Y181C_H221Y	1.76	Wildtype	-5.24	-2.77	-4.24
+Y181C_H221Y	1.76	Rescue example	0.31	-0.52	-0.93
+Y181C_H221Y	1.76	Compensate example	0.03	3.04	-4.77
+Y181C_H221Y	1.76	flip example	-0.14	-0.98	-0.92
+K103S_G190A	1.72	Wildtype	-6.03	-4.64	-3.11
+K103S_G190A	1.72	Rescue example	1.88	-0.71	0.87
+K103S_G190A	1.72	Compensate example	-0.11	-4.6	2.77
+K103S_G190A	1.72	flip example	-0.93	-1.16	-1.49
+K103S_P225H	1.65	Wildtype	-7.98	-4.64	-4.98
+K103S_P225H	1.65	Rescue example			
+K103S_P225H	1.65	Compensate example	-2.15	2.84	-6.64
+K103S_P225H	1.65	flip example	-3.62	-2.67	-2.6
+L100I_K103R	1.49	Wildtype	-8.37	-5.43	-4.43
+L100I_K103R	1.49	Rescue example			
+L100I_K103R	1.49	Compensate example	-4.46	-8.21	2.26
+L100I_K103R	1.49	flip example	-2.39	-1.89	-1.99
+V108I_H221Y	1.49	Wildtype	-7.03	-4.29	-4.24
+V108I_H221Y	1.49	Rescue example	0.55	-0.45	-0.48
+V108I_H221Y	1.49	Compensate example	0.16	1.84	-3.17
+V108I_H221Y	1.49	flip example	0.55	-0.45	-0.48
+K103S_D192N	1.48	Wildtype	-9.32	-4.64	-6.15
+K103S_D192N	1.48	Rescue example			
+K103S_D192N	1.48	Compensate example	-0.07	2.84	-4.38
+K103S_D192N	1.48	flip example	-5.71	-3.62	-3.57
+L100I_K103S	1.36	Wildtype	-8.71	-5.43	-4.64
+L100I_K103S	1.36	Rescue example	-0.69	-1.18	-0.87
+L100I_K103S	1.36	Compensate example	-1.73	-5.93	2.84
+L100I_K103S	1.36	flip example	-2.5	-1.78	-2.08
+K101E_E138A	1.27	Wildtype	-6.3	-3.86	-3.71
+K101E_E138A	1.27	Rescue example			
+K101E_E138A	1.27	Compensate example	-1.69	2.2	-5.16
+K101E_E138A	1.27	flip example	-1.4	-1.3	-1.36
+Y181C_G190A	1.19	Wildtype	-4.69	-2.77	-3.11
+Y181C_G190A	1.19	Rescue example	5.5	2.6	1.71
+Y181C_G190A	1.19	Compensate example	2.08	2.46	-1.58
+Y181C_G190A	1.19	flip example	2.62	0.54	0.89
+K103S_D177N	1.18	Wildtype	-7.72	-4.64	-4.26
+K103S_D177N	1.18	Rescue example			
+K103S_D177N	1.18	Compensate example	0.05	2.84	-3.96
+K103S_D177N	1.18	flip example	-2.04	-1.41	-1.8
+V108I_V189I	1.17	Wildtype	-8.11	-4.29	-5.0
+V108I_V189I	1.17	Rescue example	1.66	0.89	-0.4
+V108I_V189I	1.17	Compensate example	-0.66	1.83	-3.66
+V108I_V189I	1.17	flip example	-1.33	-1.28	-1.22
+K101E_E138K	1.15	Wildtype	-8.03	-3.86	-5.32
+K101E_E138K	1.15	Rescue example			
+K101E_E138K	1.15	Compensate example	-0.68	2.2	-4.04
+K101E_E138K	1.15	flip example	-4.83	-3.04	-2.94
+E138A_G190E	1.09	Wildtype	-7.76	-3.71	-5.15
+E138A_G190E	1.09	Rescue example			
+E138A_G190E	1.09	Compensate example	-2.96	-4.15	0.09
+E138A_G190E	1.09	flip example	-0.74	-1.57	-0.26
+K101P_D192N	1.06	Wildtype	-10.53	-5.45	-6.15
+K101P_D192N	1.06	Rescue example			
+K101P_D192N	1.06	Compensate example	-1.97	0.7	-3.73
+K101P_D192N	1.06	flip example	-5.17	-3.34	-2.9
+V108I_L109V	1.06	Wildtype	-12.13	-4.29	-8.9
+V108I_L109V	1.06	Rescue example			
+V108I_L109V	1.06	Compensate example	-2.43	1.84	-5.33
+V108I_L109V	1.06	flip example	-4.51	-2.8	-2.77
