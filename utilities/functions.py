@@ -302,3 +302,29 @@ def reduced_to_unreduced_list(redux_dict, reduced_pairs, in_unre_seq):
         unreduced_pair = reduced_to_unreduced(redux_dict, reduced_pair, in_unre_seq)
         unreduced_pairs.append(unreduced_pair)
     return unreduced_pairs
+
+def get_kn_file_dict(kn_file):
+    de_dict = {}
+    with open(kn_file, 'r') as file:
+        for line in file:
+            parts = line.strip().split()
+            if len(parts) < 5:
+                continue
+            pair1, pair2 = split_pairs(parts[0])
+            de1 = float(parts[3])
+            de2 = float(parts[4])
+            de_dict[pair1] = de1
+            de_dict[pair2] = de2
+    return de_dict
+
+def get_wt(single_mutation):
+    wt = single_mutation[:1]
+    return wt
+
+def get_mt(single_mutation):
+    mt = single_mutation[-1]
+    return mt
+
+def get_pos(single_mutation):
+    pos = int(single_mutation[1:-1])
+    return pos
