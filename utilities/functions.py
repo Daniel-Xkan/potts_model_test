@@ -295,3 +295,10 @@ def analyze_sequences_mutations(consensus_file, sequences_file):
     sequence_df['Mutations_count'] = sequence_df['Mutations'].apply(len)
     
     return sequence_df
+
+def reduced_to_unreduced_list(redux_dict, reduced_pairs, in_unre_seq):
+    unreduced_pairs = []
+    for reduced_pair in reduced_pairs:
+        unreduced_pair = reduced_to_unreduced(redux_dict, reduced_pair, in_unre_seq)
+        unreduced_pairs.append(unreduced_pair)
+    return unreduced_pairs
