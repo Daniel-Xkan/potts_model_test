@@ -1,5 +1,6 @@
 import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d.art3d import Poly3DCollection
+import numpy as np
 
 def plot_epistatic_plane(xy_base, de1, de2, de12):
 # Adjust the figure size to make the canvas larger for annotations
@@ -82,3 +83,50 @@ def plot_epistatic_plane(xy_base, de1, de2, de12):
     ax.set_ylabel('')
 
     plt.show()
+
+def plot_epistatic_bar(de_list):
+    # Define bar width and positions
+    bar_width = 0.2
+    indices = np.arange(len(de_list))
+
+    # Initialize the plot
+    fig, ax = plt.subplots(figsize=(8, 6))
+
+    # Plot bars for de1, de2, de12, and additive expectation
+    for i, des in enumerate(de_list):
+        de1, de2, de12 = des
+        additive_de = de1 + de2
+        dde = de12 - additive_de
+
+        # Single mutant 1 (de1)
+        ax.bar(indices[i] - 1.5 * bar_width, de1, bar_width, color='#f08080', label='Single 1' if i == 0 else "")
+
+        # Single mutant 2 (de2)
+        ax.bar(indices[i] - 0.5 * bar_width, de2, bar_width, color='#cf6161', label='Single 2' if i == 0 else "")
+
+        # Double mutant (de12)
+        # ax.bar(indices[i] + 0.5 * bar_width, de12, bar_width, color='blue', label='Double' if i == 0 else "")
+        # Double mutant (de12) with RGB color 0000cd
+        ax.bar(indices[i] + 0.5 * bar_width, de12, bar_width, color='#0000CD', label='Double (RGB)' if i == 0 else "")
+        # Additive expectation (de1 + de2) on the same x-axis as de12
+        ax.bar(indices[i] + 0.5 * bar_width, additive_de, bar_width, color='none', edgecolor='black', linestyle='--', label='Additive' if i == 0 else "")
+
+
+        # # Add red curved arrow for epistatic deviation
+        # arrow_color = 'red' if dde < 0 else 'blue'
+        # ax.annotate('', xy=(indices[i] + 0.5 * bar_width, de12), xytext=(indices[i] + 1.5 * bar_width, additive_de),
+        #     arrowprops=dict(arrowstyle='->', color=arrow_color, lw=1.5))
+
+    # Add horizontal line at y=0
+    ax.axhline(0, color='black', linewidth=0.8)
+
+    # Customize the plot
+    ax.set_xticks(indices)
+    ax.set_xticklabels([f"Pair {i+1}" for i in range(len(de_list))], rotation=45, ha='right')
+    ax.set_ylabel('Fitness Change (ΔE)')
+    ax.set_title('Epistatic Bar Plot')
+    ax.legend()
+
+    plt.tight_layout()
+    plt.show()
+
