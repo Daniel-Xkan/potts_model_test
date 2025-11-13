@@ -20,7 +20,7 @@ def get_redu_dict(redux_file, offset):
 #get the reduced pair in format like 'C140D' translate back to unreduced with rules that 1. look up in dictionary ('C', 140)get the last letter in list, and samely, look up in dictionary ('D', 140), get the last letter in list, and combine the new translated unreduced two letters put them back to new pairs, like 'G140S'
 
 #usage: dict, C140D, [unreduced seq]
-def reduced_to_unreduced(redux_dict, reduced_pair,in_unre_seq):
+def reduced_to_unreduced(redux_dict, reduced_pair,in_unre_seq, start_index=1):
     # Parse the reduced pair
     wildtype, pos, mutate = reduced_pair[0], int(reduced_pair[1:-1]), reduced_pair[-1]
     # Look up the unreduced wildtype and mutate in the dictionary
@@ -30,8 +30,8 @@ def reduced_to_unreduced(redux_dict, reduced_pair,in_unre_seq):
     # print( 'unreduced_mutates ', unreduced_mutates)
     
     # If the most frequent amino acid is needed, calculate it
-    most_freq_wildtype = max(unreduced_wildtypes, key=lambda aa: calculate_freq(aa, pos, in_unre_seq))
-    most_freq_mutate = sorted(set(unreduced_mutates), key=lambda aa: calculate_freq(aa, pos, in_unre_seq), reverse=True)[0]
+    most_freq_wildtype = max(unreduced_wildtypes, key=lambda aa: calculate_freq(aa, pos, in_unre_seq,start_index))
+    most_freq_mutate = sorted(set(unreduced_mutates), key=lambda aa: calculate_freq(aa, pos, in_unre_seq,start_index), reverse=True)[0]
 
     
     # Combine the new translated unreduced letters with the position
@@ -49,8 +49,8 @@ def unreduced_to_reduced(redux_dict, unreduced_pair):
     return reduced_pair
 
 # Calculate the frequency of an amino acid at a given position in a list of sequences
-def calculate_freq(aa, pos, seq_list):
-    count = sum(1 for seq in seq_list if seq[pos - 1] == aa)
+def calculate_freq(aa, pos, seq_list,start_index=1):
+    count = sum(1 for seq in seq_list if seq[pos - start_index] == aa)
     frequency = count / len(seq_list)
     return frequency
 
@@ -296,10 +296,10 @@ def analyze_sequences_mutations(consensus_file, sequences_file):
     
     return sequence_df
 
-def reduced_to_unreduced_list(redux_dict, reduced_pairs, in_unre_seq):
+def reduced_to_unreduced_list(redux_dict, reduced_pairs, in_unre_seq, start_index=1):
     unreduced_pairs = []
     for reduced_pair in reduced_pairs:
-        unreduced_pair = reduced_to_unreduced(redux_dict, reduced_pair, in_unre_seq)
+        unreduced_pair = reduced_to_unreduced(redux_dict, reduced_pair, in_unre_seq, start_index)
         unreduced_pairs.append(unreduced_pair)
     return unreduced_pairs
 
