@@ -119,7 +119,7 @@ def connect_background_syn_cords(circos,sector,kn_file, top_n,start_aa =1, chord
             continue
 
         # Use light gray color for background
-        light_gray_color = "#d3d3d3"
+        light_gray_color = "#ffe9cf"
         circos.link(region1, region2, color=light_gray_color)
 
 def connect_background_ant_cords(circos,sector,kn_file, bottom_n,start_aa =1, chord_thickness = 0.5):
@@ -149,7 +149,7 @@ def connect_background_ant_cords(circos,sector,kn_file, bottom_n,start_aa =1, ch
             continue
 
         # Use light gray color for background
-        light_gray_color = "#d3d3d3"
+        light_gray_color = "#ffe9cf"
         circos.link(region1, region2, color=light_gray_color)
 
 def connect_syn_cords(circos,sector,kn_file, pairs, redux_dict, start_aa = 1, chord_thickness = 0.5):
@@ -174,7 +174,7 @@ def connect_syn_cords(circos,sector,kn_file, pairs, redux_dict, start_aa = 1, ch
         if key in kn_dict:
             value = kn_dict[key]
             chords.extend([(functions.get_pos1_pos2(key), v) for v in value] if isinstance(value, (list, tuple)) else [(functions.get_pos1_pos2(key), value)])
-
+            chords = sorted(chords, key=lambda x: x[1])
     # chord_thickness = 0.5  # Define the thickness for the background chords
     actual_length = sector.size  # Get the actual length of the sector
 
@@ -213,7 +213,7 @@ def connect_ant_cords(circos,sector,kn_file, pairs, redux_dict, start_aa = 1, ch
         if key in kn_dict:
             value = kn_dict[key]
             chords.extend([(functions.get_pos1_pos2(key), v) for v in value] if isinstance(value, (list, tuple)) else [(functions.get_pos1_pos2(key), value)])
-
+    chords = sorted(chords, key=lambda x: x[1], reverse=True)
     # chord_thickness = 0.5  # Define the thickness for the background chords
     actual_length = sector.size  # Get the actual length of the sector
 
