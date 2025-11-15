@@ -91,7 +91,27 @@ def DE_dict(kn_file):
             de_dict[pair2] = delta_e2
     return de_dict
 
+def DDE_dict(kn_file):
+    dde_dict = {}
+    with open(kn_file) as f:
+        for line in f:
+            line = line.strip()
+            if not line:
+                continue
+            
+            columns = re.split(r'[,\t\s]+', line)
+            pairs = columns[0]
+            dde = float(columns[1])
+            dde_dict[pairs] = dde
+    return dde_dict
 # get de from kn.her.all dictionary
+def get_pos1_pos2(two_pairs):
+    pair1 = split_pairs(two_pairs)[0]
+    pair1_pos = get_pos(pair1)
+    pair2 = split_pairs(two_pairs)[1]
+    pair2_pos = get_pos(pair2)
+    return int(pair1_pos),int(pair2_pos)
+
 def get_DE(de_dict, pair, reduced=True, redux_dict=None):
     if reduced == False:
         if redux_dict is None:
@@ -328,3 +348,7 @@ def get_mt(single_mutation):
 def get_pos(single_mutation):
     pos = int(single_mutation[1:-1])
     return pos
+
+def read_list_from_file(file_path):
+    with open(file_path, 'r') as file:
+        return [line.strip() for line in file if line.strip()]
