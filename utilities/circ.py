@@ -3,6 +3,7 @@ from utilities import functions
 from tqdm import tqdm
 from matplotlib import cm
 from matplotlib import colors
+import numpy as np
 
 #outer rim with ticks every 10 amino acids and labels for every 10th tick
 def initialize_IN_circos_w_ticks(seq_length,track):
@@ -207,10 +208,17 @@ def add_DRM_annotation(circos, sector, track, top_mutation_pairs, start_aa = 1):
 # circos, sector = initialize_IN_circos_w_ticks(seq_length, track)
 # add_DRM_annotation(circos, sector, track, top_mutation_pairs)
 
-def connect_background_syn_cords(circos,sector,kn_file, top_n,start_aa =1, chord_thickness = 0.5, color_scheme = 'IN'):
+def connect_background_syn_cords(circos,sector,kn_file, top_n,start_aa =1, chord_thickness = 0.5, color_scheme = 'IN',chord_factor = 'color',chord_comparison ='local'):
+    chord_thickness_double = chord_thickness*2
     kn_dict = functions.DDE_dict(kn_file)
     # Sort the dictionary by the highest top_n values
     sorted_DDE = sorted(kn_dict.items(), key=lambda x: max(x[1]) if isinstance(x[1], (list, tuple)) else x[1], reverse=True)[:top_n]
+    max_dde = max(
+        max(values) if isinstance(values, (list, tuple)) else values
+        for _, values in sorted_DDE
+    )
+    if chord_comparison == 'global':
+        max_dde = 8.50879
     # Iterate through the top_n sorted items
     chords = []
     for key, value in sorted_DDE:
@@ -225,6 +233,10 @@ def connect_background_syn_cords(circos,sector,kn_file, top_n,start_aa =1, chord
 
     for (pos1, pos2), dde in tqdm(chords, total=len(chords), desc="Processing background chords"):
         # Define regions for the chord
+        if chord_factor == 'width':
+            weight = 0.1 + 0.9 * (dde / max_dde)
+            weight = weight**2
+            chord_thickness = weight * chord_thickness_double
         region1 = ("IN", pos1 - chord_thickness - start_aa, pos1 + chord_thickness - start_aa)
         region2 = ("IN", pos2 - chord_thickness - start_aa, pos2 + chord_thickness - start_aa)
 
@@ -242,13 +254,22 @@ def connect_background_syn_cords(circos,sector,kn_file, top_n,start_aa =1, chord
             color = "#e2ecd4"
         else:
             color = "#d3d3d3"  # Default color if no scheme matches
-        circos.link(region1, region2, color=color)
+        color = "#d3d3d3"  # Light grey color
+        circos.link(region1, region2, color=color, alpha =1.0)
 
-def connect_background_ant_cords(circos,sector,kn_file, bottom_n,start_aa =1, chord_thickness = 0.5, color_scheme='IN'):
+def connect_background_ant_cords(circos,sector,kn_file, bottom_n,start_aa =1, chord_thickness = 0.5, color_scheme='IN',chord_factor = 'color',chord_comparison ='local'):
+    chord_thickness_double = chord_thickness*2
     kn_dict = functions.DDE_dict(kn_file)
     # Sort the dictionary by the highest top_n values
     sorted_DDE = sorted(kn_dict.items(), key=lambda x: min(x[1]) if isinstance(x[1], (list, tuple)) else x[1])[:bottom_n]
+    min_dde = min(
+        min(values) if isinstance(values, (list, tuple)) else values
+        for _, values in sorted_DDE
+        )
     # Iterate through the top_n sorted items
+    if chord_comparison == 'global':
+        # min_dde = -3.683882
+        min_dde = -8.50879
     chords = []
     for key, value in sorted_DDE:
         # print(key, value)
@@ -262,6 +283,10 @@ def connect_background_ant_cords(circos,sector,kn_file, bottom_n,start_aa =1, ch
 
     for (pos1, pos2), dde in tqdm(chords, total=len(chords), desc="Processing background chords"):
         # Define regions for the chord
+        if chord_factor == 'width':
+            weight = 0.1 + 0.9 * (abs(dde) / abs(min_dde))
+            weight = weight**2
+            chord_thickness = weight * chord_thickness_double
         region1 = ("IN", pos1 - chord_thickness - start_aa, pos1 + chord_thickness - start_aa)
         region2 = ("IN", pos2 - chord_thickness - start_aa, pos2 + chord_thickness - start_aa)
 
@@ -279,17 +304,21 @@ def connect_background_ant_cords(circos,sector,kn_file, bottom_n,start_aa =1, ch
             color = "#e2ecd4"
         else:
             color = "#d3d3d3"  # Default color if no scheme matches
-        circos.link(region1, region2, color=color)
+        color = "#d3d3d3"  # Light grey color
+        circos.link(region1, region2, color=color, alpha =1.0)
 
-def connect_syn_cords(circos,sector,kn_file, pairs, redux_dict, start_aa = 1, chord_thickness = 0.5):
+def connect_syn_cords(circos,sector,kn_file, pairs, redux_dict, start_aa = 1, chord_thickness = 0.5, chord_factor = 'color',chord_comparison ='local'):
+    chord_thickness_double = chord_thickness*2
     kn_dict = functions.DDE_dict(kn_file)
     # Get the maximum value from kn_dict
     max_dde = max(
         max(values) if isinstance(values, (list, tuple)) else values
         for values in kn_dict.values()
     )
+    if chord_comparison == 'global':
+        max_dde = 8.50879
     chord_cmap = cm.get_cmap("Blues")
-    max_dde = 8.50879
+    # max_dde = 8.50879
     chord_norm = colors.Normalize(vmin=0, vmax=max_dde)
     print('max_dde:', max_dde)
 
@@ -306,10 +335,18 @@ def connect_syn_cords(circos,sector,kn_file, pairs, redux_dict, start_aa = 1, ch
             chords.extend([(functions.get_pos1_pos2(key), v) for v in value] if isinstance(value, (list, tuple)) else [(functions.get_pos1_pos2(key), value)])
             chords = sorted(chords, key=lambda x: x[1])
     # chord_thickness = 0.5  # Define the thickness for the background chords
+
     actual_length = sector.size  # Get the actual length of the sector
 
     for (pos1, pos2), dde in tqdm(chords, total=len(chords), desc="Processing background chords"):
     # Define regions for the chord
+        #CHORD THICKNESS
+        if chord_factor == 'width':
+            weight = 0.1 + 0.9 * (dde / max_dde)
+            weight = weight**2
+            chord_thickness = weight * chord_thickness_double
+            # chord_thickness = weight
+        #CHORD THICKNESS
         region1 = ("IN", pos1 - chord_thickness - start_aa, pos1 + chord_thickness - start_aa)
         region2 = ("IN", pos2 - chord_thickness - start_aa, pos2 + chord_thickness - start_aa)
 
@@ -319,10 +356,18 @@ def connect_syn_cords(circos,sector,kn_file, pairs, redux_dict, start_aa = 1, ch
             continue
 
         # Use light gray color for background
-        color = chord_cmap(chord_norm(dde))
-        circos.link(region1, region2, color=color)
+        # color = chord_cmap(chord_norm(dde))
+        #CHORD THICKNESS
+        if chord_factor == 'width':
+            color = "#1E88E5"  # Simple blue color
+        elif chord_factor == 'color':
+            color = chord_cmap(chord_norm(dde))
+        #CHORD THICKNESS
+        
+        circos.link(region1, region2, color=color, alpha=1.0)
 
-def connect_ant_cords(circos,sector,kn_file, pairs, redux_dict, start_aa = 1, chord_thickness = 0.5):
+def connect_ant_cords(circos,sector,kn_file, pairs, redux_dict, start_aa = 1, chord_thickness = 0.5, chord_factor = 'color',chord_comparison ='local'):
+    chord_thickness_double = chord_thickness*2
     kn_dict = functions.DDE_dict(kn_file)
     # Get the maximum value from kn_dict
     min_dde = min(
@@ -330,7 +375,9 @@ def connect_ant_cords(circos,sector,kn_file, pairs, redux_dict, start_aa = 1, ch
         for values in kn_dict.values()
     )
     print('min_dde:', min_dde)
-    min_dde = -3.683882
+    if chord_comparison == 'global':
+        # min_dde = -3.683882
+        min_dde = -8.50879
     chord_cmap = cm.get_cmap("Reds_r")
     chord_norm = colors.Normalize(vmin=min_dde, vmax=0)
 
@@ -351,6 +398,11 @@ def connect_ant_cords(circos,sector,kn_file, pairs, redux_dict, start_aa = 1, ch
 
     for (pos1, pos2), dde in tqdm(chords, total=len(chords), desc="Processing background chords"):
     # Define regions for the chord
+        if chord_factor == 'width':
+            weight = 0.1 + 0.9 * (abs(dde) / abs(min_dde))
+            weight = weight**2
+            chord_thickness = weight * chord_thickness_double
+            # chord_thickness = weight
         region1 = ("IN", pos1 - chord_thickness - start_aa, pos1 + chord_thickness - start_aa)
         region2 = ("IN", pos2 - chord_thickness - start_aa, pos2 + chord_thickness - start_aa)
 
@@ -359,9 +411,12 @@ def connect_ant_cords(circos,sector,kn_file, pairs, redux_dict, start_aa = 1, ch
             print(f"Chord out of range: region1={region1}, region2={region2}")
             continue
 
-        # Use light gray color for background
-        color = chord_cmap(chord_norm(dde))
-        circos.link(region1, region2, color=color)
+        if chord_factor == 'width':
+            color = "#EF5350"  # Simple blue color
+        elif chord_factor == 'color':
+            color = chord_cmap(chord_norm(dde))
+        #CHORD THICKNESS
+        circos.link(region1, region2, color=color, alpha=1.0)
 
 def plot_colorbar(min_v, max_v, syn=True):
     if syn == True:
