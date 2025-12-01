@@ -56,7 +56,8 @@ def initialize_IN_circos_w_ticks(seq_length,track):
     domain_label_texts = ["NTD", "CCD", "CTD"]
 
     linker_label_positions = [52, 211.5]  # Adjusted positions for linkers
-    linker_label_texts = ["Linker", "Linker"]
+    # linker_label_texts = ["Linker", "Linker"]
+    linker_label_texts = ["", ""]
 
     # Add domain labels with larger font size
     Segmentation_track.xticks(domain_label_positions, domain_label_texts, label_size=12, tick_length=0)
@@ -213,7 +214,7 @@ def add_DRM_annotation(circos, sector, track, top_mutation_pairs, start_aa = 1):
 # circos, sector = initialize_IN_circos_w_ticks(seq_length, track)
 # add_DRM_annotation(circos, sector, track, top_mutation_pairs)
 
-def connect_background_syn_cords(circos,sector,kn_file, top_n,start_aa =1, chord_thickness = 0.5, color_scheme = 'IN',chord_factor = 'color',chord_comparison ='local',weight_power=2):
+def connect_background_syn_cords(circos,sector,kn_file, top_n,start_aa =1, chord_thickness = 0.5, color_scheme = 'IN',chord_factor = 'color',chord_comparison ='local',weight_power=2,a = 2,b = 0.1,x_min = 1.8230609, x_max = 33.17926, weight = 1):
     chord_thickness_double = chord_thickness*2
     kn_dict = functions.DDE_dict(kn_file)
     # Sort the dictionary by the highest top_n values
@@ -252,7 +253,9 @@ def connect_background_syn_cords(circos,sector,kn_file, top_n,start_aa =1, chord
         pair_dde_sum[(pos1, pos2)] += abs(dde)
 
     max_pair_dde_sum = max(pair_dde_sum.values(), default=0)
+    min_pair_dde_sum = min(pair_dde_sum.values(), default=0)
     print(f"Max pair DDE sum: {max_pair_dde_sum}, Key: {max(pair_dde_sum, key=pair_dde_sum.get, default=None)}")
+    print(f"Min pair DDE sum: {min_pair_dde_sum}, Key: {min(pair_dde_sum, key=pair_dde_sum.get, default=None)}")
 
     for (pos1, pos2), dde in tqdm(chords, total=len(chords), desc="Processing background chords"):
         if pos1 > pos2:
@@ -279,6 +282,14 @@ def connect_background_syn_cords(circos,sector,kn_file, top_n,start_aa =1, chord
             # weight =pair_dde_sum[(pos1, pos2)]
             weight = np.log10(pair_dde_sum[(pos1, pos2)] + 1)
             chord_thickness = weight * chord_thickness_double
+
+        if chord_factor == 'cw5':
+            abs_sum_dde= abs(pair_dde_sum[(pos1, pos2)])
+            chord_thickness = weight*(b+(a-b)*(abs_sum_dde-x_min)/(x_max-x_min))/2
+        
+        if chord_factor == 'cw6':
+            abs_sum_dde= abs(pair_dde_sum[(pos1, pos2)])
+            chord_thickness = weight*(b+(a-b)*(abs_sum_dde-x_min)/(x_max-x_min))/2
             
         region1 = ("IN", pos1 - chord_thickness - start_aa, pos1 + chord_thickness - start_aa)
         region2 = ("IN", pos2 - chord_thickness - start_aa, pos2 + chord_thickness - start_aa)
@@ -303,7 +314,7 @@ def connect_background_syn_cords(circos,sector,kn_file, top_n,start_aa =1, chord
     # max_pair_key = max(pair_count, key=pair_count.get, default=None)
     # print(f"Max pair count: {max_pair_count}, Key: {max_pair_key}")
 
-def connect_background_ant_cords(circos,sector,kn_file, bottom_n,start_aa =1, chord_thickness = 0.5, color_scheme='IN',chord_factor = 'color',chord_comparison ='local',weight_power=2):
+def connect_background_ant_cords(circos,sector,kn_file, bottom_n,start_aa =1, chord_thickness = 0.5, color_scheme='IN',chord_factor = 'color',chord_comparison ='local',weight_power=2,a = 2,b = 0.1,x_min = 1.8230609, x_max = 33.17926, weight = 1):
     chord_thickness_double = chord_thickness*2
     kn_dict = functions.DDE_dict(kn_file)
     # Sort the dictionary by the highest top_n values
@@ -364,6 +375,13 @@ def connect_background_ant_cords(circos,sector,kn_file, bottom_n,start_aa =1, ch
             # weight =pair_dde_sum[(pos1, pos2)]
             weight = np.log10(pair_dde_sum[(pos1, pos2)] + 1)
             chord_thickness = weight * chord_thickness_double
+        if chord_factor == 'cw5':
+            abs_sum_dde= abs(pair_dde_sum[(pos1, pos2)])
+            chord_thickness = weight*(b+(a-b)*(abs_sum_dde-x_min)/(x_max-x_min))/2
+
+        if chord_factor == 'cw6':
+            abs_sum_dde= abs(pair_dde_sum[(pos1, pos2)])
+            chord_thickness = weight*(b+(a-b)*(abs_sum_dde-x_min)/(x_max-x_min))/2
             
         region1 = ("IN", pos1 - chord_thickness - start_aa, pos1 + chord_thickness - start_aa)
         region2 = ("IN", pos2 - chord_thickness - start_aa, pos2 + chord_thickness - start_aa)
@@ -385,7 +403,7 @@ def connect_background_ant_cords(circos,sector,kn_file, bottom_n,start_aa =1, ch
         color = "#d3d3d3"  # Light grey color
         circos.link(region1, region2, color=color, alpha =1.0)
 
-def connect_syn_cords(circos,sector,kn_file, pairs, redux_dict, start_aa = 1, chord_thickness = 0.5, chord_factor = 'color',chord_comparison ='local',weight_power=2):
+def connect_syn_cords(circos,sector,kn_file, pairs, redux_dict, start_aa = 1, chord_thickness = 0.5, chord_factor = 'color',chord_comparison ='local',weight_power=2,a = 2,b = 0.1,x_min = 1.8230609, x_max = 33.17926, weight = 1):
     chord_thickness_double = chord_thickness*2
     kn_dict = functions.DDE_dict(kn_file)
     # Get the maximum value from kn_dict
@@ -458,6 +476,14 @@ def connect_syn_cords(circos,sector,kn_file, pairs, redux_dict, start_aa = 1, ch
             # weight =pair_dde_sum[(pos1, pos2)]
             weight = np.log10(pair_dde_sum[(pos1, pos2)] + 1)
             chord_thickness = weight * chord_thickness_double
+        
+        if chord_factor == 'cw5':
+            abs_sum_dde= abs(pair_dde_sum[(pos1, pos2)])
+            chord_thickness = weight*(b+(a-b)*(abs_sum_dde-x_min)/(x_max-x_min))/2
+
+        if chord_factor == 'cw6':
+            abs_sum_dde= abs(pair_dde_sum[(pos1, pos2)])
+            chord_thickness = weight*(b+(a-b)*(abs_sum_dde-x_min)/(x_max-x_min))/2
             
         region1 = ("IN", pos1 - chord_thickness - start_aa, pos1 + chord_thickness - start_aa)
         region2 = ("IN", pos2 - chord_thickness - start_aa, pos2 + chord_thickness - start_aa)
@@ -470,17 +496,17 @@ def connect_syn_cords(circos,sector,kn_file, pairs, redux_dict, start_aa = 1, ch
         # Use light gray color for background
         # color = chord_cmap(chord_norm(dde))
         #CHORD THICKNESS
-        if chord_factor == 'width':
-            color = "mediumblue"  # Simple blue color
+        if chord_factor == 'width' or chord_factor == 'cw6':
+            color = "#08519C"  # Simple blue color
         # elif chord_factor == 'color':
         #     color = chord_cmap(chord_norm(dde))
-        elif chord_factor != 'width':
+        elif chord_factor != 'width' and chord_factor != 'cw6':
             color = chord_cmap(chord_norm(dde))
         #CHORD THICKNESS
         
         circos.link(region1, region2, color=color)
 
-def connect_ant_cords(circos,sector,kn_file, pairs, redux_dict, start_aa = 1, chord_thickness = 0.5, chord_factor = 'color',chord_comparison ='local',weight_power=2):
+def connect_ant_cords(circos,sector,kn_file, pairs, redux_dict, start_aa = 1, chord_thickness = 0.5, chord_factor = 'color',chord_comparison ='local',weight_power=2,a = 2,b = 0.1,x_min = 1.8230609, x_max = 33.17926, weight = 1):
     chord_thickness_double = chord_thickness*2
     kn_dict = functions.DDE_dict(kn_file)
     # Get the maximum value from kn_dict
@@ -548,6 +574,14 @@ def connect_ant_cords(circos,sector,kn_file, pairs, redux_dict, start_aa = 1, ch
             weight = np.log10(pair_dde_sum[(pos1, pos2)] + 1)
             chord_thickness = weight * chord_thickness_double
             
+        if chord_factor == 'cw5':
+            abs_sum_dde= abs(pair_dde_sum[(pos1, pos2)])
+            chord_thickness = weight*(b+(a-b)*(abs_sum_dde-x_min)/(x_max-x_min))/2
+
+        if chord_factor == 'cw6':
+            abs_sum_dde= abs(pair_dde_sum[(pos1, pos2)])
+            chord_thickness = weight*(b+(a-b)*(abs_sum_dde-x_min)/(x_max-x_min))/2
+
         region1 = ("IN", pos1 - chord_thickness - start_aa, pos1 + chord_thickness - start_aa)
         region2 = ("IN", pos2 - chord_thickness - start_aa, pos2 + chord_thickness - start_aa)
 
@@ -556,11 +590,11 @@ def connect_ant_cords(circos,sector,kn_file, pairs, redux_dict, start_aa = 1, ch
             print(f"Chord out of range: region1={region1}, region2={region2}")
             continue
 
-        if chord_factor == 'width':
-            color = "darkred"  # Use dark red color
+        if chord_factor == 'width' or chord_factor == 'cw6':
+            color = "#A50F15"  # Use dark red color
         # elif chord_factor == 'color':
         #     color = chord_cmap(chord_norm(dde))
-        elif chord_factor != 'width' : #color and width
+        elif chord_factor != 'width' and chord_factor != 'cw6': #color and width
             color = chord_cmap(chord_norm(dde))
         #CHORD THICKNESS
         circos.link(region1, region2, color=color)

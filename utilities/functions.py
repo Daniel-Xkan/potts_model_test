@@ -323,6 +323,19 @@ def reduced_to_unreduced_list(redux_dict, reduced_pairs, in_unre_seq, start_inde
         unreduced_pairs.append(unreduced_pair)
     return unreduced_pairs
 
+def unreduced_to_reduced_pair(redux_dict,unreduced_pair):
+    wildtype1, pos1, mutate1 = split_pair(unreduced_pair.split('-')[0])
+    wildtype2, pos2, mutate2 = split_pair(unreduced_pair.split('-')[1])
+
+    reduced_wildtype1 = next((key[1] for key, values in redux_dict.items() if key[0] == pos1 and wildtype1 in values), '-')
+    reduced_mutate1 = next((key[1] for key, values in redux_dict.items() if key[0] == pos1 and mutate1 in values), '-')
+
+    reduced_wildtype2 = next((key[1] for key, values in redux_dict.items() if key[0] == pos2 and wildtype2 in values), '-')
+    reduced_mutate2 = next((key[1] for key, values in redux_dict.items() if key[0] == pos2 and mutate2 in values), '-')
+
+    reduced_pair = f"{reduced_wildtype1}{pos1}{reduced_mutate1}-{reduced_wildtype2}{pos2}{reduced_mutate2}"
+    return reduced_pair
+
 def get_kn_file_dict(kn_file):
     de_dict = {}
     with open(kn_file, 'r') as file:
