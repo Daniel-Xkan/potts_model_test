@@ -43,10 +43,10 @@ def initialize_IN_circos_w_ticks(seq_length,track):
     all_ticks_pos = list(range(0, seq_length, 1))
     all_ticks_labels = None
 
-    track1.xticks(major_ticks_pos, major_ticks_labels, label_size=10, tick_length=2, outer=True)
-    track1.xticks(all_ticks_pos, all_ticks_labels, label_size=8, tick_length=1, outer=True)
+    track1.xticks(major_ticks_pos, major_ticks_labels, label_size=16, tick_length=4, outer=True)
+    track1.xticks(all_ticks_pos, all_ticks_labels, label_size=16, tick_length=2, outer=True)
 
-    Segmentation_track = sector.add_track((mid_z-3, mid_z-3))
+    Segmentation_track = sector.add_track((mid_z-5, mid_z-5))
     # Define domain and linker positions and labels
     domain_positions = [23, 52, 129.5, 211.5, 242.5]  # Adjusted middle positions for each domain and linker
     domain_labels = ["NTD", "Linker", "CCD", "Linker", "CTD"]
@@ -60,7 +60,7 @@ def initialize_IN_circos_w_ticks(seq_length,track):
     linker_label_texts = ["", ""]
 
     # Add domain labels with larger font size
-    Segmentation_track.xticks(domain_label_positions, domain_label_texts, label_size=12, tick_length=0)
+    Segmentation_track.xticks(domain_label_positions, domain_label_texts, label_size=16, tick_length=0)
 
     # Add linker labels with smaller font size
     Segmentation_track.xticks(linker_label_positions, linker_label_texts, label_size=10, tick_length=0)
@@ -108,19 +108,19 @@ def initialize_PR_circos_w_ticks(seq_length,track):
     all_ticks_pos = list(range(0, seq_length, 1))
     all_ticks_labels = None
 
-    track1.xticks(major_ticks_pos, major_ticks_labels, label_size=10, tick_length=2, outer=True)
-    track1.xticks(all_ticks_pos, all_ticks_labels, label_size=8, tick_length=1, outer=True)
+    track1.xticks(major_ticks_pos, major_ticks_labels, label_size=16, tick_length=2, outer=True)
+    track1.xticks(all_ticks_pos, all_ticks_labels, label_size=16, tick_length=1, outer=True)
 
-    Segmentation_track = sector.add_track((mid_z-3, mid_z-3))
+    Segmentation_track = sector.add_track((mid_z-4, mid_z-4))
     # Define structural region positions and labels
-    region_positions = [2, 16.5, 50, 38.5, 59, 70, 81.5, 89.5, 96.5]  # Adjusted middle positions for each region
+    region_positions = [2, 16.5, 50, 38.5, 59, 70, 81, 89.5, 96.5]  # Adjusted middle positions for each region
     region_labels = [
         "DI", "Fulcrum", "Flap", "Hinge", "Hinge", 
         "Cantilever", "80s loop", "α-helix", "DI"
     ]
 
     # Add region labels with appropriate font size
-    Segmentation_track.xticks(region_positions, region_labels, label_size=10, tick_length=0)
+    Segmentation_track.xticks(region_positions, region_labels, label_size=16, tick_length=0)
 
     # # Add domain labels with larger font size
     # Segmentation_track.xticks(domain_label_positions, domain_label_texts, label_size=12, tick_length=0)
@@ -165,10 +165,10 @@ def initialize_RT_circos_w_ticks(seq_length,track):
     all_ticks_pos = list(range(0, seq_length, 1))
     all_ticks_labels = None
 
-    track1.xticks(major_ticks_pos, major_ticks_labels, label_size=10, tick_length=2, outer=True)
-    track1.xticks(all_ticks_pos, all_ticks_labels, label_size=8, tick_length=1, outer=True)
+    track1.xticks(major_ticks_pos, major_ticks_labels, label_size=16, tick_length=2, outer=True)
+    track1.xticks(all_ticks_pos, all_ticks_labels, label_size=16, tick_length=1, outer=True)
 
-    Segmentation_track = sector.add_track((mid_z - 3, mid_z - 3))
+    Segmentation_track = sector.add_track((mid_z - 5, mid_z - 5))
     # Define structural region positions and labels
     region_positions = [23, 62.5, 97.5, 157]  # Adjusted middle positions for each region
     region_labels = [
@@ -176,7 +176,7 @@ def initialize_RT_circos_w_ticks(seq_length,track):
     ]
 
     # Add region labels with appropriate font size
-    Segmentation_track.xticks(region_positions, region_labels, label_size=10, tick_length=0)
+    Segmentation_track.xticks(region_positions, region_labels, label_size=16, tick_length=0)
 
     # Return the initialized Circos and sector
     return circos, sector
@@ -206,7 +206,7 @@ def add_DRM_annotation(circos, sector, track, top_mutation_pairs, start_aa = 1):
         circos_pos = pos - start_aa  # Adjust position to 0-based indexing for Circos
         label = f"{consensus}{pos}"
         if (consensus, pos) not in annotated_positions:
-            annotation_track.annotate(circos_pos, label, label_size=13, shorten=100)
+            annotation_track.annotate(circos_pos, label, label_size=16, shorten=100)
             annotated_positions.add((consensus, pos))
     
     
@@ -497,7 +497,7 @@ def connect_syn_cords(circos,sector,kn_file, pairs, redux_dict, start_aa = 1, ch
         # color = chord_cmap(chord_norm(dde))
         #CHORD THICKNESS
         if chord_factor == 'width' or chord_factor == 'cw6':
-            color = "#08519C"  # Simple blue color
+            color = "blue"  # Simple blue color
         # elif chord_factor == 'color':
         #     color = chord_cmap(chord_norm(dde))
         elif chord_factor != 'width' and chord_factor != 'cw6':
@@ -591,7 +591,7 @@ def connect_ant_cords(circos,sector,kn_file, pairs, redux_dict, start_aa = 1, ch
             continue
 
         if chord_factor == 'width' or chord_factor == 'cw6':
-            color = "#A50F15"  # Use dark red color
+            color = "crimson"  # Use dark red color
         # elif chord_factor == 'color':
         #     color = chord_cmap(chord_norm(dde))
         elif chord_factor != 'width' and chord_factor != 'cw6': #color and width
