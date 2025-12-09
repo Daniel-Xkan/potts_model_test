@@ -69,6 +69,15 @@ def split_pair(pair):
     mutate = pair[-1]
     return wildtype, position, mutate
 
+def split_pair_multiple_mt(pair):
+    m = re.match(r'^([A-Za-z])(\d+)(.+)$', pair)
+    if not m:
+        raise ValueError(f"Invalid mutation format: {pair}")
+    wildtype, position, rest = m.group(1), int(m.group(2)), m.group(3)
+    # split mutations by '/' if present, otherwise single mutation
+    mutations = [seg for seg in rest.split('/') if seg]
+    # return a list of (wildtype, position, mutation) tuples
+    return (position, wildtype,mutations)
 # usage: kn.her2.all, C140D, True
 #        kn.her2.all, G140S, False
 def DE_dict(kn_file):
@@ -105,6 +114,31 @@ def DDE_dict(kn_file):
             dde_dict[pairs] = dde
     return dde_dict
 # get de from kn.her.all dictionary
+
+#input: kn.her2.all
+#output dde sorted list of tuples (pos1, pos2, ddE)
+def kn_file(file_path):
+    delta_delta_e_per_pair = []
+    with open(file_path) as f:
+        for line in f:
+            line = line.strip()
+            if not line:
+                continue
+
+            columns = re.split(r'[,\t\s]+', line)
+            mutations = columns[0]
+            ddE = float(columns[1])
+            positions = [int(pos) for pos in re.findall(r'\d+', mutations)]
+            if len(positions) != 2:
+                continue
+
+            pos1, pos2 = positions
+            delta_delta_e_per_pair.append((pos1, pos2, ddE))
+
+    # Sort by ddE values
+    delta_delta_e_per_pair_sorted = sorted(delta_delta_e_per_pair, key=lambda x: x[-1], reverse=True)
+    return delta_delta_e_per_pair_sorted
+
 def get_pos1_pos2(two_pairs):
     pair1 = split_pairs(two_pairs)[0]
     pair1_pos = get_pos(pair1)
