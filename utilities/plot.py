@@ -94,20 +94,20 @@ def plot_epistatic_bar(de_list):
 
     # Plot bars for de1, de2, de12, and additive expectation
     for i, des in enumerate(de_list):
-        de1, de2, de12 = des
+        name_pairs, de1, de2, de12 = des
         additive_de = de1 + de2
         dde = de12 - additive_de
 
         # Single mutant 1 (de1)
-        ax.bar(indices[i] - 1.5 * bar_width, de1, bar_width, color='#f08080', label='Single 1' if i == 0 else "")
+        ax.bar(indices[i] - 1.5 * bar_width, de1, bar_width, color='#f08080', label='ΔE Single 1' if i == 0 else "")
 
         # Single mutant 2 (de2)
-        ax.bar(indices[i] - 0.5 * bar_width, de2, bar_width, color='#cf6161', label='Single 2' if i == 0 else "")
+        ax.bar(indices[i] - 0.5 * bar_width, de2, bar_width, color='#cf6161', label='ΔE Single 2' if i == 0 else "")
 
         # Double mutant (de12)
         # ax.bar(indices[i] + 0.5 * bar_width, de12, bar_width, color='blue', label='Double' if i == 0 else "")
         # Double mutant (de12) with RGB color 0000cd
-        ax.bar(indices[i] + 0.5 * bar_width, de12, bar_width, color='#0000CD', label='Double (RGB)' if i == 0 else "")
+        ax.bar(indices[i] + 0.5 * bar_width, de12, bar_width, color='#0000CD', label='ΔE Double' if i == 0 else "")
         # Additive expectation (de1 + de2) on the same x-axis as de12
         ax.bar(indices[i] + 0.5 * bar_width, additive_de, bar_width, color='none', edgecolor='black', linestyle='--', label='Additive' if i == 0 else "")
 
@@ -122,7 +122,7 @@ def plot_epistatic_bar(de_list):
 
     # Customize the plot
     ax.set_xticks(indices)
-    ax.set_xticklabels([f"Pair {i+1}" for i in range(len(de_list))], rotation=45, ha='right')
+    ax.set_xticklabels([name_pairs for name_pairs, _, _, _ in de_list], rotation=45, ha='right')
     ax.set_ylabel('Fitness Change (ΔE)')
     ax.set_title('Epistatic Bar Plot')
     ax.legend()

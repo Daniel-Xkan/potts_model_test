@@ -155,6 +155,25 @@ def get_DE(de_dict, pair, reduced=True, redux_dict=None):
         pair_reduced = pair
     return de_dict.get(pair_reduced)
 
+def get_seq_freq(mut_list,seq_list,consensus_seq):
+    seq_count = 0
+    ref_seq = generate_sequence_from_mutations(consensus_seq, mut_list)
+    for seq in seq_list:
+        if seq == ref_seq:
+            seq_count += 1
+    frequency = seq_count / len(seq_list)
+    return frequency
+
+def calculate_e(seq, J_dict, min_position, max_position):
+    energy = 0
+    for pos1 in range(min_position, max_position + 1):
+        aa1 = seq[pos1 - min_position]  # Access the amino acid at pos1
+        for pos2 in range(pos1 + 1, max_position + 1):
+            aa2 = seq[pos2 - min_position]  # Access the amino acid at pos2
+            energy += J_dict.get((pos1, pos2, aa1, aa2), 0)
+            # print(f"pos1: {pos1}, aa1: {aa1}, pos2: {pos2}, aa2: {aa2}, interaction: {J_dict.get((pos1, pos2, aa1, aa2), 0)}")
+    return energy
+
 def calculate_delta_e(mutation_pair, seq, J_dict, min_position, max_position):
     old_amino_acid, position, new_amino_acid = split_pair(mutation_pair)
     # E(old_amino_acid)
@@ -231,6 +250,16 @@ def calculate_delta_e_double(mutation_pair1, mutation_pair2, seq, J_dict,min_pos
     de12 = energy_old - energy_new
     return de12
 
+def calculate_delta_delta_e(mutation_pair1, mutation_pair2, seq, J_dict,min_position,max_position):
+    de1 = calculate_delta_e(mutation_pair1, seq, J_dict, min_position, max_position)
+    de2 = calculate_delta_e(mutation_pair2, seq, J_dict, min_position, max_position)
+    de12 = calculate_delta_e_double(mutation_pair1, mutation_pair2, seq, J_dict, min_position, max_position)
+
+    if de1 is None or de2 is None or de12 is None:
+        return None
+
+    dde =  de12- de1 - de2
+    return de1,de2,de12,dde
 
 def load_J_dict(j_file, min_position,max_position):
     J_dict = {}
@@ -399,3 +428,26 @@ def get_pos(single_mutation):
 def read_list_from_file(file_path):
     with open(file_path, 'r') as file:
         return [line.strip() for line in file if line.strip()]
+
+##### Get mutations from consensus and experimental sequences and sequence generation######
+def get_mutations_from_sequence(consensus_seq, experimental_seq):
+    mutations = []
+    for i, (cons_residue, exp_residue) in enumerate(zip(consensus_seq, experimental_seq), start=1):
+        if cons_residue != exp_residue:
+            mutations.append(f"{cons_residue}{i}{exp_residue}")
+    return mutations
+
+def generate_sequence_from_mutations(consensus_seq, mutations):
+    seq_list = list(consensus_seq)
+    for mutation in mutations:
+        wt = mutation[0]
+        pos = int(mutation[1:-1])
+        mt = mutation[-1]
+        if seq_list[pos - 1] != wt:
+            raise ValueError(f"Mismatch at position {pos}: expected {wt}, found {seq_list[pos - 1]}")
+        seq_list[pos - 1] = mt
+    return ''.join(seq_list)
+
+
+
+################################################################################################
