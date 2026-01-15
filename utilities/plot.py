@@ -84,7 +84,7 @@ def plot_epistatic_plane(xy_base, de1, de2, de12):
 
     plt.show()
 
-def plot_epistatic_bar(de_list):
+def plot_epistatic_bar(title, de_list):
     # Define bar width and positions
     bar_width = 0.2
     indices = np.arange(len(de_list))
@@ -124,7 +124,7 @@ def plot_epistatic_bar(de_list):
     ax.set_xticks(indices)
     ax.set_xticklabels([name_pairs for name_pairs, _, _, _ in de_list], rotation=45, ha='right')
     ax.set_ylabel('Fitness Change (ΔE)')
-    ax.set_title('Epistatic Bar Plot')
+    ax.set_title(title)
     ax.legend()
 
     plt.tight_layout()
