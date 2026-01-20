@@ -130,3 +130,51 @@ def plot_epistatic_bar(title, de_list):
     plt.tight_layout()
     plt.show()
 
+def epistatic_pie (flip,non_flip, compensatory, resue, non_compensatory):
+    # Prepare inner (3-way) and outer (2-way) data, normalize to ensure they sum to full circle
+    inner_vals = np.array([compensatory, resue, non_compensatory], dtype=float)
+    outer_vals = np.array([flip, non_flip], dtype=float)
+
+    # Avoid division by zero by providing a minimal default if all values are zero
+    if inner_vals.sum() == 0:
+        inner_vals = np.array([1.0, 0.0, 0.0])
+    if outer_vals.sum() == 0:
+        outer_vals = np.array([1.0, 0.0])
+
+    inner_fracs = inner_vals / inner_vals.sum()
+    outer_fracs = outer_vals / outer_vals.sum()
+
+    fig, ax = plt.subplots(figsize=(6, 6))
+
+    # Color palettes for inner and outer rings
+    inner_colors = ['#2e7d32', '#ffb300', '#c62828']   # compensatory, rescue, non_compensatory
+    outer_colors = ['#1976d2', '#9e9e9e']              # flip, non_flip
+
+    startangle = 90
+
+    # Outer ring (flip / non_flip)
+    ax.pie(
+        outer_fracs,
+        radius=1.3,
+        startangle=startangle,
+        colors=outer_colors,
+        labels=[f'Flip ({flip})', f'Non-flip ({non_flip})'],
+        labeldistance=1.05,
+        wedgeprops=dict(width=0.3, edgecolor='w')
+    )
+
+    # Inner ring (compensatory / rescue / non_compensatory)
+    ax.pie(
+        inner_fracs,
+        radius=1.0,
+        startangle=startangle,
+        colors=inner_colors,
+        labels=[f'Compensatory ({compensatory})', f'Rescue ({resue})', f'Non-comp ({non_compensatory})'],
+        labeldistance=0.75,
+        wedgeprops=dict(width=0.4, edgecolor='w'),
+        autopct=lambda pct: f'{pct:.1f}%'
+    )
+
+    ax.set(aspect='equal')
+    # plt.title('Epistatic distribution (outer: flip/non-flip, inner: categories)')
+    plt.show()
