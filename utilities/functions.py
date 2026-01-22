@@ -261,6 +261,25 @@ def calculate_delta_delta_e(mutation_pair1, mutation_pair2, seq, J_dict,min_posi
     dde =  de12- de1 - de2
     return de1,de2,de12,dde
 
+def calculate_with_double_mutation_dde(mutation_pair1, mutation_pair2, seq, J_dict,min_position,max_position):
+    wt1,pos1,mut1 = split_pair(mutation_pair1)
+    wt2,pos2,mut2 = split_pair(mutation_pair2)
+
+    if seq[pos1 - min_position] != mut1 or seq[pos2 - min_position] != mut2:
+        return None
+    seq_list = list(seq)
+    seq_list[pos1 - min_position] = wt1
+    seq_list[pos2 - min_position] = wt2
+    seq_wt = ''.join(seq_list)
+    
+    de1 = calculate_delta_e(mutation_pair1, seq_wt, J_dict, min_position, max_position)
+    de2 = calculate_delta_e(mutation_pair2, seq_wt, J_dict, min_position, max_position)
+    de12 = calculate_delta_e_double(mutation_pair1, mutation_pair2, seq_wt, J_dict, min_position, max_position)
+
+
+    dde =  de12- de1 - de2
+    return de1,de2,de12,dde
+
 def load_J_dict(j_file, min_position,max_position):
     J_dict = {}
     J = np.load(j_file)

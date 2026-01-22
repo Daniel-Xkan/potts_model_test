@@ -1,6 +1,7 @@
 import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d.art3d import Poly3DCollection
 import numpy as np
+from matplotlib.colors import to_rgb
 
 def plot_epistatic_plane(xy_base, de1, de2, de12):
 # Adjust the figure size to make the canvas larger for annotations
@@ -153,12 +154,18 @@ def epistatic_pie (flip,non_flip, compensatory, resue, non_compensatory):
     startangle = 90
 
     # Outer ring (flip / non_flip)
+    # Outer ring (flip / non_flip) with explicit percentages (sum to 100%)
+    outer_pct = outer_fracs * 100
+    outer_labels = [
+        f'Flip ({flip}) - {outer_pct[0]:.1f}%',
+        f'Non-flip ({non_flip}) - {outer_pct[1]:.1f}%'
+    ]
     ax.pie(
         outer_fracs,
         radius=1.3,
         startangle=startangle,
         colors=outer_colors,
-        labels=[f'Flip ({flip})', f'Non-flip ({non_flip})'],
+        labels=outer_labels,
         labeldistance=1.05,
         wedgeprops=dict(width=0.3, edgecolor='w')
     )
@@ -177,4 +184,67 @@ def epistatic_pie (flip,non_flip, compensatory, resue, non_compensatory):
 
     ax.set(aspect='equal')
     # plt.title('Epistatic distribution (outer: flip/non-flip, inner: categories)')
+    plt.show()
+
+def epistatic_pie2(compensatory_flip, compensatory_nonflip,
+                   noncompensatory_flip, noncompensatory_nonflip,
+                   rescue_flip, rescue_nonflip,
+                   rof_flip, rof_nonflip):
+    # Assemble values and labels in the desired order (flip then non-flip for each category)
+    values = np.array([
+        compensatory_flip, compensatory_nonflip,
+        noncompensatory_flip, noncompensatory_nonflip,
+        rescue_flip, rescue_nonflip,
+        rof_flip, rof_nonflip
+    ], dtype=float)
+
+    labels = [
+        f'Compensatory (flip) ({int(compensatory_flip)})',
+        f'Compensatory (non-flip) ({int(compensatory_nonflip)})',
+        f'Non-comp (flip) ({int(noncompensatory_flip)})',
+        f'Non-comp (non-flip) ({int(noncompensatory_nonflip)})',
+        f'Rescue (flip) ({int(rescue_flip)})',
+        f'Rescue (non-flip) ({int(rescue_nonflip)})',
+        f'ROF (flip) ({int(rof_flip)})',
+        f'ROF (non-flip) ({int(rof_nonflip)})'
+    ]
+
+    # Avoid empty pie by providing a tiny nonzero default
+    if values.sum() == 0:
+        values = np.ones_like(values)
+
+    # Base colors for each category (compensatory, non-comp, rescue, rof)
+    base_colors = ['#2e7d32', '#c62828', '#ffb300', '#6a1b9a']
+
+    # Helper to darken/lighten a color (flip darker, non-flip lighter)
+    def shade(hexcol, factor):
+        rgb = np.array(to_rgb(hexcol)) * factor
+        rgb = np.clip(rgb, 0, 1)
+        return tuple(rgb)
+
+    # Build colors: for each base color append flip (darker) then non-flip (lighter)
+    colors = []
+    for base in base_colors:
+        colors.append(shade(base, 0.7))   # flip (darker)
+        colors.append(shade(base, 1.15))  # non-flip (lighter, clipped)
+
+    fig, ax = plt.subplots(figsize=(7, 7))
+    startangle = 90
+
+    wedges, texts, autotexts = ax.pie(
+        values,
+        labels=labels,
+        colors=colors,
+        startangle=startangle,
+        autopct=lambda pct: f'{pct:.1f}%',
+        wedgeprops=dict(edgecolor='w')
+    )
+
+    # Improve text contrast for small wedges
+    for txt in autotexts:
+        txt.set_color('white')
+        txt.set_fontsize(8)
+
+    ax.set(aspect='equal')
+    plt.tight_layout()
     plt.show()
