@@ -2,6 +2,7 @@ import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d.art3d import Poly3DCollection
 import numpy as np
 from matplotlib.colors import to_rgb
+from matplotlib.patches import Patch
 
 def plot_epistatic_plane(xy_base, de1, de2, de12):
 # Adjust the figure size to make the canvas larger for annotations
@@ -186,65 +187,132 @@ def epistatic_pie (flip,non_flip, compensatory, resue, non_compensatory):
     # plt.title('Epistatic distribution (outer: flip/non-flip, inner: categories)')
     plt.show()
 
-def epistatic_pie2(compensatory_flip, compensatory_nonflip,
+def epistatic_pie2(name, compensatory_flip, compensatory_nonflip,
                    noncompensatory_flip, noncompensatory_nonflip,
                    rescue_flip, rescue_nonflip,
-                   rof_flip, rof_nonflip):
-    # Assemble values and labels in the desired order (flip then non-flip for each category)
-    values = np.array([
-        compensatory_flip, compensatory_nonflip,
+                   gof_flip, gof_nonflip):
+    import matplotlib.pyplot as plt
+    # New ordering: put Non-compensatory first, then Compensatory, then Rescue, then GOF
+    outer_vals = np.array([
         noncompensatory_flip, noncompensatory_nonflip,
+        compensatory_flip, compensatory_nonflip,
         rescue_flip, rescue_nonflip,
-        rof_flip, rof_nonflip
+        gof_flip, gof_nonflip
     ], dtype=float)
 
-    labels = [
-        f'Compensatory (flip) ({int(compensatory_flip)})',
-        f'Compensatory (non-flip) ({int(compensatory_nonflip)})',
-        f'Non-comp (flip) ({int(noncompensatory_flip)})',
-        f'Non-comp (non-flip) ({int(noncompensatory_nonflip)})',
-        f'Rescue (flip) ({int(rescue_flip)})',
-        f'Rescue (non-flip) ({int(rescue_nonflip)})',
-        f'ROF (flip) ({int(rof_flip)})',
-        f'ROF (non-flip) ({int(rof_nonflip)})'
-    ]
+    inner_vals = np.array([
+        noncompensatory_flip + noncompensatory_nonflip,
+        compensatory_flip + compensatory_nonflip,
+        rescue_flip + rescue_nonflip,
+        gof_flip + gof_nonflip
+    ], dtype=float)
 
-    # Avoid empty pie by providing a tiny nonzero default
-    if values.sum() == 0:
-        values = np.ones_like(values)
+    # Avoid zero-sum
+    if inner_vals.sum() == 0:
+        inner_vals = np.ones_like(inner_vals)
+    if outer_vals.sum() == 0:
+        outer_vals = np.ones_like(outer_vals)
 
-    # Base colors for each category (compensatory, non-comp, rescue, rof)
-    base_colors = ['#2e7d32', '#c62828', '#ffb300', '#6a1b9a']
+    # Percentages for legends
+    inner_pct = inner_vals / inner_vals.sum() * 100
+    outer_pct = outer_vals / outer_vals.sum() * 100
 
-    # Helper to darken/lighten a color (flip darker, non-flip lighter)
-    def shade(hexcol, factor):
-        rgb = np.array(to_rgb(hexcol)) * factor
-        rgb = np.clip(rgb, 0, 1)
-        return tuple(rgb)
+    # Base colors for categories (Non-comp, Compensatory, Rescue, GOF) - swapped first two
+    #original
+    # base_colors = ['#c62828', '#2e7d32', '#ffb300', '#6a1b9a']
+    #IBM
+    base_colors = ['#e45704','#dc257f','#785ef0','#658fff']
 
-    # Build colors: for each base color append flip (darker) then non-flip (lighter)
-    colors = []
-    for base in base_colors:
-        colors.append(shade(base, 0.7))   # flip (darker)
-        colors.append(shade(base, 1.15))  # non-flip (lighter, clipped)
+    # Outer (segment) colors: for each category produce [flip (darker), nonflip (lighter)]
+    outer_colors = []
+    for c in base_colors:
+        outer_colors.append('mistyrose')
+        outer_colors.append('lightgray')
 
     fig, ax = plt.subplots(figsize=(7, 7))
     startangle = 90
-
-    wedges, texts, autotexts = ax.pie(
-        values,
-        labels=labels,
-        colors=colors,
+    # place the provided name in the center of the pie chart
+    ax.text(0, 0, name, ha='center', va='center', fontsize=14, fontweight='bold')
+    
+    # Draw outer ring (category totals) in new order: Non-comp, Compensatory, Rescue, GOF
+    ax.pie(
+        inner_vals,
+        radius=1.0,
         startangle=startangle,
-        autopct=lambda pct: f'{pct:.1f}%',
-        wedgeprops=dict(edgecolor='w')
+        colors=base_colors,
+        # labels=[
+        #     f'Non-comp ({int(inner_vals[0])})',
+        #     f'Compensatory ({int(inner_vals[1])})',
+        #     f'Rescue ({int(inner_vals[2])})',
+        #     f'GOF ({int(inner_vals[3])})'
+        # ],
+        
+        labeldistance=1.02,
+        wedgeprops=dict(width=0.4, edgecolor='w')
     )
 
-    # Improve text contrast for small wedges
-    for txt in autotexts:
-        txt.set_color('white')
-        txt.set_fontsize(8)
+    # Draw inner ring (flip / non-flip segments) matching the new outer_vals order
+    wedges, texts, autotexts = ax.pie(
+        outer_vals,
+        radius=1.4,
+        startangle=startangle,
+        colors=outer_colors,
+        # labels=[
+        #     f'Non-comp flip ({int(noncompensatory_flip)})', f'Non-comp nonflip ({int(noncompensatory_nonflip)})',
+        #     f'Comp flip ({int(compensatory_flip)})', f'Comp nonflip ({int(compensatory_nonflip)})',
+        #     f'Rescue flip ({int(rescue_flip)})', f'Rescue nonflip ({int(rescue_nonflip)})',
+        #     f'GOF flip ({int(gof_flip)})', f'GOF nonflip ({int(gof_nonflip)})'
+        # ],
+        labeldistance=0.7,
+        # autopct=lambda pct: f'{pct:.1f}%',
+        autopct=lambda pct: f'',
+        wedgeprops=dict(width=0.4, edgecolor='w')
+    )
+
+    # Improve inner text contrast
+    for t in autotexts:
+        t.set_color('white')
+        t.set_fontsize(8)
 
     ax.set(aspect='equal')
+    plt.tight_layout()
+    plt.show()
+
+    # --- New separate legend/percentage figure ---
+    # category legend (outer ring) - order matches base_colors / inner_vals
+    category_handles = [Patch(facecolor=base_colors[i], edgecolor='w') for i in range(len(base_colors))]
+    category_labels = [
+        f'Non-comp: {int(inner_vals[0])} ({inner_pct[0]:.1f}%)',
+        f'Compensatory: {int(inner_vals[1])} ({inner_pct[1]:.1f}%)',
+        f'Rescue: {int(inner_vals[2])} ({inner_pct[2]:.1f}%)',
+        f'GOF: {int(inner_vals[3])} ({inner_pct[3]:.1f}%)'
+    ]
+
+    # segment legend (inner ring flip/non-flip) - order matches outer_vals
+    segment_handles = [Patch(facecolor=outer_colors[i], edgecolor='w') for i in range(len(outer_colors))]
+    segment_labels = [
+        f'Non-comp flip: {int(noncompensatory_flip)} ({outer_pct[0]:.1f}%)',
+        f'Non-comp nonflip: {int(noncompensatory_nonflip)} ({outer_pct[1]:.1f}%)',
+        f'Comp flip: {int(compensatory_flip)} ({outer_pct[2]:.1f}%)',
+        f'Comp nonflip: {int(compensatory_nonflip)} ({outer_pct[3]:.1f}%)',
+        f'Rescue flip: {int(rescue_flip)} ({outer_pct[4]:.1f}%)',
+        f'Rescue nonflip: {int(rescue_nonflip)} ({outer_pct[5]:.1f}%)',
+        f'GOF flip: {int(gof_flip)} ({outer_pct[6]:.1f}%)',
+        f'GOF nonflip: {int(gof_nonflip)} ({outer_pct[7]:.1f}%)'
+    ]
+
+    fig_leg = plt.figure(figsize=(6, 4))
+    ax_leg = fig_leg.add_subplot(111)
+    ax_leg.axis('off')
+
+    # place two legends on the same axes
+    cat_legend = ax_leg.legend(category_handles, category_labels, loc='upper center',
+                               bbox_to_anchor=(0.5, 0.95), ncol=1, frameon=False, title='Categories')
+    seg_legend = ax_leg.legend(segment_handles, segment_labels, loc='center',
+                               bbox_to_anchor=(0.5, 0.35), ncol=1, frameon=False, title='Flip / Non-flip')
+
+    # keep the first legend
+    ax_leg.add_artist(cat_legend)
+
     plt.tight_layout()
     plt.show()
