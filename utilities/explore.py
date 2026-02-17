@@ -13,6 +13,17 @@ def calculate_residue_e(pos, seq, J_dict, min_position, max_position):
             energy += J_dict.get((pos, pos2, aa1, aa2), 0)
     return energy
 
+def calculate_residue_de12(pos, pair1,pair2,seq, J_dict, min_position, max_position):
+    aa = seq[pos - min_position]  # Access the amino acid at the given position
+    wt1,pos1,mt1 = functions.split_pair(pair1)
+    wt2,pos2,mt2 = functions.split_pair(pair2)
+    energy_wt = J_dict.get((pos, pos1, aa, wt1), 0) + J_dict.get((pos, pos2, aa, wt2), 0)
+    energy_mt = J_dict.get((pos, pos1, aa, mt1), 0) + J_dict.get((pos, pos2, aa, mt2), 0)
+
+    energy_diff = energy_wt - energy_mt
+    return energy_diff
+    
+
 def calculate_residue_relative_e(consensus_seq,pos, seq, J_dict, min_position, max_position):
     e_consensus = calculate_residue_e(pos, consensus_seq, J_dict, min_position, max_position)
     e_seq = calculate_residue_e(pos, seq, J_dict, min_position, max_position)
@@ -53,6 +64,7 @@ def calculate_de_residue(pos, sequence, double_mutation, J_dict, redux):
 
     energy_diff = e_wt - e_mt
     return energy_diff
+
 
 import matplotlib.pyplot as plt
 def draw_heatmap(consensus_seq, sequences, J_dict, min_position, max_position):

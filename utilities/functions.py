@@ -1,6 +1,7 @@
 import re
 import numpy as np
 import pandas as pd
+import math
 
 def import_test():
     return 'import succeed'
@@ -47,6 +48,16 @@ def unreduced_to_reduced(redux_dict, unreduced_pair):
     # Combine the reduced letters with the position
     reduced_pair = f"{reduced_wildtype}{pos}{reduced_mutate}"
     return reduced_pair
+
+def unreduced_to_reduced_sequence(redux_dict, unreduced_seq):
+    unreduced_seq = list(unreduced_seq)
+    reduced_seq = []
+    for pos in range(1, len(unreduced_seq) + 1):
+        aa = unreduced_seq[pos - 1]
+        # print(aa)
+        reduced_aa = next((key[1] for key, values in redux_dict.items() if key[0] == pos and aa in values), '-')
+        reduced_seq.append(reduced_aa)
+    return ''.join(reduced_seq)
 
 # Calculate the frequency of an amino acid at a given position in a list of sequences
 def calculate_freq(aa, pos, seq_list,start_index=1):
@@ -203,8 +214,11 @@ def calculate_delta_e_double(mutation_pair1, mutation_pair2, seq, J_dict,min_pos
     current_aa1 = seq[pos1 - min_position]
     current_aa2 = seq[pos2 - min_position]
 
+    # if current_aa1 != old_amino_acid1 or current_aa2 != old_amino_acid2:
+    #     return None
     if current_aa1 != old_amino_acid1 or current_aa2 != old_amino_acid2:
-        return None
+        current_aa1 = old_amino_acid1
+        current_aa2 = old_amino_acid2
 
     energy_old = 0
     energy_new = 0
@@ -275,6 +289,22 @@ def calculate_with_double_mutation_dde(mutation_pair1, mutation_pair2, seq, J_di
     de1 = calculate_delta_e(mutation_pair1, seq_wt, J_dict, min_position, max_position)
     de2 = calculate_delta_e(mutation_pair2, seq_wt, J_dict, min_position, max_position)
     de12 = calculate_delta_e_double(mutation_pair1, mutation_pair2, seq_wt, J_dict, min_position, max_position)
+
+def calculate_dde_v2(mutation_pair1, mutation_pair2, seq, J_dict,min_position,max_position):
+    wt1,pos1,mut1 = split_pair(mutation_pair1)
+    wt2,pos2,mut2 = split_pair(mutation_pair2)
+
+    # if seq[pos1 - min_position] != mut1 or seq[pos2 - min_position] != mut2:
+    #     return None
+    seq_list = list(seq)
+    seq_list[pos1 - min_position] = wt1
+    seq_list[pos2 - min_position] = wt2
+    seq_wt = ''.join(seq_list)
+    
+    de1 = calculate_delta_e(mutation_pair1, seq_wt, J_dict, min_position, max_position)
+    de2 = calculate_delta_e(mutation_pair2, seq_wt, J_dict, min_position, max_position)
+    de12 = calculate_delta_e_double(mutation_pair1, mutation_pair2, seq_wt, J_dict, min_position, max_position)
+
 
 
     dde =  de12- de1 - de2
@@ -467,6 +497,29 @@ def generate_sequence_from_mutations(consensus_seq, mutations):
         seq_list[pos - 1] = mt
     return ''.join(seq_list)
 
+def calculate_double_mutant_probablity(seq, mutation_pair1, mutation_pair2, J_dict, min_position, max_position):
+    
+    # wt1,pos1,mt1 = split_pair(mutation_pair1)
+    # wt2,pos2,mt2 = split_pair(mutation_pair2)
 
+    de_DMC = calculate_delta_e_double(mutation_pair1, mutation_pair2, seq, J_dict, min_position, max_position)
+    de_double_sum = 1
+    for aa1 in ['A', 'B', 'C', 'D']:
+        for aa2 in ['A', 'B', 'C', 'D']:
+            if aa1 == mutation_pair1[0] and aa2 == mutation_pair2[0]:
+                continue
+            de_DMC_alt = calculate_delta_e_double(mutation_pair1[:-1] + aa1, mutation_pair2[:-1] + aa2, seq, J_dict, min_position, max_position)
+            de_DMC_alt_e = math.exp(de_DMC_alt) if de_DMC_alt is not None else 0
+            de_double_sum += de_DMC_alt_e
+            # if de_DMC_alt is not None:
+            #     print(f"Alternative mutations: {mutation_pair1[:-1] + aa1}, {mutation_pair2[:-1] + aa2}, DMC: {de_DMC_alt}")
+    return (math.exp(de_DMC))/de_double_sum
 
-################################################################################################
+def mutate_sequence(mutation_pair, sequence):
+    wt, pos, mt = split_pair(mutation_pair)
+    if sequence[pos - 1] != wt:
+        raise ValueError(f"Mismatch at position {pos}: expected {wt}, found {sequence[pos - 1]}")
+    seq_list = list(sequence)
+    seq_list[pos - 1] = mt
+    return ''.join(seq_list)
+##############################################################################################

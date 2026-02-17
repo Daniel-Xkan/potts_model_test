@@ -316,3 +316,137 @@ def epistatic_pie2(name, compensatory_flip, compensatory_nonflip,
 
     plt.tight_layout()
     plt.show()
+
+def epistatic_pie_mutatioin_percentage(
+    name,
+    noncomp_both, noncomp_one, noncomp_none,
+    comp_both, comp_one, comp_none,
+    rescue_both, rescue_one, rescue_none,
+    gof_both, gof_one, gof_none
+):
+    import matplotlib.pyplot as plt
+
+    # Inner totals per category
+    inner_vals = np.array([
+        noncomp_both + noncomp_one + noncomp_none,
+        comp_both + comp_one + comp_none,
+        rescue_both + rescue_one + rescue_none,
+        gof_both + gof_one + gof_none
+    ], dtype=float)
+
+    # Outer segments: for each category -> [both, one, none]
+    outer_vals = np.array([
+        noncomp_both, noncomp_one, noncomp_none,
+        comp_both, comp_one, comp_none,
+        rescue_both, rescue_one, rescue_none,
+        gof_both, gof_one, gof_none
+    ], dtype=float)
+
+    # Avoid zero-sum
+    if inner_vals.sum() == 0:
+        inner_vals = np.ones_like(inner_vals)
+    if outer_vals.sum() == 0:
+        outer_vals = np.ones_like(outer_vals)
+
+    inner_pct = inner_vals / inner_vals.sum() * 100
+    outer_pct = outer_vals / outer_vals.sum() * 100
+
+    # Category colors (Non-comp, Compensatory, Rescue, GOF)
+    base_colors = ['#e45704', '#dc257f', '#785ef0', '#658fff']
+
+    # Outer rim triad colors for (both, one, none) per category
+    # Use distinct hues per category, three tones each
+    triad_palette = [
+        ('#FF7800', '#A37648', '#B0ACA9'),  # Non-comp: both, one, none
+        ('#FF7800', '#A37648', '#B0ACA9'),  # Comp: both, one, none
+        ('#FF7800', '#A37648', '#B0ACA9'),  # Rescue: both, one, none
+        ('#FF7800', '#A37648', '#B0ACA9')   # GOF: both, one, none
+    ]
+    outer_colors = []
+    for triad in triad_palette:
+        outer_colors.extend(triad)
+
+    fig, ax = plt.subplots(figsize=(7, 7))
+    startangle = 90
+    ax.text(0, 0, name, ha='center', va='center', fontsize=14, fontweight='bold')
+
+    # Inner ring: category totals
+    ax.pie(
+        inner_vals,
+        radius=1.0,
+        startangle=startangle,
+        colors=base_colors,
+        labeldistance=1.02,
+        wedgeprops=dict(width=0.4, edgecolor='w')
+    )
+
+    # Outer ring: mutation presence (both/one/none) per category
+    wedges, texts, autotexts = ax.pie(
+        outer_vals,
+        radius=1.4,
+        startangle=startangle,
+        colors=outer_colors,
+        labeldistance=0.7,
+        autopct=lambda pct: '',
+        wedgeprops=dict(width=0.4, edgecolor='w')
+    )
+
+    for t in autotexts:
+        t.set_color('white')
+        t.set_fontsize(8)
+
+    ax.set(aspect='equal')
+    plt.tight_layout()
+    plt.show()
+
+    # Legends
+    category_handles = [Patch(facecolor=base_colors[i], edgecolor='w') for i in range(4)]
+    category_labels = [
+        f'Non-comp: {int(inner_vals[0])} ({inner_pct[0]:.1f}%)',
+        f'Compensatory: {int(inner_vals[1])} ({inner_pct[1]:.1f}%)',
+        f'Rescue: {int(inner_vals[2])} ({inner_pct[2]:.1f}%)',
+        f'GOF: {int(inner_vals[3])} ({inner_pct[3]:.1f}%)'
+    ]
+
+    segment_handles = [
+        Patch(facecolor=triad_palette[0][0], edgecolor='w'),
+        Patch(facecolor=triad_palette[0][1], edgecolor='w'),
+        Patch(facecolor=triad_palette[0][2], edgecolor='w'),
+        Patch(facecolor=triad_palette[1][0], edgecolor='w'),
+        Patch(facecolor=triad_palette[1][1], edgecolor='w'),
+        Patch(facecolor=triad_palette[1][2], edgecolor='w'),
+        Patch(facecolor=triad_palette[2][0], edgecolor='w'),
+        Patch(facecolor=triad_palette[2][1], edgecolor='w'),
+        Patch(facecolor=triad_palette[2][2], edgecolor='w'),
+        Patch(facecolor=triad_palette[3][0], edgecolor='w'),
+        Patch(facecolor=triad_palette[3][1], edgecolor='w'),
+        Patch(facecolor=triad_palette[3][2], edgecolor='w'),
+    ]
+    segment_labels = [
+        f'Non-comp Double mutation: {int(noncomp_both)} ({outer_pct[0]:.1f}%)',
+        f'Non-comp Single mutation: {int(noncomp_one)} ({outer_pct[1]:.1f}%)',
+        f'Non-comp No mutation: {int(noncomp_none)} ({outer_pct[2]:.1f}%)',
+        f'Comp Double mutation: {int(comp_both)} ({outer_pct[3]:.1f}%)',
+        f'Comp Single mutation: {int(comp_one)} ({outer_pct[4]:.1f}%)',
+        f'Comp No mutation: {int(comp_none)} ({outer_pct[5]:.1f}%)',
+        f'Rescue Double mutation: {int(rescue_both)} ({outer_pct[6]:.1f}%)',
+        f'Rescue Single mutation: {int(rescue_one)} ({outer_pct[7]:.1f}%)',
+        f'Rescue No mutation: {int(rescue_none)} ({outer_pct[8]:.1f}%)',
+        f'GOF Double mutation: {int(gof_both)} ({outer_pct[9]:.1f}%)',
+        f'GOF Single mutation: {int(gof_one)} ({outer_pct[10]:.1f}%)',
+        f'GOF No mutation: {int(gof_none)} ({outer_pct[11]:.1f}%)',
+    ]
+
+    fig_leg = plt.figure(figsize=(7, 5))
+    ax_leg = fig_leg.add_subplot(111)
+    ax_leg.axis('off')
+
+    cat_legend = ax_leg.legend(category_handles, category_labels, loc='upper center',
+                                bbox_to_anchor=(0.5, 0.95), ncol=1, frameon=False, title='Categories')
+    seg_legend = ax_leg.legend(segment_handles, segment_labels, loc='center',
+                                bbox_to_anchor=(0.5, 0.40), ncol=1, frameon=False, title='Mutation presence')
+
+    ax_leg.add_artist(cat_legend)
+
+    plt.tight_layout()
+    plt.show()
