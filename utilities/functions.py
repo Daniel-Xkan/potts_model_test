@@ -185,6 +185,27 @@ def calculate_e(seq, J_dict, min_position, max_position):
             # print(f"pos1: {pos1}, aa1: {aa1}, pos2: {pos2}, aa2: {aa2}, interaction: {J_dict.get((pos1, pos2, aa1, aa2), 0)}")
     return energy
 
+#vectorize sequence residue energy
+def calculate_e_residue(seq, J_dict, position, min_position, max_position):
+    energy = 0
+    aa = seq[position - min_position]  # Access the amino acid at the given position
+    for other_pos in range(min_position, max_position + 1):
+        if other_pos == position:
+            continue
+        other_aa = seq[other_pos - min_position]  # Access the amino acid at other_pos
+        energy += J_dict.get((position, other_pos, aa, other_aa), 0)
+    return energy
+
+def vectorize_seq_residue_energy(seq, J_dict, min_position, max_position):
+    energy_vector = []
+    for position in range(min_position, max_position + 1):
+        energy = calculate_e_residue(seq, J_dict, position, min_position, max_position)
+        energy_vector.append(energy)
+    return energy_vector
+
+
+###################################
+
 def calculate_delta_e(mutation_pair, seq, J_dict, min_position, max_position):
     old_amino_acid, position, new_amino_acid = split_pair(mutation_pair)
     # E(old_amino_acid)
