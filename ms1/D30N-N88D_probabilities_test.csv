@@ -1,0 +1,10 @@
+mutation_pair,epistasis_subset,num_seqs,num_with_DMC,average_p_total,observed_f_total,average_p_subcategory,observed_f_subcategory,,weights_sum,weights_sum_with_DMC,weighted_average_p_total,weighted_observed_f_total,weighted_average_p_subcategory,weighted_observed_f_subcategory
+D30N-N88D,Total,5710,247,0.0950,0.0433,0.0950,0.0433,,4650.0000,212.2000,0.0973,0.0456,0.0973,0.0456
+D30N-N88D,Gain_of_function,467,247,0.0723,0.0433,0.8835,0.5289,,390.1000,212.2000,0.0744,0.0456,0.8871,0.5440
+D30N-N88D,rescue,734,0,0.0138,0.0000,0.1077,0.0000,,605.4167,0.0000,0.0141,0.0000,0.1082,0.0000
+D30N-N88D,compensatory,2587,0,0.0087,0.0000,0.0192,0.0000,,2119.0843,0.0000,0.0085,0.0000,0.0187,0.0000
+D30N-N88D,non_compensatory,1922,0,0.0003,0.0000,0.0008,0.0000,,1535.3990,0.0000,0.0003,0.0000,0.0008,0.0000
+
+D30N-N88D,flipped,2191,35,0.0299,0.0061,0.0779,0.0160,,1805.6343,28.0000,0.0301,0.0060,0.0775,0.0155
+D30N-N88D,non_flipped,3519,212,0.0652,0.0371,0.1057,0.0602,,2844.3657,184.2000,0.0672,0.0396,0.1098,0.1098
+
