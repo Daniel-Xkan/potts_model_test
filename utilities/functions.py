@@ -1,3 +1,4 @@
+from encodings.aliases import aliases
 import re
 import numpy as np
 import pandas as pd
@@ -59,6 +60,15 @@ def unreduced_to_reduced_sequence(redux_dict, unreduced_seq):
         reduced_seq.append(reduced_aa)
     return ''.join(reduced_seq)
 
+def reduced_to_unreduced_sequence(redux_dict, reduced_seq, in_unre_seq, start_index=1):
+    reduced_seq = list(reduced_seq)
+    unreduced_seq = []
+    for pos in range(1, len(reduced_seq) + 1):
+        reduced_aa = reduced_seq[pos - 1]
+        unreduced_aas = [aa for key, values in redux_dict.items() if key[0] == pos and key[1] == reduced_aa for aa in values]
+        most_freq_aa = max(unreduced_aas, key=lambda aa: calculate_freq(aa, pos, in_unre_seq,start_index))
+        unreduced_seq.append(most_freq_aa)
+    return ''.join(unreduced_seq)
 
 # Calculate the frequency of an amino acid at a given position in a list of sequences
 def calculate_freq(aa, pos, seq_list,start_index=1):
@@ -241,6 +251,7 @@ def calculate_delta_e_double(mutation_pair1, mutation_pair2, seq, J_dict,min_pos
     if current_aa1 != old_amino_acid1 or current_aa2 != old_amino_acid2:
         current_aa1 = old_amino_acid1
         current_aa2 = old_amino_acid2
+        # pass
 
     energy_old = 0
     energy_new = 0
@@ -334,6 +345,7 @@ def calculate_dde_v2(mutation_pair1, mutation_pair2, seq, J_dict,min_position,ma
     dde =  de12- de1 - de2
     return de1,de2,de12,dde
 
+
 def calculate_dde_v3(mutation_pair1, mutation_pair2, seq, J_dict,min_position,max_position):
     wt1,pos1,mut1 = split_pair(mutation_pair1)
     wt2,pos2,mut2 = split_pair(mutation_pair2)
@@ -346,6 +358,26 @@ def calculate_dde_v3(mutation_pair1, mutation_pair2, seq, J_dict,min_position,ma
     de1 = calculate_delta_e(mutation_pair1, seq, J_dict, min_position, max_position)
     de2 = calculate_delta_e(mutation_pair2, seq, J_dict, min_position, max_position)
     dde = J_dict.get((pos1, pos2, mut1, wt2), 0) + J_dict.get((pos1, pos2, wt1, mut2), 0) - J_dict.get((pos1, pos2, wt1, wt2), 0) - J_dict.get((pos1, pos2, mut1, mut2), 0)
+
+    de12 = de1 + de2 + dde
+    return de1, de2, de12, dde
+
+def calculate_dde_v3_no_sub(mutation_pair1, mutation_pair2, seq, J_dict,min_position,max_position):
+    wt1,pos1,mut1 = split_pair(mutation_pair1)
+    wt2,pos2,mut2 = split_pair(mutation_pair2)
+
+    # if seq[pos1 - min_position] != mut1 or seq[pos2 - min_position] != mut2:
+    #     return None
+    seq_list = list(seq)
+    
+    res_pos1 = seq_list[pos1 - min_position]
+    res_pos2 = seq_list[pos2 - min_position]
+
+
+    
+    de1 = calculate_delta_e(mutation_pair1, seq, J_dict, min_position, max_position)
+    de2 = calculate_delta_e(mutation_pair2, seq, J_dict, min_position, max_position)
+    dde = J_dict.get((pos1, pos2, mut1, res_pos2), 0) + J_dict.get((pos1, pos2, res_pos1, mut2), 0) - J_dict.get((pos1, pos2, res_pos1, res_pos2), 0) - J_dict.get((pos1, pos2, mut1, mut2), 0)
 
     de12 = de1 + de2 + dde
     return de1, de2, de12, dde
@@ -365,12 +397,18 @@ def calculate_dde_v4(mutation_pair1, mutation_pair2, seq, J_dict,min_position,ma
     de1 = calculate_delta_e(mutation_pair1, seq, J_dict, min_position, max_position)
     de2 = calculate_delta_e(mutation_pair2, seq, J_dict, min_position, max_position)
 
-    de12 = calculate_delta_e_double(mutation_pair1, mutation_pair2, seq_wt, J_dict, min_position, max_position)
+    de12 = calculate_delta_e_double(mutation_pair1, mutation_pair2, seq, J_dict, min_position, max_position)
 
 
 
     dde =  de12- de1 - de2
     return de1,de2,de12,dde
+
+#aliases
+calculate_dde_from_J_with_substitution = calculate_dde_v3
+calculate_dde_from_J_no_substitution = calculate_dde_v3_no_sub
+calculate_dde_from_de_with_substitution = calculate_dde_v2
+calculate_dde_from_de_no_substitution = calculate_dde_v4
 
 def load_J_dict(j_file, min_position,max_position):
     J_dict = {}
@@ -660,6 +698,25 @@ def calculate_double_mutant_probablity_v3(seq, mutation_pair1, mutation_pair2, J
             #     print(f"Alternative mutations: {mutation_pair1[:-1] + aa1}, {mutation_pair2[:-1] + aa2}, DMC: {de_DMC_alt}")
     return (math.exp(de_DMC))/de_double_sum
 
+def calculate_double_mutant_probablity_v3_no_sub(seq, mutation_pair1, mutation_pair2, J_dict, min_position, max_position):
+    
+    # wt1,pos1,mt1 = split_pair(mutation_pair1)
+    # wt2,pos2,mt2 = split_pair(mutation_pair2)
+
+    # de_DMC = calculate_delta_e_double(mutation_pair1, mutation_pair2, seq, J_dict, min_position, max_position)
+    de_DMC = calculate_dde_v3_no_sub(mutation_pair1, mutation_pair2, seq, J_dict, min_position, max_position)[2]
+    de_double_sum = 1
+    for aa1 in ['A', 'B', 'C', 'D']:
+        for aa2 in ['A', 'B', 'C', 'D']:
+            if aa1 == mutation_pair1[0] and aa2 == mutation_pair2[0]:
+                continue
+            de_DMC_alt = calculate_dde_v3_no_sub(mutation_pair1[:-1] + aa1, mutation_pair2[:-1] + aa2, seq, J_dict, min_position, max_position)[2]
+            de_DMC_alt_e = math.exp(de_DMC_alt) if de_DMC_alt is not None else 0
+            de_double_sum += de_DMC_alt_e
+            # if de_DMC_alt is not None:
+            #     print(f"Alternative mutations: {mutation_pair1[:-1] + aa1}, {mutation_pair2[:-1] + aa2}, DMC: {de_DMC_alt}")
+    return (math.exp(de_DMC))/de_double_sum
+
 def calculate_double_mutant_probablity_v4(seq, mutation_pair1, mutation_pair2, J_dict, min_position, max_position):
     
     # wt1,pos1,mt1 = split_pair(mutation_pair1)
@@ -678,6 +735,19 @@ def calculate_double_mutant_probablity_v4(seq, mutation_pair1, mutation_pair2, J
             # if de_DMC_alt is not None:
             #     print(f"Alternative mutations: {mutation_pair1[:-1] + aa1}, {mutation_pair2[:-1] + aa2}, DMC: {de_DMC_alt}")
     return (math.exp(de_DMC))/de_double_sum
+
+#aliases
+# calculate_dde_from_J_with_substitution = calculate_dde_v3
+# calculate_dde_from_J_no_substitution = calculate_dde_v3_no_sub
+# calculate_dde_from_de_with_substitution = calculate_dde_v2
+# calculate_dde_from_de_no_substitution = calculate_dde_v4
+
+# aliases
+calculate_double_mutant_probability_from_dde_with_substitution = calculate_double_mutant_probablity_v3
+calculate_double_mutant_probability_from_dde_no_substitution = calculate_double_mutant_probablity_v3_no_sub
+calculate_double_mutant_probability_with_substitution = calculate_double_mutant_probablity_v2
+calculate_double_mutant_probability_no_substitution = calculate_double_mutant_probablity_v4
+
 
 def calculate_average_double_mutant_probablity_v3(seq_list, mutation_pair1, mutation_pair2, J_dict, min_position, max_position):
     total_prob = 0
