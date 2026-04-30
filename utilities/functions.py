@@ -76,6 +76,16 @@ def calculate_freq(aa, pos, seq_list,start_index=1):
     frequency = count / len(seq_list)
     return frequency
 
+#calculate the count of an amino acid at a given position in a list of sequences
+def count_single_aa(aa, pos, seq_list,start_index=1):
+    count = sum(1 for seq in seq_list if seq[pos - start_index] == aa)
+    return count
+
+#calculate the count of a double amino acid at given positions in a list of sequences
+def count_double_aa(aa1, pos1, aa2, pos2, seq_list,start_index=1):
+    count = sum(1 for seq in seq_list if seq[pos1 - start_index] == aa1 and seq[pos2 - start_index] == aa2)
+    return count
+
 # Split a string of two pairs separated by a hyphen into a tuple
 def split_pairs(pair_string):
     return tuple(pair.strip() for pair in pair_string.split('-') if pair.strip())
