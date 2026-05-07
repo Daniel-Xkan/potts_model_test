@@ -607,6 +607,15 @@ def generate_sequence_from_mutations(consensus_seq, mutations):
         seq_list[pos - 1] = mt
     return ''.join(seq_list)
 
+def calculate_single_mutant_frequency(seq_list, mutation_pair, min_pos, max_pos):
+    count = 0
+    total = 0
+    for seq in seq_list:
+        if seq[get_pos(mutation_pair) - min_pos] == get_mt(mutation_pair):
+            count += 1
+        total += 1
+    return count, total, count / total if total > 0 else 0
+
 def calculate_double_mutant_frequency(seq_list, mutation_pair1, mutation_pair2, min_pos, max_pos,redux_dict):
     m1_reduced = unreduced_to_reduced(redux_dict, mutation_pair1)
     m2_reduced = unreduced_to_reduced(redux_dict, mutation_pair2)
