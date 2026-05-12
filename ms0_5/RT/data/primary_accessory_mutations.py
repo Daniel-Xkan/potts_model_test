@@ -59,7 +59,19 @@ NRTI_accessory_mutations = [
 
     # T215 revertants
     "T215D", "T215C", "T215E", "T215I",
-    "T215S", "T215N", "T215A", "T215V",
+    "T215S", "T215V",
+    # "T215N", "T215A",
+    #T215 revertants: The nucleoside reverse transcriptase (RT) inhibitor-resistance mutations,
+    # T215Y/F evolve from T by acquiring two nucleotide mutations: ACT/C (T) → TAT/C (Y) or
+    # TTT/C (F). Patients primarily infected with strains containing T215Y/F often develop viruses
+    # with partial reversion mutations at this position [1–3]. T215C/D result from the back mutation of
+    # TAT/C (Y) to TGT/C (C) or GAT/C (D). T215I/V result from the back mutation of TTT/C (F) to ATT/C (I)
+    # or GTT/C (V). T215S (TCT/C) may result from back mutation of either TAT/C (Y) or TTT/C (F).
+    # T215E (GAA/G) requires two changes from T215Y (TAT/C) or one change from the common revertant
+    # T215D (GAT/C). Although most of the revertant mutations do not reduce nucleoside susceptibility
+    # (data for T215I/V are not available), they have been associated with an increased risk of virologic failure
+    # to a new treatment regimen [4]. The T215 revertants are also among the most common mutations
+    # observed in viruses from previously untreated persons, occurring in about 3% of such patients [5–9].
 
     # Rare/unfit/transitional mutations
     "K65E",                 # Extremely rare; too unfit to study phenotypically

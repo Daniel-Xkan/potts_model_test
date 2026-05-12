@@ -40,6 +40,26 @@ def reduced_to_unreduced(redux_dict, reduced_pair,in_unre_seq, start_index=1):
     unreduced_pair = f"{most_freq_wildtype}{pos}{most_freq_mutate}"
     return unreduced_pair
 
+#usage: dict, C140D, [unreduced seq]
+def reduced_to_unreduced_second_most_freq(redux_dict, reduced_pair,in_unre_seq, start_index=1):
+    # Parse the reduced pair
+    wildtype, pos, mutate = reduced_pair[0], int(reduced_pair[1:-1]), reduced_pair[-1]
+    # Look up the unreduced wildtype and mutate in the dictionary
+    unreduced_wildtypes = [aa for aa in redux_dict.get((pos, wildtype), ['-'])]
+    unreduced_mutates = [aa for aa in redux_dict.get((pos, mutate), ['-'])]
+    # print( 'unreduced_wildtypes',unreduced_wildtypes)
+    # print( 'unreduced_mutates ', unreduced_mutates)
+    
+    # If the most frequent amino acid is needed, calculate it
+    most_freq_wildtype = max(unreduced_wildtypes, key=lambda aa: calculate_freq(aa, pos, in_unre_seq,start_index))
+    most_freq_mutate = sorted(set(unreduced_mutates), key=lambda aa: calculate_freq(aa, pos, in_unre_seq,start_index), reverse=True)[1]  # Get the second most frequent
+
+    
+    # Combine the new translated unreduced letters with the position
+    unreduced_pair = f"{most_freq_wildtype}{pos}{most_freq_mutate}"
+    return unreduced_pair
+
+
 def unreduced_to_reduced(redux_dict, unreduced_pair):
     # Parse the unreduced pair
     wildtype, pos, mutate = unreduced_pair[0], int(unreduced_pair[1:-1]), unreduced_pair[-1]
