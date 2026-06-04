@@ -466,6 +466,15 @@ def read_seq(seq_file):
                 seq_list.append(line)
     return seq_list
 
+def read_weights(weights_file):
+    weights = []
+    with open(weights_file, 'r') as f:
+        for line in f:
+            line = line.strip()
+            if line:
+                weights.append(float(line))
+    return weights
+
 def read_reduced_MSA(msa_file):
     msa_list = []
     with open(msa_file, 'r') as f:
@@ -636,6 +645,32 @@ def calculate_single_mutant_frequency(seq_list, mutation_pair, min_pos, max_pos)
         total += 1
     return count, total, count / total if total > 0 else 0
 
+def calculate_single_mutant_frequency_weighted(seq_list, weights, mutation_pair, min_pos, max_pos):
+    """Calculate weighted mutant frequency.
+    
+    Args:
+        seq_list: list of sequences
+        weights: list of weights corresponding to each sequence
+        mutation_pair: mutation pair string (e.g., 'Y143R')
+        min_pos: minimum position
+        max_pos: maximum position
+    
+    Returns:
+        tuple: (weighted_count, total_weight, frequency)
+    """
+    if len(seq_list) != len(weights):
+        raise ValueError(f"Sequence list length ({len(seq_list)}) != weights length ({len(weights)})")
+    
+    weighted_count = 0.0
+    total_weight = 0.0
+    for seq, weight in zip(seq_list, weights):
+        if seq[get_pos(mutation_pair) - min_pos] == get_mt(mutation_pair):
+            weighted_count += weight
+        total_weight += weight
+    
+    frequency = weighted_count / total_weight if total_weight > 0 else 0
+    return weighted_count, total_weight, frequency
+
 def calculate_double_mutant_frequency(seq_list, mutation_pair1, mutation_pair2, min_pos, max_pos,redux_dict):
     m1_reduced = unreduced_to_reduced(redux_dict, mutation_pair1)
     m2_reduced = unreduced_to_reduced(redux_dict, mutation_pair2)
@@ -647,6 +682,37 @@ def calculate_double_mutant_frequency(seq_list, mutation_pair1, mutation_pair2, 
             count += 1
         total += 1
     return count, total, count / total if total > 0 else 0
+
+def calculate_double_mutant_frequency_weighted(seq_list, weights, mutation_pair1, mutation_pair2, min_pos, max_pos, redux_dict):
+    """Calculate weighted double mutant frequency.
+    
+    Args:
+        seq_list: list of sequences
+        weights: list of weights corresponding to each sequence
+        mutation_pair1: first mutation pair string
+        mutation_pair2: second mutation pair string
+        min_pos: minimum position
+        max_pos: maximum position
+        redux_dict: reduction dictionary
+    
+    Returns:
+        tuple: (weighted_count, total_weight, frequency)
+    """
+    if len(seq_list) != len(weights):
+        raise ValueError(f"Sequence list length ({len(seq_list)}) != weights length ({len(weights)})")
+    
+    m1_reduced = unreduced_to_reduced(redux_dict, mutation_pair1)
+    m2_reduced = unreduced_to_reduced(redux_dict, mutation_pair2)
+    weighted_count = 0.0
+    total_weight = 0.0
+    for seq, weight in zip(seq_list, weights):
+        if (seq[get_pos(m1_reduced) - min_pos] == get_mt(m1_reduced) and
+               seq[get_pos(m2_reduced) - min_pos] == get_mt(m2_reduced)):
+            weighted_count += weight
+        total_weight += weight
+    
+    frequency = weighted_count / total_weight if total_weight > 0 else 0
+    return weighted_count, total_weight, frequency
 
 def seqs_to_subcatagories_v2(seq_list, mutation_pair1, mutation_pair2, min_pos, max_pos,J_dict,redux_dict):
     subcatagories = {'gof': [], 'rescue': [], 'compensatory': [], 'non-compensatory': []}
