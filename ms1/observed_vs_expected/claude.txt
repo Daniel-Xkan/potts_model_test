@@ -1,0 +1,3 @@
+work on plot_obs_vs_exp.ipynb in ms1/observed_vs_expected, i ahve already append file paths, now read the four csv files given, and produced a expectee vs obeserved freq spread graph, with x axis expected, y axis observed. 
+there should be four graphs total: gof, rescue, compensatory, non_compensatory
+for each graph: include spread datapoints from four drug : INSTI, PI, NRTI, NNRTI, each drug with different color and data different csv file but in the same graph if they are in the same catogory:  gof, rescue, compensatory, non_compensatory
