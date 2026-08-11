@@ -618,11 +618,11 @@ def read_list_from_file(file_path):
         return [line.strip() for line in file if line.strip()]
 
 ##### Get mutations from consensus and experimental sequences and sequence generation######
-def get_mutations_from_sequence(consensus_seq, experimental_seq):
+def get_mutations_from_sequence(consensus_seq, experimental_seq,start_index=1):
     mutations = []
-    for i, (cons_residue, exp_residue) in enumerate(zip(consensus_seq, experimental_seq), start=1):
+    for i, (cons_residue, exp_residue) in enumerate(zip(consensus_seq, experimental_seq)):
         if cons_residue != exp_residue:
-            mutations.append(f"{cons_residue}{i}{exp_residue}")
+            mutations.append(f"{cons_residue}{i+start_index}{exp_residue}")
     return mutations
 
 def generate_sequence_from_mutations(consensus_seq, mutations):
@@ -892,3 +892,213 @@ def mutate_sequence(mutation_pair, sequence):
     seq_list[pos - 1] = mt
     return ''.join(seq_list)
 ##############################################################################################
+
+def is_gof_seq(seq,mutation_pair1,mutation_pair2,J_dict,min_position,max_position):
+    de1,de2,de12,dde = calculate_dde_v2(mutation_pair1,mutation_pair2,seq,J_dict,min_position,max_position)
+    return de12>de2 and de12>de1 and de12>0
+
+
+##############################################################################################
+# fast_* : whole-alignment (vectorized) versions of the calculate_* routines above
+##############################################################################################
+#
+# WHY
+#   calculate_dde_v2 / calculate_double_mutant_probablity_v2 loop over every position in
+#   Python and do a dict lookup per coupling. Scoring one mutation pair against a whole
+#   alignment costs N * L * ~100 dict lookups (the probability alone calls calculate_dde_v2
+#   16 more times per sequence). The fast_* versions below give identical numbers -- to
+#   float32 round-off, ~1e-5 on dE -- in seconds instead of hours: 20 pairs against the
+#   19,194-sequence RT alignment takes ~1.3 s.
+#
+# THE IDENTITY THEY EXPLOIT
+#   calculate_dde_v2 first rewrites the sequence to wild type at both mutated positions, so
+#   for a pair (p1: wt1->mt1, p2: wt2->mt2) everything depends on the sequence only through
+#
+#       S(p, x) = sum over o not in {p1, p2} of J[p, o, x, seq[o]]
+#
+#   plus the direct term J[p1, p2, ., .]. Writing
+#
+#       M[a1, a2] = S(p1, a1) + S(p2, a2) + J[p1, p2, a1, a2]
+#
+#   every quantity of interest is a difference of two entries of that 4x4 matrix:
+#
+#       dE1   = M[wt1, wt2] - M[mt1, wt2]
+#       dE2   = M[wt1, wt2] - M[wt1, mt2]
+#       dE12  = M[wt1, wt2] - M[mt1, mt2]
+#       dde   = dE12 - dE1 - dE2
+#       p_DMC = softmax(-M)[mt1, mt2]
+#
+#   So the eight numbers S(p1, ABCD) and S(p2, ABCD) are all that is needed per sequence,
+#   and they come from a single matmul against a one-hot encoding of the alignment. M also
+#   holds dE12 for every competing double mutant at the same two positions, which is what
+#   the "best double mutant" flag uses -- for free.
+#
+#   Note there is no separate field term here, in fast_* or in the scalar calculate_*: the
+#   site fields are folded into J, so they enter through the coupling sum. "site energies"
+#   below means the energy of one site in its sequence background (as in
+#   calculate_e_residue), not a field h.
+#
+# USAGE
+#   import utilities.functions as functions
+#
+#   Jm = functions.fast_build_J_matrix('ms0_5/IN/data/J.npy', 1, 263)   # once per protein
+#   seqs = functions.read_seq('ms0_5/IN/data/in.reduce4.seq')
+#   codes, onehot = functions.fast_encode_seqs(seqs, 1, 263)            # once per alignment
+#   redux = functions.get_redu_dict('ms0_5/IN/data/in.reduce4.redux', 1)
+#
+#   idx = functions.fast_pair_index(redux, 'G140S-Q148H', 1)            # once per pair
+#   e = functions.fast_pair_energies(onehot, Jm, *idx)
+#
+#   e.de1, e.de2, e.de12, e.dde   # (N,) float64 arrays, one entry per sequence
+#   e.p_dmc                       # (N,) probability of the double mutant combination
+#   e.is_best                     # (N,) bool: this pair beats every competing double
+#                                 #      mutant at the same two positions
+#
+#   # sequences that actually carry the double mutant combination
+#   dmc = (codes[:, idx.p1i] == idx.imt1) & (codes[:, idx.p2i] == idx.imt2)
+#
+#   # epistasis subcategories (matching DMC_sebset_freq2.5_c.ipynb)
+#   both_below = (e.de1 < e.de12) & (e.de2 < e.de12)
+#   gof     = both_below & (e.de12 > 0) & e.is_best
+#   rescue  = both_below & ~((e.de12 > 0) & e.is_best)
+#   comp    = ~both_below & ((e.de1 < e.de12) | (e.de2 < e.de12))
+#   noncomp = ~both_below & ~((e.de1 < e.de12) | (e.de2 < e.de12))
+#
+#   Pass a one-sequence alignment to score the consensus:
+#       _, c_onehot = functions.fast_encode_seqs([consensus_seq], 1, 263)
+#       c = functions.fast_pair_energies(c_onehot, Jm, *idx)   # arrays of length 1
+#
+# CAVEAT
+#   Everything works in the reduced 4-letter alphabet the Potts model is fit in, so pass
+#   reduced pairs (fast_pair_index handles the conversion). Two unreduced mutants that
+#   collapse to the same reduced letter are the same pair here and cannot be told apart.
+##############################################################################################
+
+from collections import namedtuple
+
+FAST_ALPHABET = 'ABCD'
+
+# anything outside ABCD maps to slot 4, an all-zero coupling column -- this reproduces the
+# J_dict.get((...), 0) default of the scalar functions for gaps / unexpected characters
+_FAST_AA_CODE = np.full(256, 4, dtype=np.uint8)
+for _i, _c in enumerate(FAST_ALPHABET):
+    _FAST_AA_CODE[ord(_c)] = _i
+
+PairIndex = namedtuple('PairIndex', 'p1i p2i iwt1 imt1 iwt2 imt2')
+PairEnergies = namedtuple('PairEnergies', 'de1 de2 de12 dde p_dmc is_best')
+
+
+def fast_build_J_matrix(j_file, min_position, max_position):
+    """Dense coupling tensor, shape (L, L, 4, 5), indexed [p1, p2, aa_at_p1, aa_at_p2].
+
+    Same content as load_J_dict, as an array instead of a dict with ~L^2 * 16 keys, so
+    couplings can be gathered with numpy. The 5th slot on the last axis is an all-zero
+    column standing in for out-of-alphabet characters.
+
+    Build this once per protein and reuse it for every pair.
+    """
+    J = np.load(j_file).astype(np.float32)
+    L = max_position - min_position + 1
+    Jm = np.zeros((L, L, 4, 5), dtype=np.float32)
+    # load_J_dict walks pos1 ascending, pos2 from pos1+1 ascending -> row-major upper triangle
+    iu0, iu1 = np.triu_indices(L, 1)
+    blocks = J.reshape(-1, 4, 4)
+    assert blocks.shape[0] == iu0.size, "J file row count does not match the position range"
+    Jm[iu0, iu1, :, :4] = blocks
+    Jm[iu1, iu0, :, :4] = blocks.transpose(0, 2, 1)
+    return Jm
+
+
+def fast_encode_seqs(seq_list, min_position, max_position):
+    """Encode an alignment for the fast_* routines. Build this once per alignment.
+
+    Returns (codes, onehot):
+        codes  -- (N, L) uint8, the amino acid index 0..3 at each position (4 = other),
+                  handy for testing which sequences carry a mutation
+        onehot -- (N, L*5) float32, column order (position, amino acid), the matrix
+                  fast_site_energies multiplies against
+
+    Every sequence must span exactly min_position..max_position.
+    """
+    L = max_position - min_position + 1
+    N = len(seq_list)
+    raw = np.frombuffer(''.join(seq_list).encode(), dtype=np.uint8)
+    assert raw.size == N * L, "all sequences must span exactly min_position..max_position"
+    codes = _FAST_AA_CODE[raw.reshape(N, L)]
+    onehot = np.zeros((N * L, 5), dtype=np.float32)
+    onehot[np.arange(N * L), codes.ravel()] = 1.0
+    return codes, onehot.reshape(N, L * 5)
+
+
+def fast_pair_index(redux_dict, unreduced_pair, min_position):
+    """Resolve a pair string like 'G140S-Q148H' to the indices fast_pair_energies wants.
+
+    Reduces the pair with redux_dict, then converts positions to 0-based offsets from
+    min_position and amino acids to 0..3 indices into FAST_ALPHABET. Returns a PairIndex,
+    which can be splatted straight into fast_pair_energies(onehot, Jm, *idx).
+    """
+    pair1, pair2 = split_pairs(unreduced_pair)
+    p1_reduced = unreduced_to_reduced(redux_dict, pair1)
+    p2_reduced = unreduced_to_reduced(redux_dict, pair2)
+    wt1, pos1, mt1 = split_pair(p1_reduced)
+    wt2, pos2, mt2 = split_pair(p2_reduced)
+    return PairIndex(pos1 - min_position, pos2 - min_position,
+                     FAST_ALPHABET.index(wt1), FAST_ALPHABET.index(mt1),
+                     FAST_ALPHABET.index(wt2), FAST_ALPHABET.index(mt2))
+
+
+def fast_site_energies(onehot, Jm, p, excluded):
+    """S(p, x) for x in ABCD and every sequence -> (N, 4) float64.
+
+    The energy site p contributes in each sequence's background, for all four candidate
+    residues at once -- the vectorized counterpart of calculate_e_residue. Positions listed
+    in `excluded` are dropped from the sum; fast_pair_energies excludes both mutated
+    positions so the direct J[p1, p2] term can be added once explicitly rather than being
+    counted twice. No field term is involved (see the notes above).
+    """
+    A = Jm[p].copy()
+    A[list(excluded)] = 0.0
+    return np.asarray(onehot @ A.transpose(0, 2, 1).reshape(-1, 4), dtype=np.float64)
+
+
+def fast_pair_energies(onehot, Jm, p1i, p2i, iwt1, imt1, iwt2, imt2):
+    """Score one mutation pair against a whole alignment. Returns a PairEnergies.
+
+    Arguments are an encoded alignment (fast_encode_seqs), a coupling tensor
+    (fast_build_J_matrix) and the six indices from fast_pair_index. All six returned
+    fields are arrays of length N, one entry per sequence:
+
+        de1, de2, de12, dde -- as calculate_dde_v2 returns for a single sequence
+        p_dmc               -- as calculate_double_mutant_probablity_v2 returns
+        is_best             -- True when this pair's dE12 strictly exceeds the dE12 of
+                               every other residue combination at positions (p1, p2), i.e.
+                               of every competing double mutant sharing those positions.
+                               Strict, so a tie disqualifies both pairs and a sequence can
+                               be the best double mutant for at most one pair per position
+                               pair. The 16 combinations include the two single mutants and
+                               the wild type, so is_best already implies dE12 > dE1,
+                               dE12 > dE2 and dE12 > 0.
+    """
+    S1 = fast_site_energies(onehot, Jm, p1i, (p1i, p2i))
+    S2 = fast_site_energies(onehot, Jm, p2i, (p1i, p2i))
+    J12 = Jm[p1i, p2i, :, :4].astype(np.float64)
+
+    M = S1[:, :, None] + S2[:, None, :] + J12[None, :, :]
+    base = M[:, iwt1, iwt2]
+    de1 = base - M[:, imt1, iwt2]
+    de2 = base - M[:, iwt1, imt2]
+    de12 = base - M[:, imt1, imt2]
+
+    # largest dE12 over the 16 combinations <=> smallest M; strict, so ties disqualify
+    Mf = M.reshape(S1.shape[0], 16)
+    mine = Mf[:, imt1 * 4 + imt2]
+    is_best = (Mf > mine[:, None]).sum(axis=1) == 15
+
+    # softmax over -M (the +base cancels); shifted, so exp cannot overflow the way
+    # calculate_double_mutant_probablity_v2's raw math.exp can
+    Z = -Mf
+    Z = Z - Z.max(axis=1, keepdims=True)
+    E = np.exp(Z)
+    p_dmc = E[:, imt1 * 4 + imt2] / E.sum(axis=1)
+
+    return PairEnergies(de1, de2, de12, de12 - de1 - de2, p_dmc, is_best)
