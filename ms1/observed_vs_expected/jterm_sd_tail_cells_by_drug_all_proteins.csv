@@ -1,0 +1,653 @@
+protein,tail,pair,pair drugs,pair class,q,sd of c(q),q is a resistance position,q drugs,q class,shares a drug with the pair,ddE,dE double range (95-5%)
+IN,upper,E138A-Q148H,"bictegravir, cabotegravir, dolutegravir, elvitegravir, raltegravir",INSTI,140,3.601759458016388,True,"bictegravir, cabotegravir, dolutegravir, elvitegravir, raltegravir",INSTI,True,2.13,16.742628002166747
+IN,upper,E138K-Q148H,"bictegravir, cabotegravir, dolutegravir, elvitegravir, raltegravir",INSTI,140,3.4068524702110534,True,"bictegravir, cabotegravir, dolutegravir, elvitegravir, raltegravir",INSTI,True,2.36,15.800467252731323
+IN,upper,E138K-Q148K,"bictegravir, cabotegravir, dolutegravir, elvitegravir, raltegravir",INSTI,140,2.1447580974846843,True,"bictegravir, cabotegravir, dolutegravir, elvitegravir, raltegravir",INSTI,True,4.9,12.485106712579727
+IN,upper,E138K-Q148R,"bictegravir, cabotegravir, dolutegravir, elvitegravir, raltegravir",INSTI,140,2.14270968693998,True,"bictegravir, cabotegravir, dolutegravir, elvitegravir, raltegravir",INSTI,True,3.53,13.569714248180386
+IN,upper,Y143R-I151V,raltegravir,INSTI,155,1.8271165798864115,True,"cabotegravir, dolutegravir, elvitegravir, raltegravir",INSTI,True,,10.623284339904785
+IN,upper,G140S-Q148H,"bictegravir, cabotegravir, dolutegravir, elvitegravir, raltegravir",INSTI,155,1.7374998823173775,True,"cabotegravir, dolutegravir, elvitegravir, raltegravir",INSTI,True,8.51,10.264471149444578
+IN,upper,E138K-S147G,"bictegravir, cabotegravir, dolutegravir, elvitegravir, raltegravir",INSTI,148,1.6693159149000771,True,"bictegravir, cabotegravir, dolutegravir, elvitegravir, raltegravir",INSTI,True,2.66,9.497529315948487
+IN,upper,G140S-Q148R,"bictegravir, cabotegravir, dolutegravir, elvitegravir, raltegravir",INSTI,155,1.6559715825495804,True,"cabotegravir, dolutegravir, elvitegravir, raltegravir",INSTI,True,5.2,11.486692333221432
+IN,upper,E138A-Q148H,"bictegravir, cabotegravir, dolutegravir, elvitegravir, raltegravir",INSTI,155,1.4110984422201855,True,"cabotegravir, dolutegravir, elvitegravir, raltegravir",INSTI,True,2.13,16.742628002166747
+IN,upper,E138K-Q148H,"bictegravir, cabotegravir, dolutegravir, elvitegravir, raltegravir",INSTI,155,1.4023770276924166,True,"cabotegravir, dolutegravir, elvitegravir, raltegravir",INSTI,True,2.36,15.800467252731323
+IN,upper,G140A-Q148R,"bictegravir, cabotegravir, dolutegravir, elvitegravir, raltegravir",INSTI,155,1.3797238230825284,True,"cabotegravir, dolutegravir, elvitegravir, raltegravir",INSTI,True,4.91,11.608012986183164
+IN,upper,T97A-Y143S,"cabotegravir, elvitegravir, raltegravir",INSTI,119,1.3570899789603286,False,,not listed,False,2.16,10.394344711303711
+IN,upper,E138K-Q148R,"bictegravir, cabotegravir, dolutegravir, elvitegravir, raltegravir",INSTI,155,1.320850980816697,True,"cabotegravir, dolutegravir, elvitegravir, raltegravir",INSTI,True,3.53,13.569714248180386
+IN,upper,S147G-Q148R,"bictegravir, cabotegravir, dolutegravir, elvitegravir, raltegravir",INSTI,140,1.2645404392083142,True,"bictegravir, cabotegravir, dolutegravir, elvitegravir, raltegravir",INSTI,True,2.65,11.91740596294403
+IN,upper,V54I-G140C,"bictegravir, cabotegravir, dolutegravir, elvitegravir, raltegravir",INSTI,148,1.2610798819935216,True,"bictegravir, cabotegravir, dolutegravir, elvitegravir, raltegravir",INSTI,True,2.03,11.341738688945767
+IN,upper,T97A-Y143C,"cabotegravir, elvitegravir, raltegravir",INSTI,119,1.2515588220569838,False,,not listed,False,2.07,10.798508942127224
+IN,upper,T97A-Y143R,"cabotegravir, elvitegravir, raltegravir",INSTI,155,1.2281096862907344,True,"cabotegravir, dolutegravir, elvitegravir, raltegravir",INSTI,True,2.84,11.77109007835388
+IN,upper,T97A-Y143R,"cabotegravir, elvitegravir, raltegravir",INSTI,148,1.222171861537894,True,"bictegravir, cabotegravir, dolutegravir, elvitegravir, raltegravir",INSTI,True,2.84,11.77109007835388
+IN,upper,G140C-Q148R,"bictegravir, cabotegravir, dolutegravir, elvitegravir, raltegravir",INSTI,155,1.219642542812736,True,"cabotegravir, dolutegravir, elvitegravir, raltegravir",INSTI,True,2.99,11.228775572776794
+IN,upper,S147G-Q148R,"bictegravir, cabotegravir, dolutegravir, elvitegravir, raltegravir",INSTI,138,1.1475906472480306,True,"bictegravir, cabotegravir, dolutegravir, elvitegravir, raltegravir",INSTI,True,2.65,11.91740596294403
+IN,upper,G140A-Q148K,"bictegravir, cabotegravir, dolutegravir, elvitegravir, raltegravir",INSTI,155,1.0952857586860052,True,"cabotegravir, dolutegravir, elvitegravir, raltegravir",INSTI,True,5.61,11.878794801235198
+IN,upper,T97A-Y143R,"cabotegravir, elvitegravir, raltegravir",INSTI,119,1.0872479474532362,False,,not listed,False,2.84,11.77109007835388
+IN,upper,T97A-Y143C,"cabotegravir, elvitegravir, raltegravir",INSTI,230,1.0783288678592455,False,,not listed,False,2.07,10.798508942127224
+IN,upper,S147G-Q148R,"bictegravir, cabotegravir, dolutegravir, elvitegravir, raltegravir",INSTI,155,1.0588915193364306,True,"cabotegravir, dolutegravir, elvitegravir, raltegravir",INSTI,True,2.65,11.91740596294403
+IN,upper,G140A-Q148K,"bictegravir, cabotegravir, dolutegravir, elvitegravir, raltegravir",INSTI,138,1.0568922902155213,True,"bictegravir, cabotegravir, dolutegravir, elvitegravir, raltegravir",INSTI,True,5.61,11.878794801235198
+IN,upper,T97A-Y143R,"cabotegravir, elvitegravir, raltegravir",INSTI,140,1.0392880115809071,True,"bictegravir, cabotegravir, dolutegravir, elvitegravir, raltegravir",INSTI,True,2.84,11.77109007835388
+IN,upper,E138K-Q148K,"bictegravir, cabotegravir, dolutegravir, elvitegravir, raltegravir",INSTI,155,1.036405454796088,True,"cabotegravir, dolutegravir, elvitegravir, raltegravir",INSTI,True,4.9,12.485106712579727
+IN,upper,G140A-Q148K,"bictegravir, cabotegravir, dolutegravir, elvitegravir, raltegravir",INSTI,124,1.004770850022876,False,,not listed,False,5.61,11.878794801235198
+IN,upper,L68V-E92Q,"elvitegravir, raltegravir",INSTI,148,0.9934991355840764,True,"bictegravir, cabotegravir, dolutegravir, elvitegravir, raltegravir",INSTI,True,2.25,10.543093788623807
+IN,upper,V54I-G140C,"bictegravir, cabotegravir, dolutegravir, elvitegravir, raltegravir",INSTI,124,0.9871827964889622,False,,not listed,False,2.03,11.341738688945767
+IN,upper,G140C-Q148R,"bictegravir, cabotegravir, dolutegravir, elvitegravir, raltegravir",INSTI,138,0.9864249509933557,True,"bictegravir, cabotegravir, dolutegravir, elvitegravir, raltegravir",INSTI,True,2.99,11.228775572776794
+IN,upper,G140S-Q148H,"bictegravir, cabotegravir, dolutegravir, elvitegravir, raltegravir",INSTI,143,0.9836701850778383,True,raltegravir,INSTI,True,8.51,10.264471149444578
+IN,upper,T97A-Y143S,"cabotegravir, elvitegravir, raltegravir",INSTI,155,0.965120648457886,True,"cabotegravir, dolutegravir, elvitegravir, raltegravir",INSTI,True,2.16,10.394344711303711
+IN,upper,Y143S-S230R,raltegravir,INSTI,151,0.9596060663606581,False,,not listed,False,3.7,10.371170389652253
+IN,upper,L68V-E92Q,"elvitegravir, raltegravir",INSTI,140,0.9468606633942173,True,"bictegravir, cabotegravir, dolutegravir, elvitegravir, raltegravir",INSTI,True,2.25,10.543093788623807
+IN,upper,Y143C-S230R,raltegravir,INSTI,148,0.9411741856749524,True,"bictegravir, cabotegravir, dolutegravir, elvitegravir, raltegravir",INSTI,True,6.38,11.258074128627776
+IN,upper,E92Q-K215R,"elvitegravir, raltegravir",INSTI,148,0.9043218622304094,True,"bictegravir, cabotegravir, dolutegravir, elvitegravir, raltegravir",INSTI,True,2.25,9.595318490266797
+IN,upper,T97A-Y143C,"cabotegravir, elvitegravir, raltegravir",INSTI,148,0.9042974023055896,True,"bictegravir, cabotegravir, dolutegravir, elvitegravir, raltegravir",INSTI,True,2.07,10.798508942127224
+IN,upper,G140A-Q148K,"bictegravir, cabotegravir, dolutegravir, elvitegravir, raltegravir",INSTI,72,0.9036177402885206,False,,not listed,False,5.61,11.878794801235198
+IN,upper,V54I-G140C,"bictegravir, cabotegravir, dolutegravir, elvitegravir, raltegravir",INSTI,155,0.9030358801036591,True,"cabotegravir, dolutegravir, elvitegravir, raltegravir",INSTI,True,2.03,11.341738688945767
+IN,upper,Y143C-S230R,raltegravir,INSTI,140,0.8980897448298709,True,"bictegravir, cabotegravir, dolutegravir, elvitegravir, raltegravir",INSTI,True,6.38,11.258074128627776
+IN,upper,L68V-E92Q,"elvitegravir, raltegravir",INSTI,101,0.8939659030197581,False,,not listed,False,2.25,10.543093788623807
+IN,upper,G140S-Q148R,"bictegravir, cabotegravir, dolutegravir, elvitegravir, raltegravir",INSTI,143,0.8859607760065249,True,raltegravir,INSTI,True,5.2,11.486692333221432
+IN,upper,S147G-Q148R,"bictegravir, cabotegravir, dolutegravir, elvitegravir, raltegravir",INSTI,39,0.8728487564174553,False,,not listed,False,2.65,11.91740596294403
+IN,upper,E92Q-K215R,"elvitegravir, raltegravir",INSTI,140,0.8557928145477365,True,"bictegravir, cabotegravir, dolutegravir, elvitegravir, raltegravir",INSTI,True,2.25,9.595318490266797
+IN,upper,Y143S-S230R,raltegravir,INSTI,97,0.8480234567984122,True,"cabotegravir, elvitegravir, raltegravir",INSTI,True,3.7,10.371170389652253
+IN,upper,Y143C-S230R,raltegravir,INSTI,151,0.8447382487639199,False,,not listed,False,6.38,11.258074128627776
+IN,upper,E138K-S147G,"bictegravir, cabotegravir, dolutegravir, elvitegravir, raltegravir",INSTI,140,0.8438941533484998,True,"bictegravir, cabotegravir, dolutegravir, elvitegravir, raltegravir",INSTI,True,2.66,9.497529315948487
+IN,upper,S147G-Q148R,"bictegravir, cabotegravir, dolutegravir, elvitegravir, raltegravir",INSTI,17,0.8366441772518844,False,,not listed,False,2.65,11.91740596294403
+IN,upper,G140A-Q148K,"bictegravir, cabotegravir, dolutegravir, elvitegravir, raltegravir",INSTI,119,0.8304992970528514,False,,not listed,False,5.61,11.878794801235198
+IN,upper,T97A-Y143S,"cabotegravir, elvitegravir, raltegravir",INSTI,74,0.828671821026573,True,"cabotegravir, raltegravir",INSTI,True,2.16,10.394344711303711
+IN,upper,G140A-Q148R,"bictegravir, cabotegravir, dolutegravir, elvitegravir, raltegravir",INSTI,39,0.8229228153480447,False,,not listed,False,4.91,11.608012986183164
+IN,upper,Y143C-S230R,raltegravir,INSTI,97,0.8228439356756035,True,"cabotegravir, elvitegravir, raltegravir",INSTI,True,6.38,11.258074128627776
+IN,upper,L68V-E92Q,"elvitegravir, raltegravir",INSTI,17,0.8113355222713227,False,,not listed,False,2.25,10.543093788623807
+IN,upper,G140C-Q148R,"bictegravir, cabotegravir, dolutegravir, elvitegravir, raltegravir",INSTI,39,0.8068643546786148,False,,not listed,False,2.99,11.228775572776794
+IN,upper,G140A-Q148R,"bictegravir, cabotegravir, dolutegravir, elvitegravir, raltegravir",INSTI,138,0.8036892098898498,True,"bictegravir, cabotegravir, dolutegravir, elvitegravir, raltegravir",INSTI,True,4.91,11.608012986183164
+IN,upper,E92Q-K215R,"elvitegravir, raltegravir",INSTI,124,0.7928709276266003,False,,not listed,False,2.25,9.595318490266797
+IN,upper,E138K-S147G,"bictegravir, cabotegravir, dolutegravir, elvitegravir, raltegravir",INSTI,17,0.7855341341071781,False,,not listed,False,2.66,9.497529315948487
+IN,upper,V54I-G140C,"bictegravir, cabotegravir, dolutegravir, elvitegravir, raltegravir",INSTI,156,0.778006752486357,False,,not listed,False,2.03,11.341738688945767
+IN,upper,G140C-Q148R,"bictegravir, cabotegravir, dolutegravir, elvitegravir, raltegravir",INSTI,97,0.775434726009263,True,"cabotegravir, elvitegravir, raltegravir",INSTI,True,2.99,11.228775572776794
+IN,upper,E138A-Q148H,"bictegravir, cabotegravir, dolutegravir, elvitegravir, raltegravir",INSTI,124,0.7742809544732087,False,,not listed,False,2.13,16.742628002166747
+IN,upper,T97A-Y143S,"cabotegravir, elvitegravir, raltegravir",INSTI,230,0.7628762710374707,False,,not listed,False,2.16,10.394344711303711
+IN,upper,E138K-S147G,"bictegravir, cabotegravir, dolutegravir, elvitegravir, raltegravir",INSTI,155,0.7586599048342804,True,"cabotegravir, dolutegravir, elvitegravir, raltegravir",INSTI,True,2.66,9.497529315948487
+IN,upper,G140A-Q148R,"bictegravir, cabotegravir, dolutegravir, elvitegravir, raltegravir",INSTI,97,0.7492791473138286,True,"cabotegravir, elvitegravir, raltegravir",INSTI,True,4.91,11.608012986183164
+IN,upper,G140A-Q148R,"bictegravir, cabotegravir, dolutegravir, elvitegravir, raltegravir",INSTI,151,0.7389853668215729,False,,not listed,False,4.91,11.608012986183164
+IN,upper,T97A-Y143R,"cabotegravir, elvitegravir, raltegravir",INSTI,74,0.7376603495720142,True,"cabotegravir, raltegravir",INSTI,True,2.84,11.77109007835388
+IN,upper,T97A-Y143C,"cabotegravir, elvitegravir, raltegravir",INSTI,140,0.7208712435476164,True,"bictegravir, cabotegravir, dolutegravir, elvitegravir, raltegravir",INSTI,True,2.07,10.798508942127224
+IN,upper,E92Q-K215R,"elvitegravir, raltegravir",INSTI,31,0.7175188955173551,False,,not listed,False,2.25,9.595318490266797
+IN,upper,Y143S-S230R,raltegravir,INSTI,72,0.7151253093215403,False,,not listed,False,3.7,10.371170389652253
+IN,upper,E92Q-K215R,"elvitegravir, raltegravir",INSTI,24,0.7130075018958832,False,,not listed,False,2.25,9.595318490266797
+IN,upper,G140S-Q148R,"bictegravir, cabotegravir, dolutegravir, elvitegravir, raltegravir",INSTI,151,0.7060600409843655,False,,not listed,False,5.2,11.486692333221432
+IN,upper,G140C-Q148R,"bictegravir, cabotegravir, dolutegravir, elvitegravir, raltegravir",INSTI,14,0.7017848923179153,False,,not listed,False,2.99,11.228775572776794
+IN,upper,G140C-Q148R,"bictegravir, cabotegravir, dolutegravir, elvitegravir, raltegravir",INSTI,119,0.7008432844551662,False,,not listed,False,2.99,11.228775572776794
+IN,upper,G140S-Q148R,"bictegravir, cabotegravir, dolutegravir, elvitegravir, raltegravir",INSTI,97,0.6935869764567456,True,"cabotegravir, elvitegravir, raltegravir",INSTI,True,5.2,11.486692333221432
+IN,upper,E138K-Q148H,"bictegravir, cabotegravir, dolutegravir, elvitegravir, raltegravir",INSTI,143,0.6934624871944846,True,raltegravir,INSTI,True,2.36,15.800467252731323
+IN,upper,V54I-G140C,"bictegravir, cabotegravir, dolutegravir, elvitegravir, raltegravir",INSTI,122,0.6891705466547345,False,,not listed,False,2.03,11.341738688945767
+IN,upper,E138K-Q148R,"bictegravir, cabotegravir, dolutegravir, elvitegravir, raltegravir",INSTI,156,0.6785485394945331,False,,not listed,False,3.53,13.569714248180386
+IN,upper,E138K-S147G,"bictegravir, cabotegravir, dolutegravir, elvitegravir, raltegravir",INSTI,124,0.6780507763646814,False,,not listed,False,2.66,9.497529315948487
+IN,upper,G140C-Q148R,"bictegravir, cabotegravir, dolutegravir, elvitegravir, raltegravir",INSTI,151,0.6779863686155775,False,,not listed,False,2.99,11.228775572776794
+IN,upper,T97A-Y143R,"cabotegravir, elvitegravir, raltegravir",INSTI,31,0.677864568130053,False,,not listed,False,2.84,11.77109007835388
+IN,upper,G140S-Q148R,"bictegravir, cabotegravir, dolutegravir, elvitegravir, raltegravir",INSTI,138,0.6751811437684199,True,"bictegravir, cabotegravir, dolutegravir, elvitegravir, raltegravir",INSTI,True,5.2,11.486692333221432
+IN,upper,E92Q-K215R,"elvitegravir, raltegravir",INSTI,201,0.671959507903182,False,,not listed,False,2.25,9.595318490266797
+IN,upper,Y143S-S230R,raltegravir,INSTI,119,0.6700259552911808,False,,not listed,False,3.7,10.371170389652253
+IN,upper,T97A-Y143C,"cabotegravir, elvitegravir, raltegravir",INSTI,101,0.666896109707175,False,,not listed,False,2.07,10.798508942127224
+IN,upper,Y143C-S230R,raltegravir,INSTI,119,0.6624748879016001,False,,not listed,False,6.38,11.258074128627776
+IN,upper,E138K-Q148R,"bictegravir, cabotegravir, dolutegravir, elvitegravir, raltegravir",INSTI,72,0.6595697798722088,False,,not listed,False,3.53,13.569714248180386
+IN,upper,Y143S-S230R,raltegravir,INSTI,163,0.6502568382289275,False,,not listed,False,3.7,10.371170389652253
+IN,upper,T97A-Y143S,"cabotegravir, elvitegravir, raltegravir",INSTI,163,0.6495602263296155,False,,not listed,False,2.16,10.394344711303711
+IN,upper,E92Q-K215R,"elvitegravir, raltegravir",INSTI,20,0.6399615088196479,False,,not listed,False,2.25,9.595318490266797
+IN,upper,G140A-Q148R,"bictegravir, cabotegravir, dolutegravir, elvitegravir, raltegravir",INSTI,143,0.6295152522294131,True,raltegravir,INSTI,True,4.91,11.608012986183164
+IN,upper,L68V-E92Q,"elvitegravir, raltegravir",INSTI,122,0.6256620501209293,False,,not listed,False,2.25,10.543093788623807
+IN,upper,Y143S-S230R,raltegravir,INSTI,125,0.6200655850645098,False,,not listed,False,3.7,10.371170389652253
+PR,upper,G48V-I54A,"atazanavir, darunavir, fosamprenavir, indinavir, lopinavir, saquinavir, tipranavir",PI,82,2.3361183854711287,True,"atazanavir, fosamprenavir, indinavir, lopinavir, nelfinavir, saquinavir, tipranavir",PI,True,3.14,13.950734692811965
+PR,upper,G48V-V82A,"atazanavir, fosamprenavir, indinavir, lopinavir, nelfinavir, saquinavir, tipranavir",PI,54,1.842945477338376,True,"atazanavir, darunavir, fosamprenavir, indinavir, lopinavir, saquinavir, tipranavir",PI,True,2.32,12.917510461807256
+PR,upper,G48V-I54A,"atazanavir, darunavir, fosamprenavir, indinavir, lopinavir, saquinavir, tipranavir",PI,10,1.7214152736652033,True,"atazanavir, fosamprenavir, indinavir, lopinavir, nelfinavir, saquinavir, tipranavir",PI,True,3.14,13.950734692811965
+PR,upper,G48V-V82T,"atazanavir, fosamprenavir, indinavir, lopinavir, nelfinavir, saquinavir, tipranavir",PI,54,1.6599577174240336,True,"atazanavir, darunavir, fosamprenavir, indinavir, lopinavir, saquinavir, tipranavir",PI,True,1.96,11.858220982551577
+PR,upper,I54A-A71I,"atazanavir, darunavir, fosamprenavir, indinavir, lopinavir, nelfinavir, saquinavir, tipranavir",PI,82,1.5996712577506071,True,"atazanavir, fosamprenavir, indinavir, lopinavir, nelfinavir, saquinavir, tipranavir",PI,True,2.26,14.66784948706627
+PR,upper,I54A-V82A,"atazanavir, darunavir, fosamprenavir, indinavir, lopinavir, nelfinavir, saquinavir, tipranavir",PI,10,1.5121299555080172,True,"atazanavir, fosamprenavir, indinavir, lopinavir, nelfinavir, saquinavir, tipranavir",PI,True,2.95,13.413453674316417
+PR,upper,M46L-V82A,"atazanavir, fosamprenavir, indinavir, lopinavir, nelfinavir, saquinavir, tipranavir",PI,54,1.4243899858348836,True,"atazanavir, darunavir, fosamprenavir, indinavir, lopinavir, saquinavir, tipranavir",PI,True,1.81,11.838690304756165
+PR,upper,I54A-V82T,"atazanavir, darunavir, fosamprenavir, indinavir, lopinavir, nelfinavir, saquinavir, tipranavir",PI,10,1.4131136062333183,True,"atazanavir, fosamprenavir, indinavir, lopinavir, nelfinavir, saquinavir, tipranavir",PI,True,2.34,12.976646953821183
+PR,upper,V32I-I47V,"atazanavir, darunavir, fosamprenavir, indinavir, lopinavir, tipranavir",PI,46,1.359401156991219,True,"atazanavir, fosamprenavir, indinavir, lopinavir, nelfinavir, tipranavir",PI,True,3.45,7.3267999410629265
+PR,upper,I54A-A71I,"atazanavir, darunavir, fosamprenavir, indinavir, lopinavir, nelfinavir, saquinavir, tipranavir",PI,10,1.3397359217487028,True,"atazanavir, fosamprenavir, indinavir, lopinavir, nelfinavir, saquinavir, tipranavir",PI,True,2.26,14.66784948706627
+PR,upper,G48V-V82A,"atazanavir, fosamprenavir, indinavir, lopinavir, nelfinavir, saquinavir, tipranavir",PI,10,1.3337900900162287,True,"atazanavir, fosamprenavir, indinavir, lopinavir, nelfinavir, saquinavir, tipranavir",PI,True,2.32,12.917510461807256
+PR,upper,I54V-T91S,"atazanavir, darunavir, fosamprenavir, indinavir, lopinavir, saquinavir, tipranavir",PI,82,1.3174397489243732,True,"atazanavir, fosamprenavir, indinavir, lopinavir, nelfinavir, saquinavir, tipranavir",PI,True,1.93,12.277078998088838
+PR,upper,I54A-V82T,"atazanavir, darunavir, fosamprenavir, indinavir, lopinavir, nelfinavir, saquinavir, tipranavir",PI,71,1.2717541404479908,True,"indinavir, lopinavir, nelfinavir, saquinavir",PI,True,2.34,12.976646953821183
+PR,upper,I54A-V82A,"atazanavir, darunavir, fosamprenavir, indinavir, lopinavir, nelfinavir, saquinavir, tipranavir",PI,71,1.271223042824363,True,"indinavir, lopinavir, nelfinavir, saquinavir",PI,True,2.95,13.413453674316417
+PR,upper,I54A-V82A,"atazanavir, darunavir, fosamprenavir, indinavir, lopinavir, nelfinavir, saquinavir, tipranavir",PI,48,1.248146591213436,True,"atazanavir, saquinavir",PI,True,2.95,13.413453674316417
+PR,upper,G48V-V82T,"atazanavir, fosamprenavir, indinavir, lopinavir, nelfinavir, saquinavir, tipranavir",PI,10,1.2401049797332402,True,"atazanavir, fosamprenavir, indinavir, lopinavir, nelfinavir, saquinavir, tipranavir",PI,True,1.96,11.858220982551577
+PR,upper,I54V-T91S,"atazanavir, darunavir, fosamprenavir, indinavir, lopinavir, saquinavir, tipranavir",PI,10,1.2018221818178068,True,"atazanavir, fosamprenavir, indinavir, lopinavir, nelfinavir, saquinavir, tipranavir",PI,True,1.93,12.277078998088838
+PR,upper,L90M-C95F,"atazanavir, fosamprenavir, indinavir, lopinavir, nelfinavir, saquinavir",PI,24,1.1937778476109673,True,"atazanavir, indinavir, lopinavir, saquinavir",PI,True,2.0,10.874412250518798
+PR,upper,D30N-N88D,"atazanavir, nelfinavir",PI,82,1.1721626538837138,True,"atazanavir, fosamprenavir, indinavir, lopinavir, nelfinavir, saquinavir, tipranavir",PI,True,4.61,9.275145173072815
+PR,upper,I54A-V82T,"atazanavir, darunavir, fosamprenavir, indinavir, lopinavir, nelfinavir, saquinavir, tipranavir",PI,48,1.1661849288284873,True,"atazanavir, saquinavir",PI,True,2.34,12.976646953821183
+PR,upper,L90M-C95F,"atazanavir, fosamprenavir, indinavir, lopinavir, nelfinavir, saquinavir",PI,93,1.1472793834930641,False,,not listed,False,2.0,10.874412250518798
+PR,upper,M46L-K55R,"atazanavir, fosamprenavir, indinavir, lopinavir, nelfinavir, tipranavir",PI,82,1.1065042426504905,True,"atazanavir, fosamprenavir, indinavir, lopinavir, nelfinavir, saquinavir, tipranavir",PI,True,1.81,8.64023289680481
+PR,upper,M46I-L76V,"atazanavir, darunavir, fosamprenavir, indinavir, lopinavir, nelfinavir, tipranavir",PI,10,1.087369608224911,True,"atazanavir, fosamprenavir, indinavir, lopinavir, nelfinavir, saquinavir, tipranavir",PI,True,2.67,8.325915265083314
+PR,upper,I54V-V82A,"atazanavir, darunavir, fosamprenavir, indinavir, lopinavir, nelfinavir, saquinavir, tipranavir",PI,10,1.065936524077599,True,"atazanavir, fosamprenavir, indinavir, lopinavir, nelfinavir, saquinavir, tipranavir",PI,True,2.86,11.933600163459781
+PR,upper,M46I-N88T,"atazanavir, fosamprenavir, indinavir, lopinavir, nelfinavir, tipranavir",PI,10,1.05251752624435,True,"atazanavir, fosamprenavir, indinavir, lopinavir, nelfinavir, saquinavir, tipranavir",PI,True,2.24,7.375776812434199
+PR,upper,D30N-N88D,"atazanavir, nelfinavir",PI,73,0.994220224684074,True,"atazanavir, fosamprenavir, indinavir, lopinavir, saquinavir",PI,True,4.61,9.275145173072815
+PR,upper,I54V-V82T,"atazanavir, darunavir, fosamprenavir, indinavir, lopinavir, nelfinavir, saquinavir, tipranavir",PI,71,0.9826606761298531,True,"indinavir, lopinavir, nelfinavir, saquinavir",PI,True,2.48,11.198040258884431
+PR,upper,I54V-V82A,"atazanavir, darunavir, fosamprenavir, indinavir, lopinavir, nelfinavir, saquinavir, tipranavir",PI,71,0.975809213248593,True,"indinavir, lopinavir, nelfinavir, saquinavir",PI,True,2.86,11.933600163459781
+PR,upper,I54V-V82T,"atazanavir, darunavir, fosamprenavir, indinavir, lopinavir, nelfinavir, saquinavir, tipranavir",PI,10,0.9715586545946634,True,"atazanavir, fosamprenavir, indinavir, lopinavir, nelfinavir, saquinavir, tipranavir",PI,True,2.48,11.198040258884431
+PR,upper,V32I-M46I,"atazanavir, darunavir, fosamprenavir, indinavir, lopinavir, nelfinavir, tipranavir",PI,82,0.9620883522256054,True,"atazanavir, fosamprenavir, indinavir, lopinavir, nelfinavir, saquinavir, tipranavir",PI,True,1.98,7.312994217872621
+PR,upper,V32I-I47V,"atazanavir, darunavir, fosamprenavir, indinavir, lopinavir, tipranavir",PI,54,0.9508281259051379,True,"atazanavir, darunavir, fosamprenavir, indinavir, lopinavir, saquinavir, tipranavir",PI,True,3.45,7.3267999410629265
+PR,upper,V32I-M46I,"atazanavir, darunavir, fosamprenavir, indinavir, lopinavir, nelfinavir, tipranavir",PI,47,0.9395674052121428,True,"darunavir, fosamprenavir, lopinavir, tipranavir",PI,True,1.98,7.312994217872621
+PR,upper,D30N-K34Q,nelfinavir,PI,88,0.8455243894576203,True,"atazanavir, nelfinavir",PI,True,,8.766594099998489
+PR,upper,M46I-F53Y,"atazanavir, fosamprenavir, indinavir, lopinavir, nelfinavir, tipranavir",PI,10,0.8449730046246368,True,"atazanavir, fosamprenavir, indinavir, lopinavir, nelfinavir, saquinavir, tipranavir",PI,True,1.87,9.345060348510742
+PR,upper,M46L-V82A,"atazanavir, fosamprenavir, indinavir, lopinavir, nelfinavir, saquinavir, tipranavir",PI,24,0.8392448930226967,True,"atazanavir, indinavir, lopinavir, saquinavir",PI,True,1.81,11.838690304756165
+PR,upper,I54A-V82A,"atazanavir, darunavir, fosamprenavir, indinavir, lopinavir, nelfinavir, saquinavir, tipranavir",PI,84,0.8254715860884225,True,"atazanavir, darunavir, fosamprenavir, indinavir, lopinavir, nelfinavir, saquinavir, tipranavir",PI,True,2.95,13.413453674316417
+PR,upper,G48V-V82T,"atazanavir, fosamprenavir, indinavir, lopinavir, nelfinavir, saquinavir, tipranavir",PI,73,0.8173287718636756,True,"atazanavir, fosamprenavir, indinavir, lopinavir, saquinavir",PI,True,1.96,11.858220982551577
+PR,upper,I54A-A71I,"atazanavir, darunavir, fosamprenavir, indinavir, lopinavir, nelfinavir, saquinavir, tipranavir",PI,48,0.7879735346536926,True,"atazanavir, saquinavir",PI,True,2.26,14.66784948706627
+PR,upper,V32I-I47V,"atazanavir, darunavir, fosamprenavir, indinavir, lopinavir, tipranavir",PI,24,0.7761610034067732,True,"atazanavir, indinavir, lopinavir, saquinavir",PI,True,3.45,7.3267999410629265
+PR,upper,I54V-V82A,"atazanavir, darunavir, fosamprenavir, indinavir, lopinavir, nelfinavir, saquinavir, tipranavir",PI,48,0.7722622208393205,True,"atazanavir, saquinavir",PI,True,2.86,11.933600163459781
+PR,upper,I54A-A71I,"atazanavir, darunavir, fosamprenavir, indinavir, lopinavir, nelfinavir, saquinavir, tipranavir",PI,20,0.7674060351499018,True,"atazanavir, indinavir, lopinavir",PI,True,2.26,14.66784948706627
+PR,upper,I54A-V82A,"atazanavir, darunavir, fosamprenavir, indinavir, lopinavir, nelfinavir, saquinavir, tipranavir",PI,33,0.7643926676616197,True,"atazanavir, darunavir, lopinavir, tipranavir",PI,True,2.95,13.413453674316417
+PR,upper,G48V-V82A,"atazanavir, fosamprenavir, indinavir, lopinavir, nelfinavir, saquinavir, tipranavir",PI,73,0.7628279155719894,True,"atazanavir, fosamprenavir, indinavir, lopinavir, saquinavir",PI,True,2.32,12.917510461807256
+PR,upper,G48V-I54A,"atazanavir, darunavir, fosamprenavir, indinavir, lopinavir, saquinavir, tipranavir",PI,73,0.7594841627421482,True,"atazanavir, fosamprenavir, indinavir, lopinavir, saquinavir",PI,True,3.14,13.950734692811965
+PR,upper,L90M-C95F,"atazanavir, fosamprenavir, indinavir, lopinavir, nelfinavir, saquinavir",PI,63,0.7543771732393714,False,,not listed,False,2.0,10.874412250518798
+PR,upper,G48V-I54A,"atazanavir, darunavir, fosamprenavir, indinavir, lopinavir, saquinavir, tipranavir",PI,71,0.7448134618890835,True,"indinavir, lopinavir, nelfinavir, saquinavir",PI,True,3.14,13.950734692811965
+PR,upper,V32I-M46I,"atazanavir, darunavir, fosamprenavir, indinavir, lopinavir, nelfinavir, tipranavir",PI,54,0.7405912103591636,True,"atazanavir, darunavir, fosamprenavir, indinavir, lopinavir, saquinavir, tipranavir",PI,True,1.98,7.312994217872621
+PR,upper,M46L-V82A,"atazanavir, fosamprenavir, indinavir, lopinavir, nelfinavir, saquinavir, tipranavir",PI,71,0.7336571979577373,True,"indinavir, lopinavir, nelfinavir, saquinavir",PI,True,1.81,11.838690304756165
+RT,upper,L210W-T215Y,"zidovudine, stavudine, TAMs, 69 insertion complex",NRTI,41,2.447781043683891,True,"zidovudine, stavudine, TAMs, 69 insertion complex",NRTI,True,2.7,19.798120803385967
+RT,upper,K70R-K219Q,"zidovudine, stavudine, tenofovir, TAMs, 69 insertion complex",NRTI,67,2.3422669390239226,True,"zidovudine, stavudine",NRTI,True,2.72,13.396619755029676
+RT,upper,K70R-K219E,"zidovudine, stavudine, tenofovir, TAMs, 69 insertion complex",NRTI,67,2.2015817463096554,True,"zidovudine, stavudine",NRTI,True,2.77,10.78702906370163
+RT,upper,D67N-K70R,"zidovudine, stavudine, tenofovir, TAMs, 69 insertion complex",NRTI,219,2.1409673930599253,True,"zidovudine, stavudine, TAMs, 69 insertion complex",NRTI,True,2.21,11.365990698337555
+RT,upper,D67N-K219E,"zidovudine, stavudine, TAMs, 69 insertion complex",NRTI,70,1.9898726840135017,True,"zidovudine, stavudine, tenofovir, TAMs, 69 insertion complex",NRTI,True,2.38,11.900383949279785
+RT,upper,D67N-K219Q,"zidovudine, stavudine, TAMs, 69 insertion complex",NRTI,70,1.9747664723322966,True,"zidovudine, stavudine, tenofovir, TAMs, 69 insertion complex",NRTI,True,2.73,12.531078779697413
+RT,upper,M41L-T215Y,"zidovudine, stavudine, TAMs, 69 insertion complex",NRTI,210,1.8945727102269145,True,"zidovudine, stavudine, TAMs, 69 insertion complex",NRTI,True,3.44,17.861515203118323
+RT,upper,L210W-T215S,"zidovudine, stavudine, TAMs, 69 insertion complex",NRTI,41,1.8775608509076724,True,"zidovudine, stavudine, TAMs, 69 insertion complex",NRTI,True,2.28,15.29581645131111
+RT,upper,M41L-T215S,"zidovudine, stavudine, TAMs, 69 insertion complex",NRTI,210,1.7093856686459759,True,"zidovudine, stavudine, TAMs, 69 insertion complex",NRTI,True,2.27,14.21232464760542
+RT,upper,L74V-L100I,"didanosine, abacavir, efavirenz, etravirine, nevirapine, rilpivirine",NNRTI/NRTI,103,1.5226964093380488,True,"efavirenz, nevirapine",NNRTI,True,2.04,6.788409054279325
+RT,upper,M41L-T215F,"zidovudine, stavudine, TAMs, 69 insertion complex",NRTI,210,1.2597866681652257,True,"zidovudine, stavudine, TAMs, 69 insertion complex",NRTI,True,2.48,14.915850511193272
+RT,upper,K101E-G190S,"doravirine, efavirenz, etravirine, nevirapine, rilpivirine",NNRTI,103,1.2117313730963322,True,"efavirenz, nevirapine",NNRTI,True,3.3,6.432056581974028
+RT,upper,K101E-E138A,"efavirenz, etravirine, nevirapine, rilpivirine",NNRTI,190,1.119406921252848,True,"doravirine, efavirenz, etravirine, nevirapine",NNRTI,True,1.27,5.889556777477263
+RT,upper,K101E-E138K,"efavirenz, etravirine, nevirapine, rilpivirine",NNRTI,190,1.0750164014706418,True,"doravirine, efavirenz, etravirine, nevirapine",NNRTI,True,1.15,6.113831520080566
+RT,upper,D67N-K219E,"zidovudine, stavudine, TAMs, 69 insertion complex",NRTI,215,1.0660227840193732,True,"zidovudine, stavudine, TAMs, 69 insertion complex",NRTI,True,2.38,11.900383949279785
+RT,upper,Y181C-G190A,"doravirine, efavirenz, etravirine, nevirapine, rilpivirine",NNRTI,101,1.0349560098817354,True,"efavirenz, etravirine, nevirapine, rilpivirine",NNRTI,True,1.19,7.393808364868164
+RT,upper,L210W-T215Y,"zidovudine, stavudine, TAMs, 69 insertion complex",NRTI,214,1.0139649207924393,False,,not listed,False,2.7,19.798120803385967
+RT,upper,K103S-P225H,"doravirine, efavirenz, nevirapine",NNRTI,184,0.9996129644142497,True,"abacavir, emtricitabine/lamivudine",NRTI,False,1.65,6.3897693037986745
+RT,upper,V75I-Q151M,151 complex,NRTI,116,0.9479123645736536,True,151 complex,NRTI,True,1.87,5.659520685672755
+RT,upper,L100I-K103S,"efavirenz, etravirine, nevirapine, rilpivirine",NNRTI,181,0.9433318857330723,True,"efavirenz, etravirine, nevirapine, rilpivirine",NNRTI,True,1.36,5.86567032933235
+RT,upper,V108I-H221Y,"efavirenz, nevirapine, rilpivirine",NNRTI,181,0.9049088771030628,True,"efavirenz, etravirine, nevirapine, rilpivirine",NNRTI,True,1.49,5.3837415933609005
+RT,upper,D67N-K219Q,"zidovudine, stavudine, TAMs, 69 insertion complex",NRTI,218,0.8763302578444575,False,,not listed,False,2.73,12.531078779697413
+RT,upper,K65R-S68N,"stavudine, didanosine, abacavir, emtricitabine/lamivudine, tenofovir",NRTI,215,0.8705809467888551,True,"zidovudine, stavudine, TAMs, 69 insertion complex",NRTI,True,2.63,7.125157594680786
+RT,upper,M41L-T215Y,"zidovudine, stavudine, TAMs, 69 insertion complex",NRTI,44,0.8312761230487175,False,,not listed,False,3.44,17.861515203118323
+RT,upper,K101P-D192N,"efavirenz, etravirine, nevirapine, rilpivirine",NNRTI,103,0.8302571801915465,True,"efavirenz, nevirapine",NNRTI,True,1.06,4.458551800251005
+RT,upper,M41L-T215Y,"zidovudine, stavudine, TAMs, 69 insertion complex",NRTI,214,0.8294985828599769,False,,not listed,False,3.44,17.861515203118323
+RT,upper,L100I-K103N,"efavirenz, etravirine, nevirapine, rilpivirine",NNRTI,74,0.8163285460181201,True,"didanosine, abacavir",NRTI,False,2.59,6.117739653587337
+RT,upper,K103N-P225H,"doravirine, efavirenz, nevirapine",NNRTI,184,0.8146776900263198,True,"abacavir, emtricitabine/lamivudine",NRTI,False,2.64,6.905366504192351
+RT,upper,K70R-K219Q,"zidovudine, stavudine, tenofovir, TAMs, 69 insertion complex",NRTI,215,0.8059973134431868,True,"zidovudine, stavudine, TAMs, 69 insertion complex",NRTI,True,2.72,13.396619755029676
+RT,upper,K70R-K219Q,"zidovudine, stavudine, tenofovir, TAMs, 69 insertion complex",NRTI,210,0.8054619426383708,True,"zidovudine, stavudine, TAMs, 69 insertion complex",NRTI,True,2.72,13.396619755029676
+RT,upper,L210W-T215Y,"zidovudine, stavudine, TAMs, 69 insertion complex",NRTI,118,0.8042280394514111,False,,not listed,False,2.7,19.798120803385967
+RT,upper,M41L-T215F,"zidovudine, stavudine, TAMs, 69 insertion complex",NRTI,67,0.7988814089630469,True,"zidovudine, stavudine",NRTI,True,2.48,14.915850511193272
+RT,upper,D67N-K219Q,"zidovudine, stavudine, TAMs, 69 insertion complex",NRTI,215,0.7977906809639232,True,"zidovudine, stavudine, TAMs, 69 insertion complex",NRTI,True,2.73,12.531078779697413
+RT,upper,M41L-T215Y,"zidovudine, stavudine, TAMs, 69 insertion complex",NRTI,43,0.7826142888071316,False,,not listed,False,3.44,17.861515203118323
+RT,upper,L210W-T215Y,"zidovudine, stavudine, TAMs, 69 insertion complex",NRTI,44,0.779927667170507,False,,not listed,False,2.7,19.798120803385967
+RT,upper,L210W-T215Y,"zidovudine, stavudine, TAMs, 69 insertion complex",NRTI,67,0.7710072267194179,True,"zidovudine, stavudine",NRTI,True,2.7,19.798120803385967
+RT,upper,L100I-K103R,"efavirenz, etravirine, nevirapine, rilpivirine",NNRTI,74,0.759291049874349,True,"didanosine, abacavir",NRTI,False,1.49,4.7139384865760805
+RT,upper,K101E-G190A,"doravirine, efavirenz, etravirine, nevirapine, rilpivirine",NNRTI,103,0.7478021465278564,True,"efavirenz, nevirapine",NNRTI,True,2.64,6.042242121696472
+RT,upper,K70R-K219E,"zidovudine, stavudine, tenofovir, TAMs, 69 insertion complex",NRTI,215,0.7460448844005192,True,"zidovudine, stavudine, TAMs, 69 insertion complex",NRTI,True,2.77,10.78702906370163
+RT,upper,K101E-G190A,"doravirine, efavirenz, etravirine, nevirapine, rilpivirine",NNRTI,181,0.7454436642536485,True,"efavirenz, etravirine, nevirapine, rilpivirine",NNRTI,True,2.64,6.042242121696472
+RT,upper,M41L-T215F,"zidovudine, stavudine, TAMs, 69 insertion complex",NRTI,43,0.7407844267512083,False,,not listed,False,2.48,14.915850511193272
+RT,upper,K101P-K103S,"efavirenz, etravirine, nevirapine, rilpivirine",NNRTI,190,0.7336127303138522,True,"doravirine, efavirenz, etravirine, nevirapine",NNRTI,True,2.35,5.6058508276939385
+RT,upper,L210W-T215Y,"zidovudine, stavudine, TAMs, 69 insertion complex",NRTI,43,0.7177322643686839,False,,not listed,False,2.7,19.798120803385967
+RT,upper,K103S-D192N,"efavirenz, nevirapine",NNRTI,190,0.7164837366113954,True,"doravirine, efavirenz, etravirine, nevirapine",NNRTI,True,1.48,4.907657265663146
+RT,upper,K70R-K219Q,"zidovudine, stavudine, tenofovir, TAMs, 69 insertion complex",NRTI,218,0.7153039492213547,False,,not listed,False,2.72,13.396619755029676
+RT,upper,E138A-G190E,"doravirine, efavirenz, etravirine, nevirapine, rilpivirine",NNRTI,103,0.7127917526796156,True,"efavirenz, nevirapine",NNRTI,True,1.09,5.727768611907957
+RT,upper,V75I-Q151M,151 complex,NRTI,77,0.6941850627095888,True,151 complex,NRTI,True,1.87,5.659520685672755
+RT,upper,M41L-T215Y,"zidovudine, stavudine, TAMs, 69 insertion complex",NRTI,67,0.6935636797925773,True,"zidovudine, stavudine",NRTI,True,3.44,17.861515203118323
+RT,upper,K101E-E138K,"efavirenz, etravirine, nevirapine, rilpivirine",NNRTI,103,0.6831934647546255,True,"efavirenz, nevirapine",NNRTI,True,1.15,6.113831520080566
+RT,upper,K101E-E138A,"efavirenz, etravirine, nevirapine, rilpivirine",NNRTI,103,0.6803275453272154,True,"efavirenz, nevirapine",NNRTI,True,1.27,5.889556777477263
+RT,upper,E138A-G190E,"doravirine, efavirenz, etravirine, nevirapine, rilpivirine",NNRTI,101,0.6779327092615292,True,"efavirenz, etravirine, nevirapine, rilpivirine",NNRTI,True,1.09,5.727768611907957
+RT,upper,V108I-H221Y,"efavirenz, nevirapine, rilpivirine",NNRTI,103,0.6763693839076523,True,"efavirenz, nevirapine",NNRTI,True,1.49,5.3837415933609005
+RT,upper,Y181C-G190A,"doravirine, efavirenz, etravirine, nevirapine, rilpivirine",NNRTI,100,0.6762324212177949,True,"efavirenz, etravirine, nevirapine, rilpivirine",NNRTI,True,1.19,7.393808364868164
+RT,upper,L100I-K103S,"efavirenz, etravirine, nevirapine, rilpivirine",NNRTI,74,0.6675832105721755,True,"didanosine, abacavir",NRTI,False,1.36,5.86567032933235
+RT,upper,D67N-K70R,"zidovudine, stavudine, tenofovir, TAMs, 69 insertion complex",NRTI,215,0.659506526960793,True,"zidovudine, stavudine, TAMs, 69 insertion complex",NRTI,True,2.21,11.365990698337555
+RT,upper,L74V-Y115F,"didanosine, abacavir",NRTI,181,0.6594091875622189,True,"efavirenz, etravirine, nevirapine, rilpivirine",NNRTI,False,2.13,4.987744891643523
+RT,upper,L210W-T215S,"zidovudine, stavudine, TAMs, 69 insertion complex",NRTI,118,0.6560778024603059,False,,not listed,False,2.28,15.29581645131111
+RT,upper,L74V-Y115F,"didanosine, abacavir",NRTI,184,0.654687245737914,True,"abacavir, emtricitabine/lamivudine",NRTI,True,2.13,4.987744891643523
+RT,upper,M41L-T215S,"zidovudine, stavudine, TAMs, 69 insertion complex",NRTI,44,0.6542948864842166,False,,not listed,False,2.27,14.21232464760542
+RT,upper,M41L-T215S,"zidovudine, stavudine, TAMs, 69 insertion complex",NRTI,43,0.6532945274810207,False,,not listed,False,2.27,14.21232464760542
+RT,upper,E138A-G190E,"doravirine, efavirenz, etravirine, nevirapine, rilpivirine",NNRTI,181,0.6531152170259076,True,"efavirenz, etravirine, nevirapine, rilpivirine",NNRTI,True,1.09,5.727768611907957
+RT,upper,L100I-K103N,"efavirenz, etravirine, nevirapine, rilpivirine",NNRTI,181,0.6497457061664969,True,"efavirenz, etravirine, nevirapine, rilpivirine",NNRTI,True,2.59,6.117739653587337
+RT,upper,V75I-F77L,151 complex,NRTI,74,0.6494273870218871,True,"didanosine, abacavir",NRTI,False,2.53,4.376871573925015
+RT,upper,K65R-S68N,"stavudine, didanosine, abacavir, emtricitabine/lamivudine, tenofovir",NRTI,181,0.6464137927595874,True,"efavirenz, etravirine, nevirapine, rilpivirine",NNRTI,False,2.63,7.125157594680786
+RT,upper,D67N-K219E,"zidovudine, stavudine, TAMs, 69 insertion complex",NRTI,218,0.6457625285950924,False,,not listed,False,2.38,11.900383949279785
+RT,upper,K103S-G190A,"doravirine, efavirenz, etravirine, nevirapine",NNRTI,101,0.6448419984498995,True,"efavirenz, etravirine, nevirapine, rilpivirine",NNRTI,True,1.72,5.089470529556274
+RT,upper,D67N-K219Q,"zidovudine, stavudine, TAMs, 69 insertion complex",NRTI,69,0.640372101703134,True,69 insertion complex,NRTI,True,2.73,12.531078779697413
+RT,upper,L210W-T215S,"zidovudine, stavudine, TAMs, 69 insertion complex",NRTI,67,0.6402849552313925,True,"zidovudine, stavudine",NRTI,True,2.28,15.29581645131111
+RT,upper,L210W-T215Y,"zidovudine, stavudine, TAMs, 69 insertion complex",NRTI,219,0.6386886291528779,True,"zidovudine, stavudine, TAMs, 69 insertion complex",NRTI,True,2.7,19.798120803385967
+RT,upper,V75I-Q151M,151 complex,NRTI,62,0.6378002299288981,True,"69 insertion complex, 151 complex",NRTI,True,1.87,5.659520685672755
+RT,upper,M41L-T215F,"zidovudine, stavudine, TAMs, 69 insertion complex",NRTI,208,0.6277075057801247,False,,not listed,False,2.48,14.915850511193272
+RT,upper,Y181C-H221Y,"efavirenz, etravirine, nevirapine, rilpivirine",NNRTI,108,0.6275460521889721,True,"efavirenz, nevirapine",NNRTI,True,1.76,5.237712478637692
+RT,upper,F116Y-Q151M,151 complex,NRTI,75,0.6261288073426248,True,151 complex,NRTI,True,4.38,7.385042643547054
+RT,upper,K101P-K103S,"efavirenz, etravirine, nevirapine, rilpivirine",NNRTI,181,0.6247075722740943,True,"efavirenz, etravirine, nevirapine, rilpivirine",NNRTI,True,2.35,5.6058508276939385
+RT,upper,L210W-T215S,"zidovudine, stavudine, TAMs, 69 insertion complex",NRTI,214,0.6218918456797338,False,,not listed,False,2.28,15.29581645131111
+RT,upper,K101P-K103S,"efavirenz, etravirine, nevirapine, rilpivirine",NNRTI,215,0.6213802716774146,True,"zidovudine, stavudine, TAMs, 69 insertion complex",NRTI,False,2.35,5.6058508276939385
+RT,upper,L100I-K103N,"efavirenz, etravirine, nevirapine, rilpivirine",NNRTI,190,0.6179313787863261,True,"doravirine, efavirenz, etravirine, nevirapine",NNRTI,True,2.59,6.117739653587337
+RT,upper,D67N-K70R,"zidovudine, stavudine, tenofovir, TAMs, 69 insertion complex",NRTI,69,0.6143944525116312,True,69 insertion complex,NRTI,True,2.21,11.365990698337555
+RT,upper,K103S-P225H,"doravirine, efavirenz, nevirapine",NNRTI,181,0.613610894385102,True,"efavirenz, etravirine, nevirapine, rilpivirine",NNRTI,True,1.65,6.3897693037986745
+RT,upper,V75I-F77L,151 complex,NRTI,151,0.6077549919160662,True,151 complex,NRTI,True,2.53,4.376871573925015
+RT,upper,L210W-T215S,"zidovudine, stavudine, TAMs, 69 insertion complex",NRTI,44,0.6030279564213971,False,,not listed,False,2.28,15.29581645131111
+RT,upper,K70R-K219Q,"zidovudine, stavudine, tenofovir, TAMs, 69 insertion complex",NRTI,69,0.5989921833629811,True,69 insertion complex,NRTI,True,2.72,13.396619755029676
+RT,upper,F116Y-Q151M,151 complex,NRTI,74,0.5963515803482036,True,"didanosine, abacavir",NRTI,False,4.38,7.385042643547054
+RT,upper,K65R-S68N,"stavudine, didanosine, abacavir, emtricitabine/lamivudine, tenofovir",NRTI,67,0.5925709294424579,True,"zidovudine, stavudine",NRTI,True,2.63,7.125157594680786
+RT,upper,L210W-T215S,"zidovudine, stavudine, TAMs, 69 insertion complex",NRTI,43,0.586228425680425,False,,not listed,False,2.28,15.29581645131111
+RT,upper,K101E-G190S,"doravirine, efavirenz, etravirine, nevirapine, rilpivirine",NNRTI,181,0.5840885115822664,True,"efavirenz, etravirine, nevirapine, rilpivirine",NNRTI,True,3.3,6.432056581974028
+RT,upper,L74V-Y115F,"didanosine, abacavir",NRTI,100,0.578402595768892,True,"efavirenz, etravirine, nevirapine, rilpivirine",NNRTI,False,2.13,4.987744891643523
+RT,upper,F116Y-Q151M,151 complex,NRTI,68,0.5766850559207711,False,,not listed,False,4.38,7.385042643547054
+RT,upper,M41L-T215Y,"zidovudine, stavudine, TAMs, 69 insertion complex",NRTI,208,0.5715896844194543,False,,not listed,False,3.44,17.861515203118323
+RT,upper,V75I-Q151M,151 complex,NRTI,74,0.5713757900593379,True,"didanosine, abacavir",NRTI,False,1.87,5.659520685672755
+RT,upper,M41L-T215S,"zidovudine, stavudine, TAMs, 69 insertion complex",NRTI,208,0.5642835416680927,False,,not listed,False,2.27,14.21232464760542
+RT,upper,M41L-T215S,"zidovudine, stavudine, TAMs, 69 insertion complex",NRTI,67,0.5632487574049,True,"zidovudine, stavudine",NRTI,True,2.27,14.21232464760542
+RT,upper,L100I-K103R,"efavirenz, etravirine, nevirapine, rilpivirine",NNRTI,181,0.5588274543317634,True,"efavirenz, etravirine, nevirapine, rilpivirine",NNRTI,True,1.49,4.7139384865760805
+RT,upper,M41L-T215Y,"zidovudine, stavudine, TAMs, 69 insertion complex",NRTI,118,0.5558590278467812,False,,not listed,False,3.44,17.861515203118323
+RT,upper,V108I-V189I,"efavirenz, nevirapine",NNRTI,103,0.5491690796011637,True,"efavirenz, nevirapine",NNRTI,True,1.17,5.370186924934387
+RT,upper,K70R-K219E,"zidovudine, stavudine, tenofovir, TAMs, 69 insertion complex",NRTI,69,0.5461872576655215,True,69 insertion complex,NRTI,True,2.77,10.78702906370163
+RT,upper,M41L-T215F,"zidovudine, stavudine, TAMs, 69 insertion complex",NRTI,118,0.5457852682055314,False,,not listed,False,2.48,14.915850511193272
+RT,upper,M41L-T215F,"zidovudine, stavudine, TAMs, 69 insertion complex",NRTI,74,0.5333126649863795,True,"didanosine, abacavir",NRTI,False,2.48,14.915850511193272
+RT,upper,F116Y-Q151M,151 complex,NRTI,77,0.5265483739725082,True,151 complex,NRTI,True,4.38,7.385042643547054
+RT,upper,F116Y-Q151R,151 complex,NRTI,41,0.5232772962178331,True,"zidovudine, stavudine, TAMs, 69 insertion complex",NRTI,False,1.99,5.33411766886711
+RT,upper,L210W-T215Y,"zidovudine, stavudine, TAMs, 69 insertion complex",NRTI,208,0.5189462672733727,False,,not listed,False,2.7,19.798120803385967
+RT,upper,K101P-K103S,"efavirenz, etravirine, nevirapine, rilpivirine",NNRTI,184,0.5184963208326248,True,"abacavir, emtricitabine/lamivudine",NRTI,False,2.35,5.6058508276939385
+RT,upper,K103N-P225H,"doravirine, efavirenz, nevirapine",NNRTI,100,0.5143431552828694,True,"efavirenz, etravirine, nevirapine, rilpivirine",NNRTI,True,2.64,6.905366504192351
+RT,upper,L100I-K103N,"efavirenz, etravirine, nevirapine, rilpivirine",NNRTI,225,0.5136054975725043,True,"doravirine, efavirenz",NNRTI,True,2.59,6.117739653587337
+RT,upper,L210W-T215S,"zidovudine, stavudine, TAMs, 69 insertion complex",NRTI,208,0.5106622964161054,False,,not listed,False,2.28,15.29581645131111
+RT,upper,F116Y-Q151M,151 complex,NRTI,41,0.5069304932693149,True,"zidovudine, stavudine, TAMs, 69 insertion complex",NRTI,False,4.38,7.385042643547054
+RT,upper,L100I-K103N,"efavirenz, etravirine, nevirapine, rilpivirine",NNRTI,101,0.5061968530915036,True,"efavirenz, etravirine, nevirapine, rilpivirine",NNRTI,True,2.59,6.117739653587337
+RT,upper,V75I-F77L,151 complex,NRTI,116,0.5061799484548735,True,151 complex,NRTI,True,2.53,4.376871573925015
+RT,upper,Y181C-G190A,"doravirine, efavirenz, etravirine, nevirapine, rilpivirine",NNRTI,74,0.5025227344070494,True,"didanosine, abacavir",NRTI,False,1.19,7.393808364868164
+RT,upper,A62V-V75I,"69 insertion complex, 151 complex",NRTI,60,0.5021787262785404,False,,not listed,False,2.04,4.672923743724821
+RT,upper,K103S-G190A,"doravirine, efavirenz, etravirine, nevirapine",NNRTI,215,0.5007438328890763,True,"zidovudine, stavudine, TAMs, 69 insertion complex",NRTI,False,1.72,5.089470529556274
+RT,upper,Y181C-H221Y,"efavirenz, etravirine, nevirapine, rilpivirine",NNRTI,74,0.49851722925426545,True,"didanosine, abacavir",NRTI,False,1.76,5.237712478637692
+RT,upper,M41L-T215Y,"zidovudine, stavudine, TAMs, 69 insertion complex",NRTI,74,0.4981118004255358,True,"didanosine, abacavir",NRTI,False,3.44,17.861515203118323
+RT,upper,M41L-T215Y,"zidovudine, stavudine, TAMs, 69 insertion complex",NRTI,39,0.4943492277653775,False,,not listed,False,3.44,17.861515203118323
+RT,upper,V75I-F77L,151 complex,NRTI,62,0.4935837071215048,True,"69 insertion complex, 151 complex",NRTI,True,2.53,4.376871573925015
+RT,upper,V108I-V189I,"efavirenz, nevirapine",NNRTI,184,0.49340378988330574,True,"abacavir, emtricitabine/lamivudine",NRTI,False,1.17,5.370186924934387
+RT,upper,K70R-K219Q,"zidovudine, stavudine, tenofovir, TAMs, 69 insertion complex",NRTI,214,0.4900703019158442,False,,not listed,False,2.72,13.396619755029676
+RT,upper,V108I-L109V,"efavirenz, nevirapine",NNRTI,181,0.4879422013557349,True,"efavirenz, etravirine, nevirapine, rilpivirine",NNRTI,True,1.06,6.480406528711319
+RT,upper,D67N-K219Q,"zidovudine, stavudine, TAMs, 69 insertion complex",NRTI,68,0.4870659391375374,False,,not listed,False,2.73,12.531078779697413
+RT,upper,V75I-I132L,151 complex,NRTI,103,0.48664334183624797,True,"efavirenz, nevirapine",NNRTI,False,2.9,4.310328435897826
+RT,upper,K70R-K219E,"zidovudine, stavudine, tenofovir, TAMs, 69 insertion complex",NRTI,218,0.4847655830441942,False,,not listed,False,2.77,10.78702906370163
+RT,upper,K103S-D192N,"efavirenz, nevirapine",NNRTI,101,0.48165413413336994,True,"efavirenz, etravirine, nevirapine, rilpivirine",NNRTI,True,1.48,4.907657265663146
+RT,upper,K103S-D177N,"efavirenz, nevirapine",NNRTI,100,0.4788198731794203,True,"efavirenz, etravirine, nevirapine, rilpivirine",NNRTI,True,1.18,4.834736275672911
+RT,upper,K103S-D192N,"efavirenz, nevirapine",NNRTI,184,0.47825146203729557,True,"abacavir, emtricitabine/lamivudine",NRTI,False,1.48,4.907657265663146
+RT,upper,A62V-V75I,"69 insertion complex, 151 complex",NRTI,151,0.47506185063548984,True,151 complex,NRTI,True,2.04,4.672923743724821
+RT,upper,K103S-D177N,"efavirenz, nevirapine",NNRTI,101,0.473622759747493,True,"efavirenz, etravirine, nevirapine, rilpivirine",NNRTI,True,1.18,4.834736275672911
+RT,upper,L100I-K103S,"efavirenz, etravirine, nevirapine, rilpivirine",NNRTI,215,0.47169107041910113,True,"zidovudine, stavudine, TAMs, 69 insertion complex",NRTI,False,1.36,5.86567032933235
+RT,upper,L100I-K103S,"efavirenz, etravirine, nevirapine, rilpivirine",NNRTI,101,0.4698741794760813,True,"efavirenz, etravirine, nevirapine, rilpivirine",NNRTI,True,1.36,5.86567032933235
+RT,upper,M41L-T215F,"zidovudine, stavudine, TAMs, 69 insertion complex",NRTI,39,0.4658898430592507,False,,not listed,False,2.48,14.915850511193272
+RT,upper,K103S-P225H,"doravirine, efavirenz, nevirapine",NNRTI,101,0.465834716935964,True,"efavirenz, etravirine, nevirapine, rilpivirine",NNRTI,True,1.65,6.3897693037986745
+RT,upper,D67N-K70R,"zidovudine, stavudine, tenofovir, TAMs, 69 insertion complex",NRTI,218,0.46574554454540806,False,,not listed,False,2.21,11.365990698337555
+RT,upper,F116Y-Q151R,151 complex,NRTI,215,0.46509731851528807,True,"zidovudine, stavudine, TAMs, 69 insertion complex",NRTI,False,1.99,5.33411766886711
+RT,upper,F116Y-Q151L,151 complex,NRTI,75,0.46392784587932046,True,151 complex,NRTI,True,2.68,5.423892581462857
+RT,upper,K70R-K219E,"zidovudine, stavudine, tenofovir, TAMs, 69 insertion complex",NRTI,43,0.46138117958587604,False,,not listed,False,2.77,10.78702906370163
+RT,upper,A62V-V75I,"69 insertion complex, 151 complex",NRTI,74,0.4605419722932984,True,"didanosine, abacavir",NRTI,False,2.04,4.672923743724821
+RT,upper,Y181C-H221Y,"efavirenz, etravirine, nevirapine, rilpivirine",NNRTI,190,0.45903990802674893,True,"doravirine, efavirenz, etravirine, nevirapine",NNRTI,True,1.76,5.237712478637692
+RT,upper,D67N-K219Q,"zidovudine, stavudine, TAMs, 69 insertion complex",NRTI,60,0.4561217162137248,False,,not listed,False,2.73,12.531078779697413
+RT,upper,A62V-V75I,"69 insertion complex, 151 complex",NRTI,77,0.4557634403025645,True,151 complex,NRTI,True,2.04,4.672923743724821
+RT,upper,E138A-G190E,"doravirine, efavirenz, etravirine, nevirapine, rilpivirine",NNRTI,74,0.4540663404764361,True,"didanosine, abacavir",NRTI,False,1.09,5.727768611907957
+RT,upper,K103S-P225H,"doravirine, efavirenz, nevirapine",NNRTI,190,0.4534762652654779,True,"doravirine, efavirenz, etravirine, nevirapine",NNRTI,True,1.65,6.3897693037986745
+RT,upper,L74V-Y115F,"didanosine, abacavir",NRTI,70,0.45251558962910304,True,"zidovudine, stavudine, tenofovir, TAMs, 69 insertion complex",NRTI,False,2.13,4.987744891643523
+RT,upper,L210W-T215S,"zidovudine, stavudine, TAMs, 69 insertion complex",NRTI,70,0.4507056540347043,True,"zidovudine, stavudine, tenofovir, TAMs, 69 insertion complex",NRTI,True,2.28,15.29581645131111
+RT,upper,L210W-T215Y,"zidovudine, stavudine, TAMs, 69 insertion complex",NRTI,70,0.4505908721886066,True,"zidovudine, stavudine, tenofovir, TAMs, 69 insertion complex",NRTI,True,2.7,19.798120803385967
+RT,upper,F116Y-Q151M,151 complex,NRTI,215,0.4499785758011427,True,"zidovudine, stavudine, TAMs, 69 insertion complex",NRTI,False,4.38,7.385042643547054
+RT,upper,K70R-K219Q,"zidovudine, stavudine, tenofovir, TAMs, 69 insertion complex",NRTI,41,0.4493385154575026,True,"zidovudine, stavudine, TAMs, 69 insertion complex",NRTI,True,2.72,13.396619755029676
+RT,upper,M41L-T215F,"zidovudine, stavudine, TAMs, 69 insertion complex",NRTI,219,0.4426106778292119,True,"zidovudine, stavudine, TAMs, 69 insertion complex",NRTI,True,2.48,14.915850511193272
+RT,upper,M41L-T215S,"zidovudine, stavudine, TAMs, 69 insertion complex",NRTI,39,0.44024754040661596,False,,not listed,False,2.27,14.21232464760542
+RT,upper,Y181C-G190A,"doravirine, efavirenz, etravirine, nevirapine, rilpivirine",NNRTI,221,0.4394536471468112,True,rilpivirine,NNRTI,True,1.19,7.393808364868164
+RT,upper,V75I-Q151M,151 complex,NRTI,68,0.43939974867849363,False,,not listed,False,1.87,5.659520685672755
+RT,upper,L100I-K103R,"efavirenz, etravirine, nevirapine, rilpivirine",NNRTI,179,0.43939732213114263,True,"etravirine, rilpivirine",NNRTI,True,1.49,4.7139384865760805
+RT,upper,F116Y-Q151M,151 complex,NRTI,210,0.43842569838720563,True,"zidovudine, stavudine, TAMs, 69 insertion complex",NRTI,False,4.38,7.385042643547054
+RT,upper,K70R-K219E,"zidovudine, stavudine, tenofovir, TAMs, 69 insertion complex",NRTI,210,0.43803437034390547,True,"zidovudine, stavudine, TAMs, 69 insertion complex",NRTI,True,2.77,10.78702906370163
+RT,upper,M41L-T215S,"zidovudine, stavudine, TAMs, 69 insertion complex",NRTI,214,0.43746915769411204,False,,not listed,False,2.27,14.21232464760542
+RT,upper,D67N-K70R,"zidovudine, stavudine, tenofovir, TAMs, 69 insertion complex",NRTI,68,0.4369521692106531,False,,not listed,False,2.21,11.365990698337555
+RT,upper,V108I-H221Y,"efavirenz, nevirapine, rilpivirine",NNRTI,184,0.4335381460338869,True,"abacavir, emtricitabine/lamivudine",NRTI,False,1.49,5.3837415933609005
+RT,upper,K101E-G190A,"doravirine, efavirenz, etravirine, nevirapine, rilpivirine",NNRTI,100,0.4330190751858755,True,"efavirenz, etravirine, nevirapine, rilpivirine",NNRTI,True,2.64,6.042242121696472
+RT,upper,K103S-D177N,"efavirenz, nevirapine",NNRTI,181,0.43223038806197484,True,"efavirenz, etravirine, nevirapine, rilpivirine",NNRTI,True,1.18,4.834736275672911
+RT,upper,V75I-I132L,151 complex,NRTI,41,0.43080516071566094,True,"zidovudine, stavudine, TAMs, 69 insertion complex",NRTI,False,2.9,4.310328435897826
+RT,upper,K103S-D177N,"efavirenz, nevirapine",NNRTI,184,0.43070803303313954,True,"abacavir, emtricitabine/lamivudine",NRTI,False,1.18,4.834736275672911
+RT,upper,D67N-K219E,"zidovudine, stavudine, TAMs, 69 insertion complex",NRTI,60,0.4288028917620674,False,,not listed,False,2.38,11.900383949279785
+RT,upper,K103S-D192N,"efavirenz, nevirapine",NNRTI,181,0.4287578060388477,True,"efavirenz, etravirine, nevirapine, rilpivirine",NNRTI,True,1.48,4.907657265663146
+RT,upper,K101P-D192N,"efavirenz, etravirine, nevirapine, rilpivirine",NNRTI,181,0.4271124292252358,True,"efavirenz, etravirine, nevirapine, rilpivirine",NNRTI,True,1.06,4.458551800251005
+RT,upper,K103N-P225H,"doravirine, efavirenz, nevirapine",NNRTI,101,0.4241937115159862,True,"efavirenz, etravirine, nevirapine, rilpivirine",NNRTI,True,2.64,6.905366504192351
+RT,upper,K103N-P225H,"doravirine, efavirenz, nevirapine",NNRTI,190,0.42225988291626826,True,"doravirine, efavirenz, etravirine, nevirapine",NNRTI,True,2.64,6.905366504192351
+RT,upper,M41L-T215Y,"zidovudine, stavudine, TAMs, 69 insertion complex",NRTI,184,0.4175339149034608,True,"abacavir, emtricitabine/lamivudine",NRTI,False,3.44,17.861515203118323
+RT,upper,K103N-P225H,"doravirine, efavirenz, nevirapine",NNRTI,179,0.4118805761138808,True,"etravirine, rilpivirine",NNRTI,False,2.64,6.905366504192351
+RT,upper,K103S-D177N,"efavirenz, nevirapine",NNRTI,190,0.4117521210544743,True,"doravirine, efavirenz, etravirine, nevirapine",NNRTI,True,1.18,4.834736275672911
+RT,upper,M41L-T215S,"zidovudine, stavudine, TAMs, 69 insertion complex",NRTI,118,0.40772247754710705,False,,not listed,False,2.27,14.21232464760542
+RT,upper,Y181C-G190A,"doravirine, efavirenz, etravirine, nevirapine, rilpivirine",NNRTI,215,0.4059608628721751,True,"zidovudine, stavudine, TAMs, 69 insertion complex",NRTI,False,1.19,7.393808364868164
+RT,upper,M41L-T215F,"zidovudine, stavudine, TAMs, 69 insertion complex",NRTI,44,0.4048888219671866,False,,not listed,False,2.48,14.915850511193272
+RT,upper,L74V-L100I,"didanosine, abacavir, efavirenz, etravirine, nevirapine, rilpivirine",NNRTI/NRTI,41,0.40425631008112434,True,"zidovudine, stavudine, TAMs, 69 insertion complex",NRTI,False,2.04,6.788409054279325
+RT,upper,L210W-T215S,"zidovudine, stavudine, TAMs, 69 insertion complex",NRTI,211,0.4042270160341293,False,,not listed,False,2.28,15.29581645131111
+RT,upper,K101E-E138K,"efavirenz, etravirine, nevirapine, rilpivirine",NNRTI,181,0.3979398707350443,True,"efavirenz, etravirine, nevirapine, rilpivirine",NNRTI,True,1.15,6.113831520080566
+RT,upper,V108I-L109V,"efavirenz, nevirapine",NNRTI,189,0.39633432862687945,False,,not listed,False,1.06,6.480406528711319
+RT,upper,F116Y-Q151M,151 complex,NRTI,214,0.3962550833956523,False,,not listed,False,4.38,7.385042643547054
+RT,upper,F116Y-Q151L,151 complex,NRTI,74,0.3911700976585781,True,"didanosine, abacavir",NRTI,False,2.68,5.423892581462857
+RT,upper,D67N-K70R,"zidovudine, stavudine, tenofovir, TAMs, 69 insertion complex",NRTI,60,0.3909898278427425,False,,not listed,False,2.21,11.365990698337555
+RT,upper,V75I-I132L,151 complex,NRTI,74,0.3903898252989343,True,"didanosine, abacavir",NRTI,False,2.9,4.310328435897826
+RT,upper,L74V-L100I,"didanosine, abacavir, efavirenz, etravirine, nevirapine, rilpivirine",NNRTI/NRTI,115,0.3861795759943597,True,abacavir,NRTI,True,2.04,6.788409054279325
+RT,upper,L210W-T215Y,"zidovudine, stavudine, TAMs, 69 insertion complex",NRTI,211,0.38497404883454805,False,,not listed,False,2.7,19.798120803385967
+RT,upper,F116Y-Q151L,151 complex,NRTI,77,0.38471763145872445,True,151 complex,NRTI,True,2.68,5.423892581462857
+RT,upper,Y181C-G190A,"doravirine, efavirenz, etravirine, nevirapine, rilpivirine",NNRTI,188,0.3846097915708525,True,"doravirine, efavirenz, nevirapine, rilpivirine",NNRTI,True,1.19,7.393808364868164
+RT,upper,K103S-G190A,"doravirine, efavirenz, etravirine, nevirapine",NNRTI,188,0.38336605313388733,True,"doravirine, efavirenz, nevirapine, rilpivirine",NNRTI,True,1.72,5.089470529556274
+RT,upper,V75I-I132L,151 complex,NRTI,62,0.38152403993342293,True,"69 insertion complex, 151 complex",NRTI,True,2.9,4.310328435897826
+RT,upper,K101P-D192N,"efavirenz, etravirine, nevirapine, rilpivirine",NNRTI,215,0.3789360134639137,True,"zidovudine, stavudine, TAMs, 69 insertion complex",NRTI,False,1.06,4.458551800251005
+RT,upper,K103N-P225H,"doravirine, efavirenz, nevirapine",NNRTI,135,0.37696244303410403,False,,not listed,False,2.64,6.905366504192351
+IN,lower,Y143R-I151V,raltegravir,INSTI,189,0.00017771218054219142,False,,not listed,False,,10.623284339904785
+IN,lower,Y143R-I151V,raltegravir,INSTI,153,0.0002924348180410955,True,"bictegravir, cabotegravir, dolutegravir",INSTI,False,,10.623284339904785
+IN,lower,G140A-Q148R,"bictegravir, cabotegravir, dolutegravir, elvitegravir, raltegravir",INSTI,37,0.0002931328570415727,False,,not listed,False,4.91,11.608012986183164
+IN,lower,Y143R-I151V,raltegravir,INSTI,144,0.00037705352569563624,False,,not listed,False,,10.623284339904785
+IN,lower,Y143R-I151V,raltegravir,INSTI,261,0.000405103580939778,False,,not listed,False,,10.623284339904785
+IN,lower,Y143R-I151V,raltegravir,INSTI,51,0.0004624013597510372,False,,not listed,False,,10.623284339904785
+IN,lower,L68V-E92Q,"elvitegravir, raltegravir",INSTI,87,0.0004719229523960535,False,,not listed,False,2.25,10.543093788623807
+IN,lower,L68V-E92Q,"elvitegravir, raltegravir",INSTI,94,0.0005356334364875049,False,,not listed,False,2.25,10.543093788623807
+IN,lower,E138K-Q148K,"bictegravir, cabotegravir, dolutegravir, elvitegravir, raltegravir",INSTI,185,0.0006525519532076864,False,,not listed,False,4.9,12.485106712579727
+IN,lower,E138A-Q148H,"bictegravir, cabotegravir, dolutegravir, elvitegravir, raltegravir",INSTI,231,0.0007291242739362991,False,,not listed,False,2.13,16.742628002166747
+IN,lower,G140S-Q148H,"bictegravir, cabotegravir, dolutegravir, elvitegravir, raltegravir",INSTI,73,0.0007537319067444746,False,,not listed,False,8.51,10.264471149444578
+IN,lower,L68V-E92Q,"elvitegravir, raltegravir",INSTI,36,0.0007714242009999686,False,,not listed,False,2.25,10.543093788623807
+IN,lower,L68V-E92Q,"elvitegravir, raltegravir",INSTI,242,0.0007926229516387,False,,not listed,False,2.25,10.543093788623807
+IN,lower,V54I-G140C,"bictegravir, cabotegravir, dolutegravir, elvitegravir, raltegravir",INSTI,150,0.0008226903021581682,False,,not listed,False,2.03,11.341738688945767
+IN,lower,Y143R-I151V,raltegravir,INSTI,242,0.0008531783371146901,False,,not listed,False,,10.623284339904785
+IN,lower,E92Q-K215R,"elvitegravir, raltegravir",INSTI,36,0.0009231549394065569,False,,not listed,False,2.25,9.595318490266797
+IN,lower,L68V-E92Q,"elvitegravir, raltegravir",INSTI,139,0.0009281684297536273,False,,not listed,False,2.25,10.543093788623807
+IN,lower,T97A-Y143C,"cabotegravir, elvitegravir, raltegravir",INSTI,121,0.0009311018150954697,True,"elvitegravir, raltegravir",INSTI,True,2.07,10.798508942127224
+IN,lower,L68V-E92Q,"elvitegravir, raltegravir",INSTI,261,0.001086412249268669,False,,not listed,False,2.25,10.543093788623807
+IN,lower,V54I-G140C,"bictegravir, cabotegravir, dolutegravir, elvitegravir, raltegravir",INSTI,42,0.0011241433857166196,False,,not listed,False,2.03,11.341738688945767
+IN,lower,V54I-G140C,"bictegravir, cabotegravir, dolutegravir, elvitegravir, raltegravir",INSTI,36,0.001126411855236091,False,,not listed,False,2.03,11.341738688945767
+IN,lower,S147G-Q148R,"bictegravir, cabotegravir, dolutegravir, elvitegravir, raltegravir",INSTI,260,0.0011360473907787616,False,,not listed,False,2.65,11.91740596294403
+IN,lower,Y143R-I151V,raltegravir,INSTI,2,0.0011467529201290671,False,,not listed,False,,10.623284339904785
+IN,lower,L68V-E92Q,"elvitegravir, raltegravir",INSTI,114,0.0011610062819272797,False,,not listed,False,2.25,10.543093788623807
+IN,lower,E138K-S147G,"bictegravir, cabotegravir, dolutegravir, elvitegravir, raltegravir",INSTI,36,0.001187800192697536,False,,not listed,False,2.66,9.497529315948487
+IN,lower,G140S-Q148H,"bictegravir, cabotegravir, dolutegravir, elvitegravir, raltegravir",INSTI,34,0.00120169576062478,False,,not listed,False,8.51,10.264471149444578
+IN,lower,Y143R-I151V,raltegravir,INSTI,139,0.0012483968366432407,False,,not listed,False,,10.623284339904785
+IN,lower,E138K-Q148K,"bictegravir, cabotegravir, dolutegravir, elvitegravir, raltegravir",INSTI,224,0.001290054717364179,False,,not listed,False,4.9,12.485106712579727
+IN,lower,Y143R-I151V,raltegravir,INSTI,89,0.0013701761344180488,False,,not listed,False,,10.623284339904785
+IN,lower,L68V-E92Q,"elvitegravir, raltegravir",INSTI,8,0.0014189137180549013,False,,not listed,False,2.25,10.543093788623807
+IN,lower,Y143R-I151V,raltegravir,INSTI,94,0.0015007843800273258,False,,not listed,False,,10.623284339904785
+IN,lower,V54I-G140C,"bictegravir, cabotegravir, dolutegravir, elvitegravir, raltegravir",INSTI,12,0.0015890467997554242,False,,not listed,False,2.03,11.341738688945767
+IN,lower,T97A-Y143S,"cabotegravir, elvitegravir, raltegravir",INSTI,207,0.0016186070116416477,False,,not listed,False,2.16,10.394344711303711
+IN,lower,E138K-S147G,"bictegravir, cabotegravir, dolutegravir, elvitegravir, raltegravir",INSTI,214,0.001620690659551448,False,,not listed,False,2.66,9.497529315948487
+IN,lower,Y143R-I151V,raltegravir,INSTI,179,0.0016288546957808777,False,,not listed,False,,10.623284339904785
+IN,lower,G140S-Q148R,"bictegravir, cabotegravir, dolutegravir, elvitegravir, raltegravir",INSTI,225,0.0016509564431229208,False,,not listed,False,5.2,11.486692333221432
+IN,lower,L68V-E92Q,"elvitegravir, raltegravir",INSTI,214,0.0016890481601144955,False,,not listed,False,2.25,10.543093788623807
+IN,lower,S147G-Q148R,"bictegravir, cabotegravir, dolutegravir, elvitegravir, raltegravir",INSTI,189,0.0017073824623688508,False,,not listed,False,2.65,11.91740596294403
+IN,lower,L68V-E92Q,"elvitegravir, raltegravir",INSTI,168,0.0017256605204015471,False,,not listed,False,2.25,10.543093788623807
+IN,lower,L68V-E92Q,"elvitegravir, raltegravir",INSTI,248,0.0017353378169134978,False,,not listed,False,2.25,10.543093788623807
+IN,lower,L68V-E92Q,"elvitegravir, raltegravir",INSTI,144,0.0017372148107258532,False,,not listed,False,2.25,10.543093788623807
+IN,lower,E138K-Q148K,"bictegravir, cabotegravir, dolutegravir, elvitegravir, raltegravir",INSTI,114,0.0017611336352111116,False,,not listed,False,4.9,12.485106712579727
+IN,lower,Y143R-I151V,raltegravir,INSTI,225,0.0017624160819822339,False,,not listed,False,,10.623284339904785
+IN,lower,S147G-Q148R,"bictegravir, cabotegravir, dolutegravir, elvitegravir, raltegravir",INSTI,180,0.0017763565055728967,False,,not listed,False,2.65,11.91740596294403
+IN,lower,Y143R-I151V,raltegravir,INSTI,117,0.0018564526390854954,False,,not listed,False,,10.623284339904785
+IN,lower,E138K-S147G,"bictegravir, cabotegravir, dolutegravir, elvitegravir, raltegravir",INSTI,42,0.0018831749072433408,False,,not listed,False,2.66,9.497529315948487
+IN,lower,E138K-S147G,"bictegravir, cabotegravir, dolutegravir, elvitegravir, raltegravir",INSTI,8,0.0018859837880787946,False,,not listed,False,2.66,9.497529315948487
+IN,lower,Y143R-I151V,raltegravir,INSTI,110,0.0019013201047301555,False,,not listed,False,,10.623284339904785
+IN,lower,V54I-G140C,"bictegravir, cabotegravir, dolutegravir, elvitegravir, raltegravir",INSTI,225,0.0019261515180859637,False,,not listed,False,2.03,11.341738688945767
+IN,lower,L68V-E92Q,"elvitegravir, raltegravir",INSTI,252,0.0019472016545020964,False,,not listed,False,2.25,10.543093788623807
+IN,lower,Y143R-I151V,raltegravir,INSTI,87,0.002019107192163803,False,,not listed,False,,10.623284339904785
+IN,lower,E138A-Q148H,"bictegravir, cabotegravir, dolutegravir, elvitegravir, raltegravir",INSTI,114,0.002079756693195625,False,,not listed,False,2.13,16.742628002166747
+IN,lower,L68V-E92Q,"elvitegravir, raltegravir",INSTI,243,0.002082289558071712,False,,not listed,False,2.25,10.543093788623807
+IN,lower,E138K-S147G,"bictegravir, cabotegravir, dolutegravir, elvitegravir, raltegravir",INSTI,144,0.0021022328572083714,False,,not listed,False,2.66,9.497529315948487
+IN,lower,E92Q-K215R,"elvitegravir, raltegravir",INSTI,87,0.002110397683480292,False,,not listed,False,2.25,9.595318490266797
+IN,lower,E138K-Q148K,"bictegravir, cabotegravir, dolutegravir, elvitegravir, raltegravir",INSTI,180,0.00211841871316003,False,,not listed,False,4.9,12.485106712579727
+IN,lower,E92Q-K215R,"elvitegravir, raltegravir",INSTI,168,0.0021239753241054063,False,,not listed,False,2.25,9.595318490266797
+IN,lower,T97A-Y143C,"cabotegravir, elvitegravir, raltegravir",INSTI,207,0.002201121087329895,False,,not listed,False,2.07,10.798508942127224
+IN,lower,V54I-G140C,"bictegravir, cabotegravir, dolutegravir, elvitegravir, raltegravir",INSTI,98,0.002218603488498352,False,,not listed,False,2.03,11.341738688945767
+IN,lower,Y143S-S230R,raltegravir,INSTI,98,0.0022224687780406528,False,,not listed,False,3.7,10.371170389652253
+IN,lower,S147G-Q148R,"bictegravir, cabotegravir, dolutegravir, elvitegravir, raltegravir",INSTI,36,0.002253273609021986,False,,not listed,False,2.65,11.91740596294403
+IN,lower,L68V-E92Q,"elvitegravir, raltegravir",INSTI,82,0.0022876744300808372,False,,not listed,False,2.25,10.543093788623807
+IN,lower,Y143R-I151V,raltegravir,INSTI,100,0.0023004175602532465,False,,not listed,False,,10.623284339904785
+IN,lower,V54I-G140C,"bictegravir, cabotegravir, dolutegravir, elvitegravir, raltegravir",INSTI,8,0.002311489415422032,False,,not listed,False,2.03,11.341738688945767
+IN,lower,L68V-E92Q,"elvitegravir, raltegravir",INSTI,110,0.0023133875182191417,False,,not listed,False,2.25,10.543093788623807
+IN,lower,E92Q-K215R,"elvitegravir, raltegravir",INSTI,144,0.0023192948354499145,False,,not listed,False,2.25,9.595318490266797
+IN,lower,Y143R-I151V,raltegravir,INSTI,243,0.0023538105832007225,False,,not listed,False,,10.623284339904785
+IN,lower,Y143R-I151V,raltegravir,INSTI,55,0.002357266622036284,False,,not listed,False,,10.623284339904785
+IN,lower,T97A-Y143S,"cabotegravir, elvitegravir, raltegravir",INSTI,121,0.0023590711700505933,True,"elvitegravir, raltegravir",INSTI,True,2.16,10.394344711303711
+IN,lower,Y143R-I151V,raltegravir,INSTI,114,0.002368645508172911,False,,not listed,False,,10.623284339904785
+IN,lower,E138K-S147G,"bictegravir, cabotegravir, dolutegravir, elvitegravir, raltegravir",INSTI,98,0.002377243208078525,False,,not listed,False,2.66,9.497529315948487
+IN,lower,Y143C-S230R,raltegravir,INSTI,98,0.002413416171001351,False,,not listed,False,6.38,11.258074128627776
+IN,lower,E138K-Q148R,"bictegravir, cabotegravir, dolutegravir, elvitegravir, raltegravir",INSTI,188,0.0024196452353871666,False,,not listed,False,3.53,13.569714248180386
+IN,lower,G140C-Q148R,"bictegravir, cabotegravir, dolutegravir, elvitegravir, raltegravir",INSTI,25,0.00244248530246986,False,,not listed,False,2.99,11.228775572776794
+IN,lower,E92Q-K215R,"elvitegravir, raltegravir",INSTI,261,0.002464637440875252,False,,not listed,False,2.25,9.595318490266797
+IN,lower,V54I-G140C,"bictegravir, cabotegravir, dolutegravir, elvitegravir, raltegravir",INSTI,137,0.002470287851026414,False,,not listed,False,2.03,11.341738688945767
+IN,lower,Y143C-S230R,raltegravir,INSTI,18,0.0024814728156934834,False,,not listed,False,6.38,11.258074128627776
+IN,lower,E138K-S147G,"bictegravir, cabotegravir, dolutegravir, elvitegravir, raltegravir",INSTI,137,0.0024954545814238715,False,,not listed,False,2.66,9.497529315948487
+IN,lower,V54I-G140C,"bictegravir, cabotegravir, dolutegravir, elvitegravir, raltegravir",INSTI,168,0.0025184647107926346,False,,not listed,False,2.03,11.341738688945767
+IN,lower,E138K-S147G,"bictegravir, cabotegravir, dolutegravir, elvitegravir, raltegravir",INSTI,110,0.0025500756810852964,False,,not listed,False,2.66,9.497529315948487
+IN,lower,E92Q-K215R,"elvitegravir, raltegravir",INSTI,252,0.0025517019790586132,False,,not listed,False,2.25,9.595318490266797
+IN,lower,Y143R-I151V,raltegravir,INSTI,71,0.0026053450147403476,False,,not listed,False,,10.623284339904785
+IN,lower,E92Q-K215R,"elvitegravir, raltegravir",INSTI,114,0.0026585884930251337,False,,not listed,False,2.25,9.595318490266797
+IN,lower,E138K-S147G,"bictegravir, cabotegravir, dolutegravir, elvitegravir, raltegravir",INSTI,261,0.0026687457523987086,False,,not listed,False,2.66,9.497529315948487
+IN,lower,G140A-Q148K,"bictegravir, cabotegravir, dolutegravir, elvitegravir, raltegravir",INSTI,80,0.002692783140497371,False,,not listed,False,5.61,11.878794801235198
+IN,lower,S147G-Q148R,"bictegravir, cabotegravir, dolutegravir, elvitegravir, raltegravir",INSTI,42,0.0026963187765844097,False,,not listed,False,2.65,11.91740596294403
+IN,lower,L68V-E92Q,"elvitegravir, raltegravir",INSTI,2,0.00270674576186649,False,,not listed,False,2.25,10.543093788623807
+IN,lower,L68V-E92Q,"elvitegravir, raltegravir",INSTI,117,0.002720902427459041,False,,not listed,False,2.25,10.543093788623807
+IN,lower,E138A-Q148H,"bictegravir, cabotegravir, dolutegravir, elvitegravir, raltegravir",INSTI,207,0.002760709047111409,False,,not listed,False,2.13,16.742628002166747
+IN,lower,G140S-Q148H,"bictegravir, cabotegravir, dolutegravir, elvitegravir, raltegravir",INSTI,188,0.0028468037593014656,False,,not listed,False,8.51,10.264471149444578
+IN,lower,E92Q-K215R,"elvitegravir, raltegravir",INSTI,139,0.0028761601786063532,False,,not listed,False,2.25,9.595318490266797
+IN,lower,E138K-Q148K,"bictegravir, cabotegravir, dolutegravir, elvitegravir, raltegravir",INSTI,36,0.0029087136437192162,False,,not listed,False,4.9,12.485106712579727
+PR,lower,D30N-N88D,"atazanavir, nelfinavir",PI,26,1.2870367697949281e-05,False,,not listed,False,4.61,9.275145173072815
+PR,lower,M46I-F53Y,"atazanavir, fosamprenavir, indinavir, lopinavir, nelfinavir, tipranavir",PI,52,1.77582262678647e-05,False,,not listed,False,1.87,9.345060348510742
+PR,lower,G48V-V82A,"atazanavir, fosamprenavir, indinavir, lopinavir, nelfinavir, saquinavir, tipranavir",PI,49,6.341848322602317e-05,False,,not listed,False,2.32,12.917510461807256
+PR,lower,I54A-V82T,"atazanavir, darunavir, fosamprenavir, indinavir, lopinavir, nelfinavir, saquinavir, tipranavir",PI,81,7.429170766868155e-05,False,,not listed,False,2.34,12.976646953821183
+PR,lower,I54A-V82T,"atazanavir, darunavir, fosamprenavir, indinavir, lopinavir, nelfinavir, saquinavir, tipranavir",PI,26,0.00011999775978036321,False,,not listed,False,2.34,12.976646953821183
+PR,lower,D30N-K34Q,nelfinavir,PI,49,0.0001353651228485645,False,,not listed,False,,8.766594099998489
+PR,lower,I54A-A71I,"atazanavir, darunavir, fosamprenavir, indinavir, lopinavir, nelfinavir, saquinavir, tipranavir",PI,52,0.00014431672447413332,False,,not listed,False,2.26,14.66784948706627
+PR,lower,M46I-L76V,"atazanavir, darunavir, fosamprenavir, indinavir, lopinavir, nelfinavir, tipranavir",PI,29,0.00015348445040722883,False,,not listed,False,2.67,8.325915265083314
+PR,lower,D30N-N88D,"atazanavir, nelfinavir",PI,52,0.00015728814694850596,False,,not listed,False,4.61,9.275145173072815
+PR,lower,I54A-V82A,"atazanavir, darunavir, fosamprenavir, indinavir, lopinavir, nelfinavir, saquinavir, tipranavir",PI,51,0.00016284920463757578,False,,not listed,False,2.95,13.413453674316417
+PR,lower,V32I-M46I,"atazanavir, darunavir, fosamprenavir, indinavir, lopinavir, nelfinavir, tipranavir",PI,52,0.00018726303791097057,False,,not listed,False,1.98,7.312994217872621
+PR,lower,M46I-K55R,"atazanavir, fosamprenavir, indinavir, lopinavir, nelfinavir, tipranavir",PI,81,0.0001937764037140399,False,,not listed,False,1.77,8.781228518486024
+PR,lower,D30N-K34Q,nelfinavir,PI,52,0.0002171198177439775,False,,not listed,False,,8.766594099998489
+PR,lower,I54V-T91S,"atazanavir, darunavir, fosamprenavir, indinavir, lopinavir, saquinavir, tipranavir",PI,42,0.00026443643835713493,False,,not listed,False,1.93,12.277078998088838
+PR,lower,D30N-K34Q,nelfinavir,PI,26,0.00026932247531533723,False,,not listed,False,,8.766594099998489
+PR,lower,I54V-V82T,"atazanavir, darunavir, fosamprenavir, indinavir, lopinavir, nelfinavir, saquinavir, tipranavir",PI,56,0.000289976803067175,False,,not listed,False,2.48,11.198040258884431
+PR,lower,M46I-L76V,"atazanavir, darunavir, fosamprenavir, indinavir, lopinavir, nelfinavir, tipranavir",PI,52,0.00032001522298736934,False,,not listed,False,2.67,8.325915265083314
+PR,lower,M46I-F53Y,"atazanavir, fosamprenavir, indinavir, lopinavir, nelfinavir, tipranavir",PI,29,0.00032873277209337376,False,,not listed,False,1.87,9.345060348510742
+PR,lower,I54V-V82T,"atazanavir, darunavir, fosamprenavir, indinavir, lopinavir, nelfinavir, saquinavir, tipranavir",PI,26,0.0003362159695580378,False,,not listed,False,2.48,11.198040258884431
+PR,lower,D30N-K34Q,nelfinavir,PI,44,0.00036702917354397563,False,,not listed,False,,8.766594099998489
+PR,lower,M46L-K55R,"atazanavir, fosamprenavir, indinavir, lopinavir, nelfinavir, tipranavir",PI,49,0.00038767338332082213,False,,not listed,False,1.81,8.64023289680481
+PR,lower,M46I-N88T,"atazanavir, fosamprenavir, indinavir, lopinavir, nelfinavir, tipranavir",PI,52,0.0003942111995094808,False,,not listed,False,2.24,7.375776812434199
+PR,lower,I54A-A71I,"atazanavir, darunavir, fosamprenavir, indinavir, lopinavir, nelfinavir, saquinavir, tipranavir",PI,94,0.0004527642391294227,False,,not listed,False,2.26,14.66784948706627
+PR,lower,D30N-K34Q,nelfinavir,PI,81,0.0005235304715872616,False,,not listed,False,,8.766594099998489
+PR,lower,V32I-I47V,"atazanavir, darunavir, fosamprenavir, indinavir, lopinavir, tipranavir",PI,26,0.000573878744878039,False,,not listed,False,3.45,7.3267999410629265
+PR,lower,V32I-M46I,"atazanavir, darunavir, fosamprenavir, indinavir, lopinavir, nelfinavir, tipranavir",PI,29,0.0005801598016247858,False,,not listed,False,1.98,7.312994217872621
+PR,lower,I54V-V82A,"atazanavir, darunavir, fosamprenavir, indinavir, lopinavir, nelfinavir, saquinavir, tipranavir",PI,26,0.0006029471969580793,False,,not listed,False,2.86,11.933600163459781
+PR,lower,V32I-I47V,"atazanavir, darunavir, fosamprenavir, indinavir, lopinavir, tipranavir",PI,52,0.0006169309442588108,False,,not listed,False,3.45,7.3267999410629265
+PR,lower,M46I-N88T,"atazanavir, fosamprenavir, indinavir, lopinavir, nelfinavir, tipranavir",PI,29,0.0006176922604251235,False,,not listed,False,2.24,7.375776812434199
+PR,lower,D30N-K34Q,nelfinavir,PI,80,0.0006380611404403988,False,,not listed,False,,8.766594099998489
+PR,lower,M46L-V82A,"atazanavir, fosamprenavir, indinavir, lopinavir, nelfinavir, saquinavir, tipranavir",PI,27,0.0006425971623990826,False,,not listed,False,1.81,11.838690304756165
+PR,lower,M46L-V82A,"atazanavir, fosamprenavir, indinavir, lopinavir, nelfinavir, saquinavir, tipranavir",PI,26,0.0007200603534939509,False,,not listed,False,1.81,11.838690304756165
+PR,lower,I54A-A71I,"atazanavir, darunavir, fosamprenavir, indinavir, lopinavir, nelfinavir, saquinavir, tipranavir",PI,49,0.0007486056363374052,False,,not listed,False,2.26,14.66784948706627
+PR,lower,G48V-V82T,"atazanavir, fosamprenavir, indinavir, lopinavir, nelfinavir, saquinavir, tipranavir",PI,52,0.0007544339969856904,False,,not listed,False,1.96,11.858220982551577
+PR,lower,I54A-V82A,"atazanavir, darunavir, fosamprenavir, indinavir, lopinavir, nelfinavir, saquinavir, tipranavir",PI,26,0.0008191654067365939,False,,not listed,False,2.95,13.413453674316417
+PR,lower,G48V-I54A,"atazanavir, darunavir, fosamprenavir, indinavir, lopinavir, saquinavir, tipranavir",PI,52,0.0008280686991320756,False,,not listed,False,3.14,13.950734692811965
+PR,lower,L90M-C95F,"atazanavir, fosamprenavir, indinavir, lopinavir, nelfinavir, saquinavir",PI,26,0.0008336859780243401,False,,not listed,False,2.0,10.874412250518798
+PR,lower,V32I-M46I,"atazanavir, darunavir, fosamprenavir, indinavir, lopinavir, nelfinavir, tipranavir",PI,81,0.0008352235917846836,False,,not listed,False,1.98,7.312994217872621
+PR,lower,G48V-V82T,"atazanavir, fosamprenavir, indinavir, lopinavir, nelfinavir, saquinavir, tipranavir",PI,80,0.0008720274968060657,False,,not listed,False,1.96,11.858220982551577
+PR,lower,M46I-N88T,"atazanavir, fosamprenavir, indinavir, lopinavir, nelfinavir, tipranavir",PI,26,0.0009541224644803311,False,,not listed,False,2.24,7.375776812434199
+PR,lower,D30N-K34Q,nelfinavir,PI,86,0.0009823705469728565,False,,not listed,False,,8.766594099998489
+PR,lower,M46L-K55R,"atazanavir, fosamprenavir, indinavir, lopinavir, nelfinavir, tipranavir",PI,26,0.0010205777742957986,False,,not listed,False,1.81,8.64023289680481
+PR,lower,I54A-A71I,"atazanavir, darunavir, fosamprenavir, indinavir, lopinavir, nelfinavir, saquinavir, tipranavir",PI,27,0.0010276171209157563,False,,not listed,False,2.26,14.66784948706627
+PR,lower,I54V-T91S,"atazanavir, darunavir, fosamprenavir, indinavir, lopinavir, saquinavir, tipranavir",PI,26,0.0010718234654661907,False,,not listed,False,1.93,12.277078998088838
+PR,lower,M46I-L76V,"atazanavir, darunavir, fosamprenavir, indinavir, lopinavir, nelfinavir, tipranavir",PI,26,0.0010988766339566126,False,,not listed,False,2.67,8.325915265083314
+PR,lower,M46I-L76V,"atazanavir, darunavir, fosamprenavir, indinavir, lopinavir, nelfinavir, tipranavir",PI,81,0.0011015138249331816,False,,not listed,False,2.67,8.325915265083314
+PR,lower,V32I-M46I,"atazanavir, darunavir, fosamprenavir, indinavir, lopinavir, nelfinavir, tipranavir",PI,26,0.001161576394133875,False,,not listed,False,1.98,7.312994217872621
+PR,lower,D30N-N88D,"atazanavir, nelfinavir",PI,44,0.0011927020306675329,False,,not listed,False,4.61,9.275145173072815
+RT,lower,K103S-G190A,"doravirine, efavirenz, etravirine, nevirapine",NNRTI,95,0.00010420089713884632,False,,not listed,False,1.72,5.089470529556274
+RT,lower,K101P-K103S,"efavirenz, etravirine, nevirapine, rilpivirine",NNRTI,81,0.00013093900648806492,False,,not listed,False,2.35,5.6058508276939385
+RT,lower,K101E-E138K,"efavirenz, etravirine, nevirapine, rilpivirine",NNRTI,55,0.00018784930917131227,False,,not listed,False,1.15,6.113831520080566
+RT,lower,K101E-E138A,"efavirenz, etravirine, nevirapine, rilpivirine",NNRTI,55,0.00019221229781463613,False,,not listed,False,1.27,5.889556777477263
+RT,lower,L100I-K103R,"efavirenz, etravirine, nevirapine, rilpivirine",NNRTI,95,0.00019575063884550735,False,,not listed,False,1.49,4.7139384865760805
+RT,lower,K103S-D177N,"efavirenz, nevirapine",NNRTI,95,0.00019916031509638354,False,,not listed,False,1.18,4.834736275672911
+RT,lower,E138A-G190E,"doravirine, efavirenz, etravirine, nevirapine, rilpivirine",NNRTI,97,0.00022678775847863385,False,,not listed,False,1.09,5.727768611907957
+RT,lower,E138A-G190E,"doravirine, efavirenz, etravirine, nevirapine, rilpivirine",NNRTI,99,0.00022992098131528507,False,,not listed,False,1.09,5.727768611907957
+RT,lower,K101P-D192N,"efavirenz, etravirine, nevirapine, rilpivirine",NNRTI,93,0.00023066480039104093,False,,not listed,False,1.06,4.458551800251005
+RT,lower,L100I-K103S,"efavirenz, etravirine, nevirapine, rilpivirine",NNRTI,95,0.0002629843275025063,False,,not listed,False,1.36,5.86567032933235
+RT,lower,E138A-G190E,"doravirine, efavirenz, etravirine, nevirapine, rilpivirine",NNRTI,144,0.0002878456864946167,False,,not listed,False,1.09,5.727768611907957
+RT,lower,L100I-K103R,"efavirenz, etravirine, nevirapine, rilpivirine",NNRTI,55,0.00029764773376677846,False,,not listed,False,1.49,4.7139384865760805
+RT,lower,K103S-D192N,"efavirenz, nevirapine",NNRTI,95,0.0003388726374957221,False,,not listed,False,1.48,4.907657265663146
+RT,lower,K101E-E138A,"efavirenz, etravirine, nevirapine, rilpivirine",NNRTI,85,0.00035034520274134954,False,,not listed,False,1.27,5.889556777477263
+RT,lower,K101E-E138A,"efavirenz, etravirine, nevirapine, rilpivirine",NNRTI,205,0.0003508876307173489,False,,not listed,False,1.27,5.889556777477263
+RT,lower,K65R-S68N,"stavudine, didanosine, abacavir, emtricitabine/lamivudine, tenofovir",NRTI,119,0.00036256179419610755,False,,not listed,False,2.63,7.125157594680786
+RT,lower,K101P-D192N,"efavirenz, etravirine, nevirapine, rilpivirine",NNRTI,213,0.000379871749709593,False,,not listed,False,1.06,4.458551800251005
+RT,lower,F116Y-Q151R,151 complex,NRTI,95,0.00039713910560588864,False,,not listed,False,1.99,5.33411766886711
+RT,lower,K101E-E138K,"efavirenz, etravirine, nevirapine, rilpivirine",NNRTI,85,0.00039840086981478414,False,,not listed,False,1.15,6.113831520080566
+RT,lower,V75I-I132L,151 complex,NRTI,95,0.0004070056757557,False,,not listed,False,2.9,4.310328435897826
+RT,lower,L100I-K103S,"efavirenz, etravirine, nevirapine, rilpivirine",NNRTI,148,0.0004094861518248154,False,,not listed,False,1.36,5.86567032933235
+RT,lower,K101P-D192N,"efavirenz, etravirine, nevirapine, rilpivirine",NNRTI,168,0.0004223881770523047,False,,not listed,False,1.06,4.458551800251005
+RT,lower,F116Y-Q151R,151 complex,NRTI,213,0.00043336268436928245,False,,not listed,False,1.99,5.33411766886711
+RT,lower,V75I-I132L,151 complex,NRTI,213,0.0004407056444070544,False,,not listed,False,2.9,4.310328435897826
+RT,lower,D67N-K219Q,"zidovudine, stavudine, TAMs, 69 insertion complex",NRTI,97,0.00044190624806451884,False,,not listed,False,2.73,12.531078779697413
+RT,lower,K101P-D192N,"efavirenz, etravirine, nevirapine, rilpivirine",NNRTI,85,0.0004443237008692835,False,,not listed,False,1.06,4.458551800251005
+RT,lower,K101P-D192N,"efavirenz, etravirine, nevirapine, rilpivirine",NNRTI,182,0.00045530344015699565,False,,not listed,False,1.06,4.458551800251005
+RT,lower,K101E-G190S,"doravirine, efavirenz, etravirine, nevirapine, rilpivirine",NNRTI,97,0.00046354053768275506,False,,not listed,False,3.3,6.432056581974028
+RT,lower,F116Y-Q151L,151 complex,NRTI,95,0.0004655963726191086,False,,not listed,False,2.68,5.423892581462857
+RT,lower,K65R-S68N,"stavudine, didanosine, abacavir, emtricitabine/lamivudine, tenofovir",NRTI,213,0.000469629325103741,False,,not listed,False,2.63,7.125157594680786
+RT,lower,K103S-D192N,"efavirenz, nevirapine",NNRTI,198,0.00047772353518612284,False,,not listed,False,1.48,4.907657265663146
+RT,lower,D67N-K70R,"zidovudine, stavudine, tenofovir, TAMs, 69 insertion complex",NRTI,97,0.0004803523365370192,False,,not listed,False,2.21,11.365990698337555
+RT,lower,V108I-L109V,"efavirenz, nevirapine",NNRTI,213,0.0004808327249976365,False,,not listed,False,1.06,6.480406528711319
+RT,lower,E138A-G190E,"doravirine, efavirenz, etravirine, nevirapine, rilpivirine",NNRTI,95,0.0004884203729688436,False,,not listed,False,1.09,5.727768611907957
+RT,lower,K101P-D192N,"efavirenz, etravirine, nevirapine, rilpivirine",NNRTI,95,0.0004940831622253045,False,,not listed,False,1.06,4.458551800251005
+RT,lower,K101P-K103S,"efavirenz, etravirine, nevirapine, rilpivirine",NNRTI,198,0.0005052065223080422,False,,not listed,False,2.35,5.6058508276939385
+RT,lower,K101P-K103S,"efavirenz, etravirine, nevirapine, rilpivirine",NNRTI,217,0.0005116187091604293,False,,not listed,False,2.35,5.6058508276939385
+RT,lower,L100I-K103S,"efavirenz, etravirine, nevirapine, rilpivirine",NNRTI,198,0.0005207700033723299,False,,not listed,False,1.36,5.86567032933235
+RT,lower,F116Y-Q151L,151 complex,NRTI,213,0.0005213742293815524,False,,not listed,False,2.68,5.423892581462857
+RT,lower,L100I-K103N,"efavirenz, etravirine, nevirapine, rilpivirine",NNRTI,182,0.0005228518990868039,False,,not listed,False,2.59,6.117739653587337
+RT,lower,K103S-P225H,"doravirine, efavirenz, nevirapine",NNRTI,85,0.0005247257475389185,False,,not listed,False,1.65,6.3897693037986745
+RT,lower,K103S-G190A,"doravirine, efavirenz, etravirine, nevirapine",NNRTI,51,0.0005270348222114976,False,,not listed,False,1.72,5.089470529556274
+RT,lower,K101E-E138A,"efavirenz, etravirine, nevirapine, rilpivirine",NNRTI,95,0.0005300497613213021,False,,not listed,False,1.27,5.889556777477263
+RT,lower,K65R-S68N,"stavudine, didanosine, abacavir, emtricitabine/lamivudine, tenofovir",NRTI,198,0.0005310157005298578,False,,not listed,False,2.63,7.125157594680786
+RT,lower,K103S-D177N,"efavirenz, nevirapine",NNRTI,183,0.0005365478349020689,False,,not listed,False,1.18,4.834736275672911
+RT,lower,F116Y-Q151R,151 complex,NRTI,85,0.0005388302963258064,False,,not listed,False,1.99,5.33411766886711
+RT,lower,K103N-P225H,"doravirine, efavirenz, nevirapine",NNRTI,59,0.0005399795903313085,False,,not listed,False,2.64,6.905366504192351
+RT,lower,E138A-G190E,"doravirine, efavirenz, etravirine, nevirapine, rilpivirine",NNRTI,55,0.0005462982024470594,False,,not listed,False,1.09,5.727768611907957
+RT,lower,K101E-G190S,"doravirine, efavirenz, etravirine, nevirapine, rilpivirine",NNRTI,85,0.0005482592723697617,False,,not listed,False,3.3,6.432056581974028
+RT,lower,K101E-E138K,"efavirenz, etravirine, nevirapine, rilpivirine",NNRTI,95,0.0005538697106879223,False,,not listed,False,1.15,6.113831520080566
+RT,lower,L74V-L100I,"didanosine, abacavir, efavirenz, etravirine, nevirapine, rilpivirine",NNRTI/NRTI,119,0.0005609906338724628,False,,not listed,False,2.04,6.788409054279325
+RT,lower,K103S-P225H,"doravirine, efavirenz, nevirapine",NNRTI,97,0.0005631456511790131,False,,not listed,False,1.65,6.3897693037986745
+RT,lower,K65R-S68N,"stavudine, didanosine, abacavir, emtricitabine/lamivudine, tenofovir",NRTI,95,0.0005641302966590475,False,,not listed,False,2.63,7.125157594680786
+RT,lower,V75I-I132L,151 complex,NRTI,119,0.0005689082093095402,False,,not listed,False,2.9,4.310328435897826
+RT,lower,K101P-K103S,"efavirenz, etravirine, nevirapine, rilpivirine",NNRTI,91,0.0005706444469093612,False,,not listed,False,2.35,5.6058508276939385
+RT,lower,K103S-D192N,"efavirenz, nevirapine",NNRTI,97,0.000570717639578589,False,,not listed,False,1.48,4.907657265663146
+RT,lower,V75I-F77L,151 complex,NRTI,95,0.0005709534849558843,False,,not listed,False,2.53,4.376871573925015
+RT,lower,K101P-D192N,"efavirenz, etravirine, nevirapine, rilpivirine",NNRTI,153,0.0005717358507743296,False,,not listed,False,1.06,4.458551800251005
+RT,lower,L100I-K103S,"efavirenz, etravirine, nevirapine, rilpivirine",NNRTI,85,0.0005745260035598572,False,,not listed,False,1.36,5.86567032933235
+RT,lower,F116Y-Q151R,151 complex,NRTI,97,0.0005755692778129928,False,,not listed,False,1.99,5.33411766886711
+RT,lower,K101P-D192N,"efavirenz, etravirine, nevirapine, rilpivirine",NNRTI,55,0.0005812578289906365,False,,not listed,False,1.06,4.458551800251005
+RT,lower,F116Y-Q151M,151 complex,NRTI,95,0.0005828890635654586,False,,not listed,False,4.38,7.385042643547054
+RT,lower,A62V-V75I,"69 insertion complex, 151 complex",NRTI,95,0.0005850205630647102,False,,not listed,False,2.04,4.672923743724821
+RT,lower,L74V-L100I,"didanosine, abacavir, efavirenz, etravirine, nevirapine, rilpivirine",NNRTI/NRTI,168,0.0005852225013768133,False,,not listed,False,2.04,6.788409054279325
+RT,lower,V75I-I132L,151 complex,NRTI,71,0.0005910763839441203,False,,not listed,False,2.9,4.310328435897826
+RT,lower,L100I-K103R,"efavirenz, etravirine, nevirapine, rilpivirine",NNRTI,198,0.0005931787497290724,False,,not listed,False,1.49,4.7139384865760805
+RT,lower,L74V-L100I,"didanosine, abacavir, efavirenz, etravirine, nevirapine, rilpivirine",NNRTI/NRTI,91,0.0005959570915991405,False,,not listed,False,2.04,6.788409054279325
+RT,lower,L100I-K103R,"efavirenz, etravirine, nevirapine, rilpivirine",NNRTI,85,0.0005974618087428563,False,,not listed,False,1.49,4.7139384865760805
+RT,lower,L74V-L100I,"didanosine, abacavir, efavirenz, etravirine, nevirapine, rilpivirine",NNRTI/NRTI,93,0.0005995924001922673,False,,not listed,False,2.04,6.788409054279325
+RT,lower,V75I-I132L,151 complex,NRTI,85,0.0006019517594207424,False,,not listed,False,2.9,4.310328435897826
+RT,lower,L74V-Y115F,"didanosine, abacavir",NRTI,183,0.0006045473861756878,False,,not listed,False,2.13,4.987744891643523
+RT,lower,Y181C-G190A,"doravirine, efavirenz, etravirine, nevirapine, rilpivirine",NNRTI,59,0.0006050011759237029,False,,not listed,False,1.19,7.393808364868164
+RT,lower,K103S-D192N,"efavirenz, nevirapine",NNRTI,59,0.0006069268983693749,False,,not listed,False,1.48,4.907657265663146
+RT,lower,E138A-G190E,"doravirine, efavirenz, etravirine, nevirapine, rilpivirine",NNRTI,213,0.0006075082318929133,False,,not listed,False,1.09,5.727768611907957
+RT,lower,Y181C-H221Y,"efavirenz, etravirine, nevirapine, rilpivirine",NNRTI,168,0.0006107425409527195,False,,not listed,False,1.76,5.237712478637692
+RT,lower,V75I-I132L,151 complex,NRTI,89,0.0006108993719671406,False,,not listed,False,2.9,4.310328435897826
+RT,lower,K103S-D192N,"efavirenz, nevirapine",NNRTI,55,0.0006143947146730704,False,,not listed,False,1.48,4.907657265663146
+RT,lower,V108I-V189I,"efavirenz, nevirapine",NNRTI,213,0.0006154531308045606,False,,not listed,False,1.17,5.370186924934387
+RT,lower,L74V-Y115F,"didanosine, abacavir",NRTI,91,0.000616492591025629,False,,not listed,False,2.13,4.987744891643523
+RT,lower,K101E-G190S,"doravirine, efavirenz, etravirine, nevirapine, rilpivirine",NNRTI,95,0.0006169680145842244,False,,not listed,False,3.3,6.432056581974028
+RT,lower,V75I-I132L,151 complex,NRTI,127,0.0006198455652235502,False,,not listed,False,2.9,4.310328435897826
+RT,lower,M41L-T215S,"zidovudine, stavudine, TAMs, 69 insertion complex",NRTI,71,0.0006268907197790001,False,,not listed,False,2.27,14.21232464760542
+RT,lower,F116Y-Q151L,151 complex,NRTI,85,0.0006275696706034479,False,,not listed,False,2.68,5.423892581462857
+RT,lower,L100I-K103N,"efavirenz, etravirine, nevirapine, rilpivirine",NNRTI,119,0.0006328365730281199,False,,not listed,False,2.59,6.117739653587337
+RT,lower,F116Y-Q151R,151 complex,NRTI,198,0.0006367990759078755,False,,not listed,False,1.99,5.33411766886711
+RT,lower,L74V-L100I,"didanosine, abacavir, efavirenz, etravirine, nevirapine, rilpivirine",NNRTI/NRTI,183,0.0006438366903621321,False,,not listed,False,2.04,6.788409054279325
+RT,lower,K65R-S68N,"stavudine, didanosine, abacavir, emtricitabine/lamivudine, tenofovir",NRTI,59,0.0006480386619216562,False,,not listed,False,2.63,7.125157594680786
+RT,lower,K103S-G190A,"doravirine, efavirenz, etravirine, nevirapine",NNRTI,97,0.0006495919348471196,False,,not listed,False,1.72,5.089470529556274
+RT,lower,F116Y-Q151L,151 complex,NRTI,93,0.0006534091779513259,False,,not listed,False,2.68,5.423892581462857
+RT,lower,K101E-E138A,"efavirenz, etravirine, nevirapine, rilpivirine",NNRTI,213,0.0006615966221351573,False,,not listed,False,1.27,5.889556777477263
+RT,lower,E138A-G190E,"doravirine, efavirenz, etravirine, nevirapine, rilpivirine",NNRTI,141,0.0006635743607792625,False,,not listed,False,1.09,5.727768611907957
+RT,lower,V75I-I132L,151 complex,NRTI,52,0.0006641376006121221,False,,not listed,False,2.9,4.310328435897826
+RT,lower,K103S-D192N,"efavirenz, nevirapine",NNRTI,81,0.000668571244456678,False,,not listed,False,1.48,4.907657265663146
+RT,lower,K103S-D177N,"efavirenz, nevirapine",NNRTI,85,0.0006709096435340011,False,,not listed,False,1.18,4.834736275672911
+RT,lower,K101E-E138K,"efavirenz, etravirine, nevirapine, rilpivirine",NNRTI,78,0.0006712799154787526,False,,not listed,False,1.15,6.113831520080566
+RT,lower,V108I-H221Y,"efavirenz, nevirapine, rilpivirine",NNRTI,213,0.0006726347625457356,False,,not listed,False,1.49,5.3837415933609005
+RT,lower,K101P-D192N,"efavirenz, etravirine, nevirapine, rilpivirine",NNRTI,51,0.0006788556460640226,False,,not listed,False,1.06,4.458551800251005
+RT,lower,V75I-F77L,151 complex,NRTI,213,0.0006792715279728118,False,,not listed,False,2.53,4.376871573925015
+RT,lower,V75I-Q151M,151 complex,NRTI,95,0.0006814083851507443,False,,not listed,False,1.87,5.659520685672755
+RT,lower,L100I-K103S,"efavirenz, etravirine, nevirapine, rilpivirine",NNRTI,97,0.0006826995548504449,False,,not listed,False,1.36,5.86567032933235
+RT,lower,K103S-D192N,"efavirenz, nevirapine",NNRTI,182,0.0006831010858138597,False,,not listed,False,1.48,4.907657265663146
+RT,lower,F116Y-Q151M,151 complex,NRTI,213,0.0006847323665656964,False,,not listed,False,4.38,7.385042643547054
+RT,lower,V108I-L109V,"efavirenz, nevirapine",NNRTI,85,0.0006852384791399701,False,,not listed,False,1.06,6.480406528711319
+RT,lower,K103S-D192N,"efavirenz, nevirapine",NNRTI,85,0.0006863617307760489,False,,not listed,False,1.48,4.907657265663146
+RT,lower,L74V-L100I,"didanosine, abacavir, efavirenz, etravirine, nevirapine, rilpivirine",NNRTI/NRTI,213,0.000688592025166071,False,,not listed,False,2.04,6.788409054279325
+RT,lower,V75I-I132L,151 complex,NRTI,152,0.0006924103913234704,False,,not listed,False,2.9,4.310328435897826
+RT,lower,L210W-T215S,"zidovudine, stavudine, TAMs, 69 insertion complex",NRTI,198,0.00069660236406072,False,,not listed,False,2.28,15.29581645131111
+RT,lower,L74V-Y115F,"didanosine, abacavir",NRTI,213,0.0006973572416799002,False,,not listed,False,2.13,4.987744891643523
+RT,lower,V75I-I132L,151 complex,NRTI,168,0.0006998756771494674,False,,not listed,False,2.9,4.310328435897826
+RT,lower,A62V-V75I,"69 insertion complex, 151 complex",NRTI,213,0.0007012877685859035,False,,not listed,False,2.04,4.672923743724821
+RT,lower,K70R-K219E,"zidovudine, stavudine, tenofovir, TAMs, 69 insertion complex",NRTI,133,0.0007024910691349181,False,,not listed,False,2.77,10.78702906370163
+RT,lower,K101E-E138K,"efavirenz, etravirine, nevirapine, rilpivirine",NNRTI,71,0.0007045668735253375,False,,not listed,False,1.15,6.113831520080566
+RT,lower,M41L-T215F,"zidovudine, stavudine, TAMs, 69 insertion complex",NRTI,97,0.0007058951708645373,False,,not listed,False,2.48,14.915850511193272
+RT,lower,F116Y-Q151L,151 complex,NRTI,97,0.0007059675311369356,False,,not listed,False,2.68,5.423892581462857
+RT,lower,K101E-E138K,"efavirenz, etravirine, nevirapine, rilpivirine",NNRTI,213,0.0007135638603721392,False,,not listed,False,1.15,6.113831520080566
+RT,lower,K65R-S68N,"stavudine, didanosine, abacavir, emtricitabine/lamivudine, tenofovir",NRTI,152,0.0007149107576264497,False,,not listed,False,2.63,7.125157594680786
+RT,lower,D67N-K219E,"zidovudine, stavudine, TAMs, 69 insertion complex",NRTI,93,0.0007155626669137546,False,,not listed,False,2.38,11.900383949279785
+RT,lower,K101P-D192N,"efavirenz, etravirine, nevirapine, rilpivirine",NNRTI,198,0.0007204509258075157,False,,not listed,False,1.06,4.458551800251005
+RT,lower,V108I-V189I,"efavirenz, nevirapine",NNRTI,71,0.0007303540373402845,False,,not listed,False,1.17,5.370186924934387
+RT,lower,K101E-G190A,"doravirine, efavirenz, etravirine, nevirapine, rilpivirine",NNRTI,95,0.0007305892753365947,False,,not listed,False,2.64,6.042242121696472
+RT,lower,M41L-T215F,"zidovudine, stavudine, TAMs, 69 insertion complex",NRTI,55,0.0007329832082513618,False,,not listed,False,2.48,14.915850511193272
+RT,lower,F116Y-Q151L,151 complex,NRTI,198,0.0007336459450328585,False,,not listed,False,2.68,5.423892581462857
+RT,lower,K101P-K103S,"efavirenz, etravirine, nevirapine, rilpivirine",NNRTI,55,0.0007341695683084604,False,,not listed,False,2.35,5.6058508276939385
+RT,lower,L100I-K103S,"efavirenz, etravirine, nevirapine, rilpivirine",NNRTI,81,0.0007404345783255303,False,,not listed,False,1.36,5.86567032933235
+RT,lower,K65R-S68N,"stavudine, didanosine, abacavir, emtricitabine/lamivudine, tenofovir",NRTI,85,0.0007414965649809953,False,,not listed,False,2.63,7.125157594680786
+RT,lower,K101P-D192N,"efavirenz, etravirine, nevirapine, rilpivirine",NNRTI,71,0.0007416909959900721,False,,not listed,False,1.06,4.458551800251005
+RT,lower,K101E-E138A,"efavirenz, etravirine, nevirapine, rilpivirine",NNRTI,71,0.0007426918156323421,False,,not listed,False,1.27,5.889556777477263
+RT,lower,K101P-K103S,"efavirenz, etravirine, nevirapine, rilpivirine",NNRTI,95,0.000744135975129954,False,,not listed,False,2.35,5.6058508276939385
+RT,lower,V75I-I132L,151 complex,NRTI,133,0.0007456116299607573,False,,not listed,False,2.9,4.310328435897826
+RT,lower,V75I-I132L,151 complex,NRTI,56,0.0007480614200297474,False,,not listed,False,2.9,4.310328435897826
+RT,lower,K101E-E138A,"efavirenz, etravirine, nevirapine, rilpivirine",NNRTI,127,0.0007514751763359087,False,,not listed,False,1.27,5.889556777477263
+RT,lower,V75I-I132L,151 complex,NRTI,198,0.0007585028846968846,False,,not listed,False,2.9,4.310328435897826
+RT,lower,K103N-P225H,"doravirine, efavirenz, nevirapine",NNRTI,182,0.0007586550306451564,False,,not listed,False,2.64,6.905366504192351
+RT,lower,K101E-G190A,"doravirine, efavirenz, etravirine, nevirapine, rilpivirine",NNRTI,59,0.0007598707516354754,False,,not listed,False,2.64,6.042242121696472
+RT,lower,L74V-Y115F,"didanosine, abacavir",NRTI,168,0.0007626326423165252,False,,not listed,False,2.13,4.987744891643523
+RT,lower,K101E-G190A,"doravirine, efavirenz, etravirine, nevirapine, rilpivirine",NNRTI,82,0.0007640279621352475,False,,not listed,False,2.64,6.042242121696472
+RT,lower,K70R-K219Q,"zidovudine, stavudine, tenofovir, TAMs, 69 insertion complex",NRTI,133,0.0007666220076156727,False,,not listed,False,2.72,13.396619755029676
+RT,lower,V75I-I132L,151 complex,NRTI,93,0.0007669410331237453,False,,not listed,False,2.9,4.310328435897826
+RT,lower,K101P-K103S,"efavirenz, etravirine, nevirapine, rilpivirine",NNRTI,84,0.0007683920540540552,False,,not listed,False,2.35,5.6058508276939385
+RT,lower,L74V-Y115F,"didanosine, abacavir",NRTI,93,0.000769516070417707,False,,not listed,False,2.13,4.987744891643523
+RT,lower,E138A-G190E,"doravirine, efavirenz, etravirine, nevirapine, rilpivirine",NNRTI,168,0.0007716209007215326,False,,not listed,False,1.09,5.727768611907957
+RT,lower,L100I-K103R,"efavirenz, etravirine, nevirapine, rilpivirine",NNRTI,97,0.0007732814713739829,False,,not listed,False,1.49,4.7139384865760805
+RT,lower,K103S-G190A,"doravirine, efavirenz, etravirine, nevirapine",NNRTI,85,0.0007770025904259808,False,,not listed,False,1.72,5.089470529556274
+RT,lower,L100I-K103R,"efavirenz, etravirine, nevirapine, rilpivirine",NNRTI,81,0.0007933321387647654,False,,not listed,False,1.49,4.7139384865760805
+RT,lower,K103S-D192N,"efavirenz, nevirapine",NNRTI,61,0.000801738156789085,False,,not listed,False,1.48,4.907657265663146
+RT,lower,K65R-S68N,"stavudine, didanosine, abacavir, emtricitabine/lamivudine, tenofovir",NRTI,183,0.0008038216057390385,False,,not listed,False,2.63,7.125157594680786
+RT,lower,K101P-D192N,"efavirenz, etravirine, nevirapine, rilpivirine",NNRTI,119,0.0008155189800887287,False,,not listed,False,1.06,4.458551800251005
+RT,lower,K103N-P225H,"doravirine, efavirenz, nevirapine",NNRTI,119,0.000815960582960641,False,,not listed,False,2.64,6.905366504192351
+RT,lower,K103S-P225H,"doravirine, efavirenz, nevirapine",NNRTI,213,0.0008188498830160428,False,,not listed,False,1.65,6.3897693037986745
+RT,lower,V75I-Q151M,151 complex,NRTI,213,0.0008198325044815886,False,,not listed,False,1.87,5.659520685672755
+RT,lower,V108I-V189I,"efavirenz, nevirapine",NNRTI,222,0.0008213765361672156,False,,not listed,False,1.17,5.370186924934387
+RT,lower,K101P-D192N,"efavirenz, etravirine, nevirapine, rilpivirine",NNRTI,97,0.00082672171947754,False,,not listed,False,1.06,4.458551800251005
+RT,lower,K101E-E138A,"efavirenz, etravirine, nevirapine, rilpivirine",NNRTI,108,0.0008273285929359381,True,"efavirenz, nevirapine",NNRTI,True,1.27,5.889556777477263
+RT,lower,F116Y-Q151M,151 complex,NRTI,85,0.0008287101966701413,False,,not listed,False,4.38,7.385042643547054
+RT,lower,K101P-K103S,"efavirenz, etravirine, nevirapine, rilpivirine",NNRTI,97,0.0008289446497356209,False,,not listed,False,2.35,5.6058508276939385
+RT,lower,K101P-K103S,"efavirenz, etravirine, nevirapine, rilpivirine",NNRTI,182,0.0008289515531420797,False,,not listed,False,2.35,5.6058508276939385
+RT,lower,K101E-E138A,"efavirenz, etravirine, nevirapine, rilpivirine",NNRTI,61,0.0008298868036553331,False,,not listed,False,1.27,5.889556777477263
+RT,lower,K101E-G190A,"doravirine, efavirenz, etravirine, nevirapine, rilpivirine",NNRTI,91,0.0008328804625279883,False,,not listed,False,2.64,6.042242121696472
+RT,lower,L210W-T215S,"zidovudine, stavudine, TAMs, 69 insertion complex",NRTI,95,0.0008346145614697034,False,,not listed,False,2.28,15.29581645131111
+RT,lower,K103N-P225H,"doravirine, efavirenz, nevirapine",NNRTI,114,0.0008367838980328732,False,,not listed,False,2.64,6.905366504192351
+RT,lower,K103S-D192N,"efavirenz, nevirapine",NNRTI,213,0.000838948435457772,False,,not listed,False,1.48,4.907657265663146
+RT,lower,K65R-S68N,"stavudine, didanosine, abacavir, emtricitabine/lamivudine, tenofovir",NRTI,97,0.0008431307206725615,False,,not listed,False,2.63,7.125157594680786
+RT,lower,V108I-V189I,"efavirenz, nevirapine",NNRTI,168,0.0008468671831015469,False,,not listed,False,1.17,5.370186924934387
+RT,lower,K101P-D192N,"efavirenz, etravirine, nevirapine, rilpivirine",NNRTI,59,0.0008505174112075654,False,,not listed,False,1.06,4.458551800251005
+RT,lower,V75I-I132L,151 complex,NRTI,97,0.0008514892884616071,False,,not listed,False,2.9,4.310328435897826
+RT,lower,K101E-E138K,"efavirenz, etravirine, nevirapine, rilpivirine",NNRTI,61,0.0008563091426829333,False,,not listed,False,1.15,6.113831520080566
+RT,lower,L74V-L100I,"didanosine, abacavir, efavirenz, etravirine, nevirapine, rilpivirine",NNRTI/NRTI,89,0.0008581364147196426,False,,not listed,False,2.04,6.788409054279325
+RT,lower,K103S-P225H,"doravirine, efavirenz, nevirapine",NNRTI,134,0.0008639217078918785,False,,not listed,False,1.65,6.3897693037986745
+RT,lower,K101P-D192N,"efavirenz, etravirine, nevirapine, rilpivirine",NNRTI,129,0.0008714084645317662,False,,not listed,False,1.06,4.458551800251005
+RT,lower,E138A-G190E,"doravirine, efavirenz, etravirine, nevirapine, rilpivirine",NNRTI,85,0.0008726429782664651,False,,not listed,False,1.09,5.727768611907957
+RT,lower,K101E-G190S,"doravirine, efavirenz, etravirine, nevirapine, rilpivirine",NNRTI,213,0.000875223349524023,False,,not listed,False,3.3,6.432056581974028
+RT,lower,V108I-V189I,"efavirenz, nevirapine",NNRTI,85,0.0008763444882421677,False,,not listed,False,1.17,5.370186924934387
+RT,lower,K101E-G190A,"doravirine, efavirenz, etravirine, nevirapine, rilpivirine",NNRTI,85,0.0008764866543790983,False,,not listed,False,2.64,6.042242121696472
+RT,lower,K70R-K219E,"zidovudine, stavudine, tenofovir, TAMs, 69 insertion complex",NRTI,95,0.0008809472339007136,False,,not listed,False,2.77,10.78702906370163
+RT,lower,K103S-D192N,"efavirenz, nevirapine",NNRTI,127,0.0008816068943336718,False,,not listed,False,1.48,4.907657265663146
+RT,lower,M41L-T215S,"zidovudine, stavudine, TAMs, 69 insertion complex",NRTI,95,0.0008818472370942582,False,,not listed,False,2.27,14.21232464760542
+RT,lower,D67N-K70R,"zidovudine, stavudine, tenofovir, TAMs, 69 insertion complex",NRTI,93,0.0008833741285108587,False,,not listed,False,2.21,11.365990698337555
+RT,lower,F116Y-Q151M,151 complex,NRTI,93,0.0008898442336503444,False,,not listed,False,4.38,7.385042643547054
+RT,lower,V75I-F77L,151 complex,NRTI,85,0.000890865853031545,False,,not listed,False,2.53,4.376871573925015
+RT,lower,L100I-K103N,"efavirenz, etravirine, nevirapine, rilpivirine",NNRTI,95,0.0008912931231518933,False,,not listed,False,2.59,6.117739653587337
+RT,lower,V108I-H221Y,"efavirenz, nevirapine, rilpivirine",NNRTI,217,0.0008936848008334056,False,,not listed,False,1.49,5.3837415933609005
+RT,lower,K101E-E138A,"efavirenz, etravirine, nevirapine, rilpivirine",NNRTI,153,0.0008946251367190469,False,,not listed,False,1.27,5.889556777477263
+RT,lower,K101E-G190S,"doravirine, efavirenz, etravirine, nevirapine, rilpivirine",NNRTI,93,0.0008957907497808058,False,,not listed,False,3.3,6.432056581974028
+RT,lower,L100I-K103N,"efavirenz, etravirine, nevirapine, rilpivirine",NNRTI,198,0.0009042064501029574,False,,not listed,False,2.59,6.117739653587337
+RT,lower,L74V-Y115F,"didanosine, abacavir",NRTI,198,0.0009132428338601565,False,,not listed,False,2.13,4.987744891643523
+RT,lower,L210W-T215Y,"zidovudine, stavudine, TAMs, 69 insertion complex",NRTI,95,0.0009136609371213924,False,,not listed,False,2.7,19.798120803385967
