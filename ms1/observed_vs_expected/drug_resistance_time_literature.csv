@@ -1,0 +1,25 @@
+protein,drug,class,barrier_mutations,weeks_in_vitro,weeks_in_vitro_low,weeks_in_vitro_high,censored,source,confidence,note
+IN,bictegravir,INSTI,2,41,36,46,0,"Oliveira 2018 Retrovirology PMC6098636",medium,solitary low-level (<3-fold) mutation at wk 36-46 in patient-derived isolates
+IN,cabotegravir,INSTI,2,,,,,"Oliveira 2018 Retrovirology PMC6098636",low,resistance in 8/12 isolates over the 36-46 wk passage; per-week timing not reported - FILL IN
+IN,dolutegravir,INSTI,2,41,36,46,0,"Oliveira 2018 Retrovirology PMC6098636",medium,solitary low-level (<3-fold) mutation at wk 36-46
+IN,elvitegravir,INSTI,1,12,8,16,0,"Oliveira 2018 Retrovirology PMC6098636",high,primary mutation (T66I/A E92G/V/Q T97A R263K) by wk 8-16; >100-fold by wk 36
+IN,raltegravir,INSTI,1,,,,,"IAS-USA 2025",low,not in the Oliveira passage panel - FILL IN
+PR,atazanavir,PI,2,,,,,"IAS-USA 2025 / Stanford HIVDB",low,FILL IN
+PR,darunavir,PI,3,37.1,37.1,,1,"De Meyer 2008 Antivir Chem Chemother PMC2699666",high,"no breakthrough virus at 260 days - censored, the true value is larger"
+PR,fosamprenavir,PI,2,4.3,4.3,4.3,0,"De Meyer 2008 Antivir Chem Chemother PMC2699666",medium,breakthrough at 30 days under high drug concentration (amprenavir)
+PR,indinavir,PI,2,,,,,"IAS-USA 2025 / Stanford HIVDB",low,FILL IN
+PR,lopinavir,PI,3,12.9,12.9,12.9,0,"De Meyer 2008 Antivir Chem Chemother PMC2699666",high,breakthrough at 90 days under high drug concentration
+PR,nelfinavir,PI,1,2.9,2.9,2.9,0,"De Meyer 2008 Antivir Chem Chemother PMC2699666",high,breakthrough at 20 days under high drug concentration
+PR,saquinavir,PI,2,,,,,"IAS-USA 2025 / Stanford HIVDB",low,FILL IN
+PR,tipranavir,PI,3,,,,,"IAS-USA 2025 / Stanford HIVDB",low,FILL IN
+RT,zidovudine,NRTI,3,,,,,"IAS-USA 2025 / Stanford HIVDB",low,FILL IN
+RT,stavudine,NRTI,3,,,,,"IAS-USA 2025 / Stanford HIVDB",low,FILL IN
+RT,didanosine,NRTI,2,38,38,38,0,"Brenner/Invernizzi cord-blood cell-culture subtype selections",medium,M184V and L74V at wk 38 in 2 of 4 subtype C selections
+RT,abacavir,NRTI,2,,,,,"Brenner/Invernizzi cell-culture selections",low,selects M184V Y115F K65R; week not reported - FILL IN
+RT,emtricitabine/lamivudine,NRTI,1,11,8,14,0,"Brenner/Invernizzi cord-blood cell-culture subtype selections",high,M184V at wk 8-14 and the timing did not vary by subtype
+RT,tenofovir,NRTI,1,12,12,74,0,"Brenner/Invernizzi cord-blood cell-culture subtype selections",low,"strongly subtype dependent: K65R by wk 12 in subtype C, none by wk 34-74 in subtype B"
+RT,doravirine,NNRTI,2,8,8,24,0,"Feng 2015 AAC 04201-14; Oliveira 2021 JAC 76:2137",high,V108I / V106A-I-M at wk 8; F227L Y318F M230L L234I by wk 24
+RT,efavirenz,NNRTI,1,8,,24,0,"Oliveira 2021 JAC 76:2137 (genotyped at wk 8 and 24)",low,"K103N is an early selection but the study genotyped only at wk 8 and 24 - approximate"
+RT,etravirine,NNRTI,3,,,,,"IAS-USA 2025 / Stanford HIVDB",low,FILL IN
+RT,nevirapine,NNRTI,1,0.64,0.43,0.86,0,"in vitro serial passage, resistance at 3-6 days at all concentrations tested",medium,fastest drug in the table by an order of magnitude
+RT,rilpivirine,NNRTI,1,8,,24,0,"Oliveira 2021 JAC 76:2137 (genotyped at wk 8 and 24)",low,"E138K then L100I / K101E / M230L; only wk 8 and 24 genotypes - approximate"

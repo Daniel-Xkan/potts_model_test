@@ -1,0 +1,28 @@
+protein,drug,DRMs used,DRMs dropped in reduction,reduced pairs,kept (count > 0)
+IN,bictegravir,13,2,38,16
+IN,cabotegravir,19,5,110,35
+IN,dolutegravir,15,4,59,23
+IN,elvitegravir,22,4,142,35
+IN,raltegravir,26,5,142,54
+PR,atazanavir,44,3,286,251
+PR,darunavir,16,3,52,49
+PR,fosamprenavir,30,3,143,138
+PR,indinavir,31,2,160,154
+PR,lopinavir,36,3,242,233
+PR,nelfinavir,18,2,59,57
+PR,saquinavir,32,2,83,80
+PR,tipranavir,27,2,129,123
+RT,zidovudine,31,0,79,79
+RT,stavudine,34,0,121,111
+RT,didanosine,5,0,6,4
+RT,abacavir,8,0,23,21
+RT,emtricitabine/lamivudine,5,0,6,6
+RT,tenofovir,10,0,9,6
+RT,TAMs,25,0,46,46
+RT,69 insertion complex,27,1,69,69
+RT,151 complex,10,0,24,23
+RT,doravirine,17,9,46,40
+RT,efavirenz,32,2,193,171
+RT,etravirine,32,3,175,159
+RT,nevirapine,31,2,173,153
+RT,rilpivirine,24,8,108,91
