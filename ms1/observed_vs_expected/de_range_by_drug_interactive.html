@@ -1,9 +1,10 @@
+
 <!doctype html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>dE double range by drug - ddE filter</title>
+<title>dE double range by drug - Stanford x IAS positions</title>
 <style>
   :root{
     --surface:#fcfcfb; --ink:#0b0b0b; --ink2:#52514e; --muted:#898781;
@@ -50,12 +51,8 @@
 </head>
 <body>
 <div class="wrap">
-  <h1>&Delta;E double range by drug, filtered by &Delta;&Delta;E on the consensus background</h1>
-  <p class="sub">One dot per DRM pair of that drug &mdash; every Stanford substitution at the drug's
-  IAS-USA positions, paired up, kept when the bivariate marginal in the MSA is non-zero. The x
-  position is the 95&ndash;5 percentile spread of &Delta;E double over the whole alignment. Raise the
-  &Delta;&Delta;E threshold and the dots drop out, the boxes recompute, and the rows re-sort on the
-  new medians.</p>
+  <h1>&Delta;E double range by drug &mdash; Stanford substitutions at IAS-USA positions</h1>
+  <p class="sub">One dot per DRM pair of that drug &mdash; every Stanford HIVDB substitution at the drug's IAS-USA codon positions, paired up, kept when the bivariate marginal in the MSA is non-zero. The x position is the 95&ndash;5 percentile spread of &Delta;E double over the whole alignment. Raise the &Delta;&Delta;E threshold and the dots drop out, the boxes recompute, and the rows re-sort on the new medians.</p>
 
   <div class="panel">
     <div class="ctl">
@@ -89,7 +86,7 @@
   furthest pair within 1.5&times;IQR, dots = the pairs themselves (jittered vertically only; the x
   value is exact). &Delta;&Delta;E here is evaluated on the consensus sequence, the same convention
   as the ms0_5 ddE tables &mdash; G140S-Q148H returns 8.51. A pair reachable from several drugs is
-  drawn once per drug with the same x.</p>
+  drawn once per drug with the same x. Mutations from <code>ms0_5/*/data/drug_resistant_pair_*_stanford.tsv</code>; drug assignment by IAS-USA 2025 positions.</p>
 </div>
 <div id="tip"></div>
 
